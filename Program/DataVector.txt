@@ -1,0 +1,60 @@
+Relatório de Vendas de Produtos nas Regiões do Brasil
+1. Introdução
+Este documento apresenta um levantamento detalhado de vendas em quatro grandes regiões do Brasil: Norte, Nordeste, Sudeste e Sul. Nele constam informações sobre os produtos comercializados, as quantidades vendidas, os preços unitários, os custos logísticos associados e os lucros obtidos. Além disso, são fornecidos metadados adicionais (como datas, categorias e IDs dos produtos) que possibilitam a indexação e a utilização destes dados em sistemas de RAG ou vector store.
+
+2. Metodologia
+Fonte dos Dados: Os dados apresentados são fictícios e foram elaborados para ilustrar um cenário de vendas realista.
+
+Período: As informações referem-se ao último trimestre.
+
+Estrutura: Cada registro contém:
+
+ID do Produto
+
+Nome do Produto
+
+Categoria
+
+Região
+
+Quantidade Vendida
+
+Preço Unitário (R$)
+
+Total de Vendas (R$)
+
+Custo Logístico (R$)
+
+Lucro (R$)
+
+Data da Venda
+
+3. Dados por Região
+3.1 Região Norte
+ID Produto	Produto	Categoria	Quantidade	Preço Unitário (R$)	Total de Vendas (R$)	Custo Logístico (R$)	Lucro (R$)	Data da Venda
+N-001	Açaí Premium	Alimentos	100	15,00	1.500,00	50,00	300,00	2025-03-01
+N-002	Castanha-do-Pará	Snacks	80	12,00	960,00	40,00	200,00	2025-03-05
+N-003	Peixe de Rio	Pesca	50	25,00	1.250,00	60,00	150,00	2025-03-10
+Observação: A logística na região Norte pode envolver transporte fluvial ou aéreo devido à localização geográfica, impactando os custos.
+
+3.2 Região Nordeste
+ID Produto	Produto	Categoria	Quantidade	Preço Unitário (R$)	Total de Vendas (R$)	Custo Logístico (R$)	Lucro (R$)	Data da Venda
+NE-001	Caju Brasil	Frutas	150	8,00	1.200,00	30,00	250,00	2025-03-03
+NE-002	Manga Tropical	Frutas	200	7,50	1.500,00	35,00	300,00	2025-03-08
+NE-003	Carne de Sol	Alimentos	120	20,00	2.400,00	80,00	500,00	2025-03-12
+Observação: A região Nordeste apresenta uma logística predominantemente rodoviária, com custos variáveis de acordo com a distância dos centros de distribuição.
+
+3.3 Região Sudeste
+ID Produto	Produto	Categoria	Quantidade	Preço Unitário (R$)	Total de Vendas (R$)	Custo Logístico (R$)	Lucro (R$)	Data da Venda
+SE-001	Café Gourmet	Bebidas	300	18,00	5.400,00	100,00	1.200,00	2025-03-02
+SE-002	Pão de Queijo	Lanches	500	3,50	1.750,00	60,00	400,00	2025-03-07
+SE-003	Massa Artesanal	Alimentos	250	12,00	3.000,00	90,00	700,00	2025-03-11
+Observação: Sendo a região com maior densidade populacional e infraestrutura avançada, a logística no Sudeste apresenta custos otimizados e maior frequência de distribuição.
+
+3.4 Região Sul
+ID Produto	Produto	Categoria	Quantidade	Preço Unitário (R$)	Total de Vendas (R$)	Custo Logístico (R$)	Lucro (R$)	Data da Venda
+S-001	Vinho Tinto	Bebidas	120	45,00	5.400,00	70,00	1.100,00	2025-03-04
+S-002	Queijo Colonial	Laticínios	180	25,00	4.500,00	50,00	900,00	2025-03-09
+S-003	Churrasco Pronto	Alimentos	140	30,00	4.200,00	65,00	850,00	2025-03-13
+Observação: A região Sul conta com uma logística eficiente, com forte rede de distribuição que permite entregas rápidas mesmo em áreas rurais.
+

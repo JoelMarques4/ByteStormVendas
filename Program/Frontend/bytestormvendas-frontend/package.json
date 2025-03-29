@@ -9,10 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@svg-maps/brazil": "^1.0.1",
     "axios": "^1.8.3",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.10.5",
-    "vue": "^3.5.13"
+    "chart.js": "^4.4.8",
+    "d3": "^7.9.0",
+    "svg-pan-zoom": "^3.6.2",
+    "vue": "^3.5.13",
+    "vue-svg-map": "^1.2.0",
+    "vue3-chartjs": "^1.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
