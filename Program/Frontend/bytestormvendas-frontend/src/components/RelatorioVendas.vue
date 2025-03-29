@@ -1,11 +1,17 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, onBeforeUnmount, watch, nextTick, computed } from 'vue';
 import axios from 'axios';
+import { Chart, registerables } from 'chart.js';
+import zoomPlugin from 'chartjs-plugin-zoom';
+
+// Registrar componentes necessários do Chart.js
+Chart.register(...registerables, zoomPlugin);
 
 const props = defineProps({
-  regiao: {
-    type: String,
-    required: true
+  regioes: {
+    type: Array,
+    required: true,
+    default: () => []
   },
   mostrar: {
     type: Boolean,
@@ -18,18 +24,105 @@ const emit = defineEmits(['fechar']);
 const carregando = ref(true);
 const erro = ref(null);
 const dadosVendas = ref(null);
+const regioesSelecionadas = ref([]);
 
-// Função para carregar os dados de vendas da região selecionada
+// Título formatado para as regiões selecionadas
+const tituloRegioes = computed(() => {
+  if (regioesSelecionadas.value.length === 1) {
+    return `Região ${regioesSelecionadas.value[0]}`;
+  } else if (regioesSelecionadas.value.length === 5) {
+    return 'Todas as Regiões';
+  } else {
+    return `${regioesSelecionadas.value.length} Regiões Selecionadas`;
+  }
+});
+
+// Referências para os canvas dos gráficos
+const vendasProdutoChart = ref(null);
+const vendasEstadoChart = ref(null);
+const qtdProdutoMesChart = ref(null);
+const vendasEstadoMesChart = ref(null);
+const lucroReceitaChart = ref(null);
+
+// Instâncias dos gráficos
+let chartVendasProduto = null;
+let chartVendasEstado = null;
+let chartQtdProdutoMes = null;
+let chartVendasEstadoMes = null;
+let chartLucroReceita = null;
+
+// Adicionar referência para o container do mapa
+const mapaVendasContainer = ref(null);
+let mapaVendas = null;
+
+// Variável para controlar tentativas de renderização
+let tentativasRenderizacao = 0;
+const MAX_TENTATIVAS = 5;
+
+// Função para inicializar os gráficos com um atraso maior
+const inicializarGraficos = () => {
+  console.log('Iniciando inicialização dos gráficos...');
+  tentativasRenderizacao = 0;
+  tentarRenderizarGraficos();
+};
+
+// Função para tentar renderizar os gráficos várias vezes
+const tentarRenderizarGraficos = () => {
+  tentativasRenderizacao++;
+  console.log(`Tentativa ${tentativasRenderizacao} de renderizar gráficos`);
+  
+  // Verificar se os elementos canvas estão disponíveis
+  const canvasDisponiveis = 
+    vendasProdutoChart.value && 
+    vendasEstadoChart.value && 
+    qtdProdutoMesChart.value && 
+    vendasEstadoMesChart.value &&
+    lucroReceitaChart.value;
+  
+  console.log('Canvas disponíveis:', canvasDisponiveis);
+  
+  if (canvasDisponiveis) {
+    console.log('Todos os canvas estão disponíveis, renderizando gráficos');
+    renderizarGraficos();
+  } else if (tentativasRenderizacao < MAX_TENTATIVAS) {
+    console.log(`Alguns canvas não estão disponíveis, tentando novamente em ${tentativasRenderizacao * 200}ms`);
+    setTimeout(tentarRenderizarGraficos, tentativasRenderizacao * 200);
+  } else {
+    console.error('Número máximo de tentativas excedido. Falha ao renderizar gráficos.');
+    erro.value = 'Não foi possível carregar os gráficos. Por favor, tente novamente.';
+  }
+};
+
+// Função para carregar os dados de vendas das regiões selecionadas
 const carregarDados = async () => {
   carregando.value = true;
   erro.value = null;
+  regioesSelecionadas.value = [...props.regioes];
+  
+  if (regioesSelecionadas.value.length === 0) {
+    erro.value = 'Nenhuma região selecionada. Por favor, selecione pelo menos uma região.';
+    carregando.value = false;
+    return;
+  }
   
   try {
-    console.log(`Carregando dados para a região: ${props.regiao}`);
-    // Usar a URL do backend corretamente
-    const response = await axios.get(`http://localhost:8000/api/vendas/dados/${props.regiao}`);
-    console.log('Dados recebidos:', response.data);
-    dadosVendas.value = response.data;
+    console.log(`Carregando dados para as regiões: ${regioesSelecionadas.value.join(', ')}`);
+    
+    // Usando Promise.all para carregar dados de múltiplas regiões em paralelo
+    const requests = regioesSelecionadas.value.map(regiao => 
+      axios.get(`http://localhost:8000/api/vendas/dados/${regiao}`)
+    );
+    
+    const responses = await Promise.all(requests);
+    console.log('Todas as respostas recebidas:', responses);
+    
+    // Combinar dados de todas as regiões
+    const dadosCombinados = combinarDadosRegioes(responses.map(response => response.data));
+    dadosVendas.value = dadosCombinados;
+    
+    // Renderizar os gráficos após os dados serem carregados
+    await nextTick();
+    inicializarGraficos();
   } catch (error) {
     console.error('Erro ao carregar dados:', error);
     if (error.response) {
@@ -50,7 +143,715 @@ const carregarDados = async () => {
   }
 };
 
-// Formatar valor monetário
+// Função para combinar dados de múltiplas regiões
+const combinarDadosRegioes = (dadosRegioes) => {
+  if (!dadosRegioes || dadosRegioes.length === 0) {
+    return { dados_tabela: [] };
+  }
+  
+  // Combinar todos os dados_tabela em uma única array
+  const dadosTabelaCombinados = [];
+  
+  dadosRegioes.forEach((dadosRegiao, index) => {
+    if (dadosRegiao && dadosRegiao.dados_tabela) {
+      // Adicionar informação da região se não existir
+      const regiao = regioesSelecionadas.value[index];
+      const dadosComRegiao = dadosRegiao.dados_tabela.map(item => ({
+        ...item,
+        Regiao: item.Regiao || regiao
+      }));
+      
+      dadosTabelaCombinados.push(...dadosComRegiao);
+    }
+  });
+  
+  return { dados_tabela: dadosTabelaCombinados };
+};
+
+// Função para renderizar os gráficos usando Chart.js
+const renderizarGraficos = () => {
+  console.log('Tentando renderizar gráficos com dados:', dadosVendas.value);
+  if (!dadosVendas.value || !dadosVendas.value.dados_tabela) {
+    console.error('Dados inválidos para renderização de gráficos:', dadosVendas.value);
+    return;
+  }
+  
+  // Processar dados para os gráficos
+  const dados = processarDadosGraficos();
+  console.log('Dados processados para gráficos:', dados);
+
+  // Renderizar gráfico de vendas por produto
+  if (vendasProdutoChart.value) {
+    console.log('Elemento canvas para vendas por produto disponível');
+    renderizarGraficoVendasProduto(dados.vendasProduto);
+  } else {
+    console.error('Elemento canvas para vendas por produto não encontrado');
+  }
+  
+  // Renderizar gráfico de vendas por estado
+  if (vendasEstadoChart.value) {
+    console.log('Elemento canvas para vendas por estado disponível');
+    renderizarGraficoVendasEstado(dados.vendasEstado);
+  } else {
+    console.error('Elemento canvas para vendas por estado não encontrado');
+  }
+  
+  // Renderizar gráfico de quantidade por produto e mês
+  if (qtdProdutoMesChart.value) {
+    console.log('Elemento canvas para quantidade por produto e mês disponível');
+    const qtdProdutoMesDatasets = dados.qtdProdutoMesDatasets;
+    const meses = dados.mesesNomes;
+    renderizarGraficoQtdProdutoMes(qtdProdutoMesDatasets, meses);
+  } else {
+    console.error('Elemento canvas para quantidade por produto e mês não encontrado');
+  }
+  
+  // Renderizar gráfico de vendas por estado e mês
+  if (vendasEstadoMesChart.value) {
+    console.log('Elemento canvas para vendas por estado e mês disponível');
+    const vendasEstadoMesDatasets = dados.vendasEstadoMesDatasets;
+    const meses = dados.mesesNomes;
+    renderizarGraficoVendasEstadoMes(vendasEstadoMesDatasets, meses);
+  } else {
+    console.error('Elemento canvas para vendas por estado e mês não encontrado');
+  }
+  
+  // Renderizar gráfico de lucro e receita por produto
+  if (lucroReceitaChart.value) {
+    console.log('Elemento canvas para lucro e receita disponível');
+    renderizarGraficoLucroReceita(dados.lucroProduto, dados.vendasProduto);
+  } else {
+    console.error('Elemento canvas para lucro e receita não encontrado');
+  }
+};
+
+// Função para processar dados para os gráficos
+const processarDadosGraficos = () => {
+  const dados = dadosVendas.value.dados_tabela;
+  
+  // Converter datas para objetos Date
+  dados.forEach(item => {
+    item.DataObj = new Date(item.Data);
+    // Criar formatos de mês para ordenação e exibição
+    item.MesOrdenacao = `${item.DataObj.getFullYear()}-${String(item.DataObj.getMonth() + 1).padStart(2, '0')}`;
+    item.MesNome = item.DataObj.toLocaleString('pt-BR', { month: 'short', year: 'numeric' });
+    
+    // Garantir que valor está disponível
+    if (!item.hasOwnProperty('Valor') && item.hasOwnProperty('Valor_Unitario') && item.hasOwnProperty('Quantidade')) {
+      item.Valor = item.Valor_Unitario * item.Quantidade;
+    }
+  });
+
+  // Coletar todos os meses únicos e ordenar cronologicamente
+  const mesesSet = new Set();
+  dados.forEach(item => mesesSet.add(item.MesOrdenacao));
+  const mesesOrdenados = Array.from(mesesSet).sort();
+  
+  // Mapeamento de mês ordenação para nome do mês
+  const mesParaNome = {};
+  dados.forEach(item => {
+    mesParaNome[item.MesOrdenacao] = item.MesNome;
+  });
+  
+  // Lista de nomes de meses, em ordem cronológica
+  const mesesNomes = mesesOrdenados.map(mes => mesParaNome[mes] || mes);
+
+  // Vendas por produto
+  const vendasProdutoTemp = {};
+  dados.forEach(item => {
+    if (vendasProdutoTemp[item.Produto]) {
+      vendasProdutoTemp[item.Produto] += item.Valor;
+    } else {
+      vendasProdutoTemp[item.Produto] = item.Valor;
+    }
+  });
+  
+  // Limitar a 10 produtos mais vendidos para melhor visualização
+  const produtosOrdenados = Object.entries(vendasProdutoTemp)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 10);
+  
+  const vendasProduto = Object.fromEntries(produtosOrdenados);
+
+  // Vendas por estado/região
+  const vendasEstadoTemp = {};
+  dados.forEach(item => {
+    // Usar região se estado não estiver disponível, ou combinados quando temos múltiplas regiões
+    let chave = item.Estado ? getEstadoNome(item.Estado) : item.Regiao;
+    
+    // Se temos múltiplas regiões, adicione a região ao nome do estado para distinguir
+    if (regioesSelecionadas.value.length > 1 && item.Estado) {
+      chave = `${getEstadoNome(item.Estado)} (${item.Regiao})`;
+    }
+    
+    if (vendasEstadoTemp[chave]) {
+      vendasEstadoTemp[chave] += item.Valor;
+    } else {
+      vendasEstadoTemp[chave] = item.Valor;
+    }
+  });
+  
+  // Limitar a 15 estados/regiões com mais vendas quando temos múltiplas regiões
+  const limite = regioesSelecionadas.value.length > 1 ? 15 : 10;
+  const estadosOrdenados = Object.entries(vendasEstadoTemp)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limite);
+  
+  const vendasEstado = Object.fromEntries(estadosOrdenados);
+
+  // Quantidade por produto e mês
+  const qtdProdutoMesTemp = {};
+  
+  // Usar MesOrdenacao para agrupar dados
+  dados.forEach(item => {
+    if (!qtdProdutoMesTemp[item.Produto]) {
+      qtdProdutoMesTemp[item.Produto] = {};
+    }
+    if (qtdProdutoMesTemp[item.Produto][item.MesOrdenacao]) {
+      qtdProdutoMesTemp[item.Produto][item.MesOrdenacao] += item.Quantidade;
+    } else {
+      qtdProdutoMesTemp[item.Produto][item.MesOrdenacao] = item.Quantidade;
+    }
+  });
+  
+  // Calcular total de unidades vendidas por produto
+  const produtosTotais = {};
+  Object.entries(qtdProdutoMesTemp).forEach(([produto, mesesData]) => {
+    produtosTotais[produto] = Object.values(mesesData).reduce((acc, val) => acc + val, 0);
+  });
+  
+  // Pegar os 5 produtos mais vendidos em quantidade para o gráfico por mês
+  const produtosTopQuantidade = Object.entries(produtosTotais)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+    .map(item => item[0]);
+  
+  // Preparar dados para gráfico: produtos por mês
+  const qtdProdutoMesDatasets = produtosTopQuantidade.map((produto, index) => {
+    const cores = [
+      'rgba(255, 99, 132, 0.7)',
+      'rgba(54, 162, 235, 0.7)',
+      'rgba(255, 206, 86, 0.7)',
+      'rgba(75, 192, 192, 0.7)',
+      'rgba(153, 102, 255, 0.7)',
+    ];
+    
+    return {
+      label: produto,
+      data: mesesOrdenados.map(mes => qtdProdutoMesTemp[produto]?.[mes] || 0),
+      backgroundColor: cores[index % cores.length],
+      borderColor: cores[index % cores.length].replace('0.7', '1'),
+      borderWidth: 1
+    };
+  });
+
+  // Vendas por estado/região e mês
+  const vendasEstadoMesTemp = {};
+  dados.forEach(item => {
+    // Usar região se estado não estiver disponível, ou combinados quando temos múltiplas regiões
+    let chave = item.Estado ? getEstadoNome(item.Estado) : item.Regiao;
+    
+    // Se temos múltiplas regiões, adicione a região ao nome do estado para distinguir
+    if (regioesSelecionadas.value.length > 1 && item.Estado) {
+      chave = `${getEstadoNome(item.Estado)} (${item.Regiao})`;
+    }
+    
+    if (!vendasEstadoMesTemp[chave]) {
+      vendasEstadoMesTemp[chave] = {};
+    }
+    if (vendasEstadoMesTemp[chave][item.MesOrdenacao]) {
+      vendasEstadoMesTemp[chave][item.MesOrdenacao] += item.Valor;
+    } else {
+      vendasEstadoMesTemp[chave][item.MesOrdenacao] = item.Valor;
+    }
+  });
+  
+  // Calcular total de vendas por estado
+  const estadosTotais = {};
+  Object.entries(vendasEstadoMesTemp).forEach(([estado, mesesData]) => {
+    estadosTotais[estado] = Object.values(mesesData).reduce((acc, val) => acc + val, 0);
+  });
+  
+  // Pegar os 5 estados com mais vendas para o gráfico por mês (ou mais quando múltiplas regiões)
+  const limite2 = regioesSelecionadas.value.length > 1 ? 8 : 5;
+  const estadosTopVendas = Object.entries(estadosTotais)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limite2)
+    .map(item => item[0]);
+  
+  // Preparar dados para gráfico: estados por mês
+  const vendasEstadoMesDatasets = estadosTopVendas.map((estado, index) => {
+    const cores = [
+      'rgba(255, 99, 132, 0.7)',
+      'rgba(54, 162, 235, 0.7)',
+      'rgba(255, 206, 86, 0.7)',
+      'rgba(75, 192, 192, 0.7)',
+      'rgba(153, 102, 255, 0.7)',
+      'rgba(255, 159, 64, 0.7)',
+      'rgba(201, 203, 207, 0.7)',
+      'rgba(0, 162, 232, 0.7)',
+      'rgba(139, 195, 74, 0.7)',
+      'rgba(103, 58, 183, 0.7)',
+    ];
+    
+    return {
+      label: estado,
+      data: mesesOrdenados.map(mes => vendasEstadoMesTemp[estado]?.[mes] || 0),
+      backgroundColor: cores[index % cores.length],
+      borderColor: cores[index % cores.length].replace('0.7', '1'),
+      borderWidth: 1
+    };
+  });
+
+  // Lucro por produto
+  const lucroProdutoTemp = {};
+  dados.forEach(item => {
+    if (lucroProdutoTemp[item.Produto]) {
+      lucroProdutoTemp[item.Produto] += item.Lucro || 0;
+    } else {
+      lucroProdutoTemp[item.Produto] = item.Lucro || 0;
+    }
+  });
+  
+  // Usar os mesmos produtos do gráfico de vendas para manter consistência
+  const lucroProduto = {};
+  Object.keys(vendasProduto).forEach(produto => {
+    lucroProduto[produto] = lucroProdutoTemp[produto] || 0;
+  });
+
+  return { 
+    vendasProduto, 
+    vendasEstado, 
+    mesesNomes,
+    qtdProdutoMesDatasets,
+    vendasEstadoMesDatasets,
+    lucroProduto
+  };
+};
+
+// Função para obter o nome do estado a partir do código
+const getEstadoNome = (codigoEstado) => {
+  const estadosNomes = {
+    'BR-AC': 'Acre', 'BR-AP': 'Amapá', 'BR-AM': 'Amazonas', 'BR-PA': 'Pará', 
+    'BR-RO': 'Rondônia', 'BR-RR': 'Roraima', 'BR-TO': 'Tocantins',
+    'BR-AL': 'Alagoas', 'BR-BA': 'Bahia', 'BR-CE': 'Ceará', 
+    'BR-MA': 'Maranhão', 'BR-PB': 'Paraíba', 'BR-PE': 'Pernambuco', 
+    'BR-PI': 'Piauí', 'BR-RN': 'Rio Grande do Norte', 'BR-SE': 'Sergipe',
+    'BR-DF': 'Distrito Federal', 'BR-GO': 'Goiás', 
+    'BR-MT': 'Mato Grosso', 'BR-MS': 'Mato Grosso do Sul',
+    'BR-ES': 'Espírito Santo', 'BR-MG': 'Minas Gerais', 
+    'BR-RJ': 'Rio de Janeiro', 'BR-SP': 'São Paulo',
+    'BR-PR': 'Paraná', 'BR-RS': 'Rio Grande do Sul', 'BR-SC': 'Santa Catarina'
+  };
+  return estadosNomes[codigoEstado] || codigoEstado;
+};
+
+// Renderizar gráfico de vendas por produto
+const renderizarGraficoVendasProduto = (vendasProduto) => {
+  if (!vendasProdutoChart.value) return;
+  
+  const produtos = Object.keys(vendasProduto);
+  const valores = produtos.map(produto => vendasProduto[produto]);
+
+  if (chartVendasProduto) {
+    chartVendasProduto.destroy();
+  }
+
+  const ctx = vendasProdutoChart.value.getContext('2d');
+  if (!ctx) return;
+  
+  chartVendasProduto = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: produtos,
+      datasets: [{
+        label: 'Valor Total Vendido (R$)',
+        data: valores,
+        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: (context) => `Valor: ${formatarMoeda(context.raw)}`
+          }
+        },
+        title: {
+          display: true,
+          text: 'Vendas por Produto'
+        },
+        legend: {
+          display: true,
+          position: 'top'
+        },
+        zoom: {
+          pan: {
+            enabled: true,
+            mode: 'x'
+          },
+          zoom: {
+            wheel: {
+              enabled: true,
+              speed: 0.05
+            },
+            pinch: {
+              enabled: true
+            },
+            mode: 'x',
+            drag: {
+              enabled: true,
+              backgroundColor: 'rgba(54, 162, 235, 0.3)',
+              borderColor: 'rgba(54, 162, 235, 0.5)'
+            }
+          },
+          limits: {
+            x: {min: 'original', max: 'original'}
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: value => formatarMoeda(value)
+          }
+        }
+      }
+    }
+  });
+};
+
+// Renderizar gráfico de vendas por estado
+const renderizarGraficoVendasEstado = (vendasEstado) => {
+  if (!vendasEstadoChart.value) return;
+  
+  const estados = Object.keys(vendasEstado);
+  const valores = estados.map(estado => vendasEstado[estado]);
+
+  if (chartVendasEstado) {
+    chartVendasEstado.destroy();
+  }
+
+  const ctx = vendasEstadoChart.value.getContext('2d');
+  if (!ctx) return;
+  
+  chartVendasEstado = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: estados,
+      datasets: [{
+        label: 'Valor Total Vendido (R$)',
+        data: valores,
+        backgroundColor: 'rgba(75, 192, 192, 0.7)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: (context) => `Valor: ${formatarMoeda(context.raw)}`
+          }
+        },
+        title: {
+          display: true,
+          text: regioesSelecionadas.value.length > 1 ? 'Vendas por Estado/Região' : 'Vendas por Estado'
+        },
+        legend: {
+          display: true,
+          position: 'top'
+        },
+        zoom: {
+          pan: {
+            enabled: true,
+            mode: 'x'
+          },
+          zoom: {
+            wheel: {
+              enabled: true,
+              speed: 0.05
+            },
+            pinch: {
+              enabled: true
+            },
+            mode: 'x',
+            drag: {
+              enabled: true,
+              backgroundColor: 'rgba(75, 192, 192, 0.3)',
+              borderColor: 'rgba(75, 192, 192, 0.5)'
+            }
+          },
+          limits: {
+            x: {min: 'original', max: 'original'}
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: value => formatarMoeda(value)
+          }
+        }
+      }
+    }
+  });
+};
+
+// Renderizar gráfico de quantidade por produto e mês
+const renderizarGraficoQtdProdutoMes = (datasets, meses) => {
+  if (!qtdProdutoMesChart.value) return;
+
+  if (chartQtdProdutoMes) {
+    chartQtdProdutoMes.destroy();
+  }
+
+  const ctx = qtdProdutoMesChart.value.getContext('2d');
+  if (!ctx) return;
+  
+  chartQtdProdutoMes = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: meses,
+      datasets: datasets
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: (context) => `Quantidade: ${context.raw}`
+          }
+        },
+        title: {
+          display: true,
+          text: 'Quantidade por Produto e Mês'
+        },
+        legend: {
+          display: true,
+          position: 'top'
+        },
+        zoom: {
+          pan: {
+            enabled: true,
+            mode: 'x'
+          },
+          zoom: {
+            wheel: {
+              enabled: true,
+              speed: 0.05
+            },
+            pinch: {
+              enabled: true
+            },
+            mode: 'x',
+            drag: {
+              enabled: true,
+              backgroundColor: 'rgba(255, 99, 132, 0.3)',
+              borderColor: 'rgba(255, 99, 132, 0.5)'
+            }
+          },
+          limits: {
+            x: {min: 'original', max: 'original'}
+          }
+        }
+      },
+      scales: {
+        x: {
+          stacked: false,
+        },
+        y: {
+          stacked: false,
+          beginAtZero: true
+        }
+      }
+    }
+  });
+};
+
+// Renderizar gráfico de vendas por estado e mês
+const renderizarGraficoVendasEstadoMes = (datasets, meses) => {
+  if (!vendasEstadoMesChart.value) return;
+
+  if (chartVendasEstadoMes) {
+    chartVendasEstadoMes.destroy();
+  }
+
+  const ctx = vendasEstadoMesChart.value.getContext('2d');
+  if (!ctx) return;
+  
+  // Se temos múltiplas regiões selecionadas, adicione legenda para identificação
+  const titulo = regioesSelecionadas.value.length > 1 
+    ? 'Vendas por Estado/Região e Mês' 
+    : 'Vendas por Estado e Mês';
+  
+  chartVendasEstadoMes = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: meses,
+      datasets: datasets
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: (context) => {
+              const dataset = context.dataset;
+              return `${dataset.label}: ${formatarMoeda(context.raw)}`;
+            }
+          }
+        },
+        title: {
+          display: true,
+          text: titulo
+        },
+        legend: {
+          display: true,
+          position: 'top'
+        },
+        zoom: {
+          pan: {
+            enabled: true,
+            mode: 'x'
+          },
+          zoom: {
+            wheel: {
+              enabled: true,
+              speed: 0.05
+            },
+            pinch: {
+              enabled: true
+            },
+            mode: 'x',
+            drag: {
+              enabled: true,
+              backgroundColor: 'rgba(153, 102, 255, 0.3)',
+              borderColor: 'rgba(153, 102, 255, 0.5)'
+            }
+          },
+          limits: {
+            x: {min: 'original', max: 'original'}
+          }
+        }
+      },
+      scales: {
+        x: {
+          stacked: false,
+        },
+        y: {
+          stacked: false,
+          beginAtZero: true,
+          ticks: {
+            callback: value => formatarMoeda(value)
+          }
+        }
+      }
+    }
+  });
+};
+
+// Função para renderizar o gráfico de lucro e receita por produto
+const renderizarGraficoLucroReceita = (lucroProduto, vendasProduto) => {
+  if (!lucroReceitaChart.value) return;
+  
+  const produtos = Object.keys(vendasProduto);
+  const valoresVenda = produtos.map(produto => vendasProduto[produto]);
+  const valoresLucro = produtos.map(produto => lucroProduto[produto]);
+
+  if (chartLucroReceita) {
+    chartLucroReceita.destroy();
+  }
+
+  const ctx = lucroReceitaChart.value.getContext('2d');
+  if (!ctx) return;
+  
+  chartLucroReceita = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: produtos,
+      datasets: [
+        {
+          label: 'Receita Total (R$)',
+          data: valoresVenda,
+          backgroundColor: 'rgba(54, 162, 235, 0.7)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Lucro (R$)',
+          data: valoresLucro,
+          backgroundColor: 'rgba(75, 192, 92, 0.7)',
+          borderColor: 'rgba(75, 192, 92, 1)',
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: (context) => `${context.dataset.label}: ${formatarMoeda(context.raw)}`
+          }
+        },
+        title: {
+          display: true,
+          text: 'Comparação de Receita e Lucro por Produto'
+        },
+        legend: {
+          display: true,
+          position: 'top'
+        },
+        zoom: {
+          pan: {
+            enabled: true,
+            mode: 'x'
+          },
+          zoom: {
+            wheel: {
+              enabled: true,
+              speed: 0.05
+            },
+            pinch: {
+              enabled: true
+            },
+            mode: 'x',
+            drag: {
+              enabled: true,
+              backgroundColor: 'rgba(54, 162, 235, 0.3)',
+              borderColor: 'rgba(54, 162, 235, 0.5)'
+            }
+          },
+          limits: {
+            x: {min: 'original', max: 'original'}
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: value => formatarMoeda(value)
+          }
+        }
+      }
+    }
+  });
+};
+
+// Funções auxiliares para formatação
 const formatarMoeda = (valor) => {
   return new Intl.NumberFormat('pt-BR', { 
     style: 'currency', 
@@ -58,159 +859,572 @@ const formatarMoeda = (valor) => {
   }).format(valor);
 };
 
-// Observar mudanças na região selecionada
-watch(() => props.regiao, (novaRegiao) => {
-  if (novaRegiao && props.mostrar) {
+const formatarData = (data) => {
+  if (!data) return '';
+  
+  try {
+    const dataObj = new Date(data);
+    return dataObj.toLocaleDateString('pt-BR');
+  } catch (e) {
+    console.error('Erro ao formatar data:', e);
+    return data;
+  }
+};
+
+// Modificar a função que cria o mapa para usar uma visualização simples em vez do Leaflet
+const criarMapaVendas = () => {
+  // Verificar se o elemento do mapa existe e se temos dados
+  if (!mapaVendasContainer.value || !dadosVendas.value || !dadosVendas.value.dados_tabela) {
+    console.error('Container do mapa ou dados não disponíveis');
+    return;
+  }
+  
+  try {
+    console.log('Criando visualização simplificada de mapa...');
+    
+    // Limpar o container existente
+    mapaVendasContainer.value.innerHTML = '';
+    
+    // Criar canvas para o mapa
+    const canvas = document.createElement('canvas');
+    canvas.width = mapaVendasContainer.value.clientWidth;
+    canvas.height = mapaVendasContainer.value.clientHeight;
+    mapaVendasContainer.value.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#f0f0f0';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Desenhar contorno do Brasil (simplificado)
+    ctx.beginPath();
+    ctx.strokeStyle = '#2c3e50';
+    ctx.lineWidth = 2;
+    
+    // Contorno simplificado do Brasil
+    const brasilSimplificado = [
+      {x: 0.5, y: 0.4},
+      {x: 0.7, y: 0.3},
+      {x: 0.8, y: 0.5},
+      {x: 0.6, y: 0.8},
+      {x: 0.3, y: 0.7},
+      {x: 0.5, y: 0.4}
+    ];
+    
+    // Desenhar o contorno
+    ctx.beginPath();
+    const startPoint = {
+      x: brasilSimplificado[0].x * canvas.width,
+      y: brasilSimplificado[0].y * canvas.height
+    };
+    ctx.moveTo(startPoint.x, startPoint.y);
+    
+    for (let i = 1; i < brasilSimplificado.length; i++) {
+      const point = {
+        x: brasilSimplificado[i].x * canvas.width,
+        y: brasilSimplificado[i].y * canvas.height
+      };
+      ctx.lineTo(point.x, point.y);
+    }
+    
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(240, 240, 240, 0.5)';
+    ctx.fill();
+    
+    // Coletar e agrupar dados de vendas
+    const pontos = dadosVendas.value.dados_tabela.filter(item => 
+      item.Latitude && item.Longitude
+    );
+    
+    // Função para converter coordenadas geográficas para coordenadas no canvas
+    const geoToCanvas = (lat, lng) => {
+      // Limites aproximados do Brasil
+      const latMin = -33.7683777809;
+      const latMax = 5.24448639569;
+      const lngMin = -73.9872354804;
+      const lngMax = -34.7299934555;
+      
+      // Normalizar as coordenadas
+      const x = ((lng - lngMin) / (lngMax - lngMin)) * canvas.width;
+      const y = (1 - ((lat - latMin) / (latMax - latMin))) * canvas.height;
+      
+      return { x, y };
+    };
+    
+    // Agrupar vendas por localização arredondada
+    const vendasPorLocal = {};
+    pontos.forEach(item => {
+      // Arredondar para reduzir sobreposição
+      const lat = parseFloat((Math.round(parseFloat(item.Latitude) * 10) / 10).toFixed(1));
+      const lng = parseFloat((Math.round(parseFloat(item.Longitude) * 10) / 10).toFixed(1));
+      const key = `${lat}-${lng}`;
+      
+      if (!vendasPorLocal[key]) {
+        vendasPorLocal[key] = {
+          lat,
+          lng,
+          vendas: 0,
+          produtos: new Set(),
+          clientes: new Set(),
+          lucro: 0
+        };
+      }
+      
+      vendasPorLocal[key].vendas += parseFloat(item.Valor || 0);
+      vendasPorLocal[key].lucro += parseFloat(item.Lucro || 0);
+      vendasPorLocal[key].produtos.add(item.Produto);
+      vendasPorLocal[key].clientes.add(item.Cliente);
+    });
+    
+    // Desenhar círculos representando as vendas
+    Object.values(vendasPorLocal).forEach(local => {
+      const canvasPos = geoToCanvas(local.lat, local.lng);
+      
+      // Calcular tamanho do círculo com base no valor das vendas
+      const valorNormalizado = Math.min(Math.max(Math.log10(local.vendas) * 5, 5), 20);
+      
+      // Desenhar círculo
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(52, 152, 219, 0.5)';
+      ctx.strokeStyle = 'rgba(41, 128, 185, 0.8)';
+      ctx.lineWidth = 1;
+      ctx.arc(canvasPos.x, canvasPos.y, valorNormalizado, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+    });
+    
+    // Adicionar título ao mapa
+    ctx.fillStyle = '#2c3e50';
+    ctx.font = '16px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('Mapa de Distribuição de Vendas (Simplificado)', canvas.width / 2, 20);
+    
+    // Adicionar legenda
+    ctx.font = '12px Arial';
+    ctx.textAlign = 'left';
+    ctx.fillText('Tamanho do círculo representa o volume de vendas', 10, canvas.height - 10);
+    
+    console.log('Visualização de mapa criada com sucesso!');
+    
+    // Adicionar informação para o usuário
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'mapa-info';
+    infoDiv.innerHTML = 'Este é um mapa simplificado. Para interatividade completa, instale o pacote Leaflet.';
+    mapaVendasContainer.value.appendChild(infoDiv);
+    
+  } catch (error) {
+    console.error('Erro ao criar visualização do mapa:', error);
+  }
+};
+
+// Observar mudanças nos dados para atualizar o mapa
+watch(() => dadosVendas.value, () => {
+  if (dadosVendas.value && props.mostrar) {
+    // Atrasar criação do mapa para garantir que o container esteja renderizado
+    setTimeout(() => {
+      criarMapaVendas();
+    }, 500);
+  }
+}, { deep: true });
+
+// Limpar mapa ao fechar o relatório
+const fecharRelatorio = () => {
+  console.log('Fechando relatório e limpando gráficos e mapa');
+  limparGraficos();
+  
+  if (mapaVendas) {
+    mapaVendas.remove();
+    mapaVendas = null;
+  }
+  
+  emit('fechar');
+};
+
+// Função para limpar os gráficos
+const limparGraficos = () => {
+  console.log('Limpando instâncias de gráficos');
+  if (chartVendasProduto) {
+    chartVendasProduto.destroy();
+    chartVendasProduto = null;
+  }
+  if (chartVendasEstado) {
+    chartVendasEstado.destroy();
+    chartVendasEstado = null;
+  }
+  if (chartQtdProdutoMes) {
+    chartQtdProdutoMes.destroy();
+    chartQtdProdutoMes = null;
+  }
+  if (chartVendasEstadoMes) {
+    chartVendasEstadoMes.destroy();
+    chartVendasEstadoMes = null;
+  }
+  if (chartLucroReceita) {
+    chartLucroReceita.destroy();
+    chartLucroReceita = null;
+  }
+};
+
+// Função para resetar zoom de um gráfico específico
+const resetarZoom = (tipoGrafico) => {
+  if (tipoGrafico === 'vendasProduto' && chartVendasProduto) {
+    chartVendasProduto.resetZoom();
+  } else if (tipoGrafico === 'vendasEstado' && chartVendasEstado) {
+    chartVendasEstado.resetZoom();
+  } else if (tipoGrafico === 'qtdProdutoMes' && chartQtdProdutoMes) {
+    chartQtdProdutoMes.resetZoom();
+  } else if (tipoGrafico === 'vendasEstadoMes' && chartVendasEstadoMes) {
+    chartVendasEstadoMes.resetZoom();
+  } else if (tipoGrafico === 'lucroReceita' && chartLucroReceita) {
+    chartLucroReceita.resetZoom();
+  }
+};
+
+// Observar mudanças nas regiões selecionadas
+watch(() => props.regioes, (novasRegioes) => {
+  if (novasRegioes && novasRegioes.length > 0 && props.mostrar) {
     carregarDados();
   }
-});
+}, { deep: true });
 
 // Observar mudanças na visibilidade
 watch(() => props.mostrar, (mostrar) => {
-  if (mostrar && props.regiao) {
+  if (mostrar && props.regioes && props.regioes.length > 0) {
     carregarDados();
   }
 });
 
 // Ao montar o componente
 onMounted(() => {
-  if (props.mostrar && props.regiao) {
+  if (props.mostrar && props.regioes && props.regioes.length > 0) {
     carregarDados();
   }
 });
+
+// Limpar os gráficos antes do componente ser desmontado
+onBeforeUnmount(() => {
+  console.log('Componente sendo desmontado, limpando gráficos');
+  limparGraficos();
+});
+
+// Função para exportar dados para CSV (que pode ser aberto no Excel)
+const exportarParaCSV = () => {
+  if (!dadosVendas.value || !dadosVendas.value.dados_tabela) {
+    console.error('Sem dados para exportar');
+    return;
+  }
+  
+  try {
+    // Cabeçalhos da tabela
+    const cabecalhos = [
+      'Data', 'Cliente', 'Estado', 'Região', 'Produto', 
+      'Quantidade', 'Valor Unitário', 'Valor Total', 'Lucro'
+    ];
+    
+    // Dados formatados
+    const linhas = dadosVendas.value.dados_tabela.map(item => [
+      formatarData(item.Data),
+      item.Cliente,
+      item.Estado || getEstadoNome(item),
+      item.Regiao,
+      item.Produto,
+      item.Quantidade || 1,
+      formatarMoedaSemSimbolo(item.Valor_Unitario || (item.Valor / (item.Quantidade || 1))),
+      formatarMoedaSemSimbolo(item.Valor),
+      formatarMoedaSemSimbolo(item.Lucro || 0)
+    ]);
+    
+    // Funções auxiliares para formatação
+    function formatarMoedaSemSimbolo(valor) {
+      return valor.toFixed(2).replace('.', ',');
+    }
+    
+    // Criar conteúdo CSV
+    let csvContent = cabecalhos.join(';') + '\n';
+    linhas.forEach(linha => {
+      csvContent += linha.join(';') + '\n';
+    });
+    
+    // Adicionar BOM para garantir que caracteres especiais sejam exibidos corretamente
+    const BOM = '\uFEFF';
+    csvContent = BOM + csvContent;
+    
+    // Criar blob e link para download
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    
+    // Configurar link
+    link.setAttribute('href', url);
+    link.setAttribute('download', `relatorio_vendas_${regioesSelecionadas.value.join('_')}_${new Date().toISOString().slice(0, 10)}.csv`);
+    link.style.display = 'none';
+    
+    // Adicionar ao DOM, clicar e remover
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    console.log('Arquivo CSV gerado com sucesso');
+  } catch (error) {
+    console.error('Erro ao exportar para CSV:', error);
+  }
+};
+
+// Função para formatar moeda sem o símbolo - para uso na exportação
+const formatarMoedaSemSimbolo = (valor) => {
+  if (valor === undefined || valor === null) return '0,00';
+  return valor.toFixed(2).replace('.', ',');
+};
 </script>
 
 <template>
-  <div v-if="mostrar" class="relatorio-overlay" @click.self="emit('fechar')">
-    <div class="relatorio-container">
-      <div class="relatorio-header">
-        <h2>Relatório de Vendas: {{ regiao }}</h2>
-        <button class="btn-fechar" @click="emit('fechar')">
+  <div class="relatorio-container" v-if="mostrar">
+    <div class="relatorio-content">
+      <button class="fechar-btn" @click="fecharRelatorio">
           <i class="bi bi-x-lg"></i>
         </button>
+      
+      <div class="relatorio-header">
+        <h2>Relatório de Vendas: {{ tituloRegioes }}</h2>
       </div>
       
-      <div v-if="carregando" class="carregando">
-        <div class="spinner"></div>
+      <div v-if="carregando" class="loading-container">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Carregando...</span>
+        </div>
         <p>Carregando dados...</p>
       </div>
       
-      <div v-else-if="erro" class="erro">
-        <i class="bi bi-exclamation-triangle"></i>
-        <p>{{ erro }}</p>
+      <div v-else-if="erro" class="error-container">
+        <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size: 48px;"></i>
+        <p class="text-danger">{{ erro }}</p>
       </div>
       
-      <div v-else-if="dadosVendas" class="relatorio-conteudo">
-        <!-- Resumo dos dados -->
-        <div class="cards-container">
-          <div class="card-info">
-            <h3>Total de Vendas</h3>
-            <p class="valor">{{ formatarMoeda(dadosVendas.resumo.total_vendas) }}</p>
+      <div v-else-if="dadosVendas && dadosVendas.dados_tabela && dadosVendas.dados_tabela.length > 0">
+        <!-- Regiões selecionadas -->
+        <div class="regioes-selecionadas" v-if="regioesSelecionadas.length > 1">
+          <h4>Regiões incluídas neste relatório:</h4>
+          <div class="regioes-tags">
+            <span v-for="regiao in regioesSelecionadas" :key="regiao" class="regiao-tag">
+              {{ regiao }}
+            </span>
+          </div>
           </div>
           
-          <div class="card-info">
-            <h3>Média por Venda</h3>
-            <p class="valor">{{ formatarMoeda(dadosVendas.resumo.media_valor) }}</p>
+        <!-- Visualizações gráficas -->
+        <div class="charts-container">
+          <!-- Gráfico de Vendas por Produto -->
+          <div class="chart-container">
+            <h4>Vendas por Produto</h4>
+            <div class="chart-wrapper">
+              <canvas ref="vendasProdutoChart"></canvas>
+              <button class="reset-zoom-btn" @click="resetarZoom('vendasProduto')">
+                <i class="bi bi-arrows-angle-expand"></i> Resetar Zoom
+              </button>
+            </div>
+            <div class="chart-info">Use a roda do mouse para zoom ou arraste para selecionar uma área</div>
           </div>
           
-          <div class="card-info">
-            <h3>Produtos Vendidos</h3>
-            <p class="valor">{{ dadosVendas.resumo.total_produtos }}</p>
+          <!-- Gráfico de Vendas por Estado -->
+          <div class="chart-container">
+            <h4>{{ regioesSelecionadas.length > 1 ? 'Vendas por Estado/Região' : 'Vendas por Estado' }}</h4>
+            <div class="chart-wrapper">
+              <canvas ref="vendasEstadoChart"></canvas>
+              <button class="reset-zoom-btn" @click="resetarZoom('vendasEstado')">
+                <i class="bi bi-arrows-angle-expand"></i> Resetar Zoom
+              </button>
+            </div>
+            <div class="chart-info">Use a roda do mouse para zoom ou arraste para selecionar uma área</div>
           </div>
           
-          <div class="card-info">
-            <h3>Clientes Atendidos</h3>
-            <p class="valor">{{ dadosVendas.resumo.num_clientes }}</p>
+          <!-- Gráfico de Quantidade por Produto e Mês -->
+          <div class="chart-container">
+            <h4>Quantidade por Produto e Mês</h4>
+            <div class="chart-wrapper">
+              <canvas ref="qtdProdutoMesChart"></canvas>
+              <button class="reset-zoom-btn" @click="resetarZoom('qtdProdutoMes')">
+                <i class="bi bi-arrows-angle-expand"></i> Resetar Zoom
+              </button>
+          </div>
+            <div class="chart-info">Use a roda do mouse para zoom ou arraste para selecionar uma área</div>
+        </div>
+        
+          <!-- Gráfico de Vendas por Estado e Mês -->
+          <div class="chart-container">
+            <h4>{{ regioesSelecionadas.length > 1 ? 'Vendas por Estado/Região e Mês' : 'Vendas por Estado e Mês' }}</h4>
+            <div class="chart-wrapper">
+              <canvas ref="vendasEstadoMesChart"></canvas>
+              <button class="reset-zoom-btn" @click="resetarZoom('vendasEstadoMes')">
+                <i class="bi bi-arrows-angle-expand"></i> Resetar Zoom
+              </button>
+            </div>
+            <div class="chart-info">Use a roda do mouse para zoom ou arraste para selecionar uma área</div>
+          </div>
+          
+          <!-- Gráfico de Lucro e Receita por Produto -->
+          <div class="chart-container">
+            <h4>Lucro e Receita por Produto</h4>
+            <div class="chart-wrapper">
+              <canvas ref="lucroReceitaChart"></canvas>
+              <button class="reset-zoom-btn" @click="resetarZoom('lucroReceita')">
+                <i class="bi bi-arrows-angle-expand"></i> Resetar Zoom
+              </button>
+            </div>
+            <div class="chart-info">Use a roda do mouse para zoom ou arraste para selecionar uma área</div>
+          </div>
+          
+          <!-- Mapa de Distribuição Geográfica de Vendas -->
+          <div class="chart-container mapa-container">
+            <h4>Distribuição Geográfica de Vendas</h4>
+            <div class="mapa-wrapper" ref="mapaVendasContainer"></div>
+          </div>
+          
+          <!-- Botões de ação -->
+          <div class="relatorio-acoes">
+            <button class="btn-exportar" @click="exportarParaCSV">
+              <i class="fas fa-file-export"></i> Exportar para Excel
+            </button>
+            <button class="btn-fechar" @click="fecharRelatorio">Fechar</button>
           </div>
         </div>
         
-        <!-- Gráficos -->
-        <div class="graficos-container">
-          <div v-if="dadosVendas.graficos.vendas_por_produto" class="grafico">
-            <h3>Vendas por Produto</h3>
-            <img :src="dadosVendas.graficos.vendas_por_produto" alt="Gráfico de vendas por produto" />
+        <!-- Resumo em Cards -->
+        <div class="resumo-cards" v-if="dadosVendas && dadosVendas.resumo">
+          <div class="card-resumo">
+            <div class="card-icon">
+              <i class="bi bi-cash-coin"></i>
+            </div>
+            <div class="card-content">
+              <h5>Receita Total</h5>
+              <p class="valor">{{ formatarMoeda(dadosVendas.resumo.total_vendas) }}</p>
+            </div>
           </div>
           
-          <div v-if="dadosVendas.graficos.quantidade_por_produto" class="grafico">
-            <h3>Quantidade por Produto</h3>
-            <img :src="dadosVendas.graficos.quantidade_por_produto" alt="Gráfico de quantidade por produto" />
+          <div class="card-resumo">
+            <div class="card-icon card-icon-lucro">
+              <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <div class="card-content">
+              <h5>Lucro Total</h5>
+              <p class="valor">{{ formatarMoeda(dadosVendas.resumo.total_lucro) }}</p>
+            </div>
           </div>
           
-          <div v-if="dadosVendas.graficos.vendas_por_estado" class="grafico">
-            <h3>Vendas por Estado</h3>
-            <img :src="dadosVendas.graficos.vendas_por_estado" alt="Gráfico de vendas por estado" />
+          <div class="card-resumo">
+            <div class="card-icon card-icon-margem">
+              <i class="bi bi-percent"></i>
+            </div>
+            <div class="card-content">
+              <h5>Margem de Lucro</h5>
+              <p class="valor">{{ dadosVendas.resumo.margem_lucro.toFixed(2) }}%</p>
+            </div>
+          </div>
+          
+          <div class="card-resumo">
+            <div class="card-icon card-icon-produtos">
+              <i class="bi bi-box-seam"></i>
+            </div>
+            <div class="card-content">
+              <h5>Produtos Vendidos</h5>
+              <p class="valor">{{ dadosVendas.resumo.total_produtos }}</p>
+            </div>
+          </div>
+          
+          <div class="card-resumo">
+            <div class="card-icon card-icon-clientes">
+              <i class="bi bi-people"></i>
+            </div>
+            <div class="card-content">
+              <h5>Clientes Atendidos</h5>
+              <p class="valor">{{ dadosVendas.resumo.num_clientes }}</p>
+            </div>
           </div>
         </div>
         
         <!-- Tabela de dados -->
-        <div class="tabela-container">
-          <h3>Detalhamento de Vendas</h3>
-          <div class="tabela-scroll">
-            <table>
+        <h4 class="mt-4">Dados Detalhados</h4>
+        <div class="table-responsive">
+          <table class="data-table">
               <thead>
                 <tr>
-                  <th v-for="(value, key) in dadosVendas.dados_tabela[0]" :key="key">
-                    {{ key }}
-                  </th>
+                <th>Data</th>
+                <th>Região</th>
+                <th>Estado</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Valor Unit.</th>
+                <th>Valor Total</th>
+                <th>Lucro</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="(item, index) in dadosVendas.dados_tabela" :key="index">
-                  <td v-for="(value, key) in item" :key="key">
-                    {{ key.toLowerCase().includes('valor') ? formatarMoeda(value) : value }}
-                  </td>
+                <td>{{ formatarData(item.Data) }}</td>
+                <td>{{ item.Regiao }}</td>
+                <td>{{ item.Estado_Nome || getEstadoNome(item.Estado) }}</td>
+                <td>{{ item.Produto }}</td>
+                <td>{{ item.Quantidade }}</td>
+                <td>{{ formatarMoeda(item.Valor_Unitario) }}</td>
+                <td>{{ formatarMoeda(item.Valor) }}</td>
+                <td>{{ formatarMoeda(item.Lucro) }}</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
         
-        <!-- Botões de ação -->
-        <div class="acoes">
-          <button class="btn-imprimir" @click="window.print()">
-            <i class="bi bi-printer"></i> Imprimir Relatório
-          </button>
-          <button class="btn-fechar" @click="emit('fechar')">
-            <i class="bi bi-x"></i> Fechar
-          </button>
-        </div>
+      <div v-else-if="dadosVendas" class="no-data-container">
+        <i class="bi bi-exclamation-circle text-warning" style="font-size: 48px;"></i>
+        <p>Não foram encontrados dados para as regiões selecionadas.</p>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.relatorio-overlay {
+.relatorio-container {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 20px 0;
 }
 
-.relatorio-container {
+.relatorio-content {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   width: 90%;
   max-width: 1200px;
   max-height: 90vh;
   overflow-y: auto;
+  position: relative;
   padding: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+}
+
+.fechar-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  z-index: 10;
 }
 
 .relatorio-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 15px;
   margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
 .relatorio-header h2 {
@@ -218,25 +1432,41 @@ onMounted(() => {
   color: #2c3e50;
 }
 
-.btn-fechar {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #666;
+.regioes-selecionadas {
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 10px 15px;
 }
 
-.btn-fechar:hover {
-  color: #f44336;
+.regioes-selecionadas h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
-.carregando, .erro {
+.regioes-tags {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.regiao-tag {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.loading-container, .error-container, .no-data-container {
+  display: flex;
   justify-content: center;
-  padding: 40px;
-  color: #666;
+  align-items: center;
+  height: 300px;
+  flex-direction: column;
 }
 
 .spinner {
@@ -254,157 +1484,243 @@ onMounted(() => {
   100% { transform: rotate(360deg); }
 }
 
-.erro {
-  color: #f44336;
-}
-
-.erro i {
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-
-.cards-container {
+.charts-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-bottom: 30px;
-}
-
-.card-info {
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.card-info h3 {
-  margin: 0 0 10px 0;
-  font-size: 16px;
-  color: #666;
-}
-
-.card-info .valor {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
-  color: #2c3e50;
-}
-
-.graficos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 20px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  width: 100%;
 }
 
-.grafico {
-  background-color: white;
+.chart-container {
+  background-color: #f9f9f9;
   border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.grafico h3 {
+.chart-container h4 {
   margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #2c3e50;
-  text-align: center;
+  margin-bottom: 10px;
 }
 
-.grafico img {
+.chart-wrapper {
+  height: 320px;
   width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit: contain;
+  position: relative;
+  overflow: hidden;
 }
 
-.tabela-container {
-  margin-bottom: 30px;
-}
-
-.tabela-container h3 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #2c3e50;
-}
-
-.tabela-scroll {
-  overflow-x: auto;
-}
-
-table {
+.data-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px;
-}
-
-th, td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-th {
-  background-color: #f8f9fa;
-  font-weight: bold;
-  color: #333;
-}
-
-tr:hover {
-  background-color: #f5f5f5;
-}
-
-.acoes {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
   margin-top: 20px;
+  font-size: 14px;
 }
 
-.btn-imprimir {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
+.data-table th, .data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.reset-zoom-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
   border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 12px;
   cursor: pointer;
+  z-index: 5;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.btn-imprimir:hover {
-  background-color: #45a049;
+.reset-zoom-btn:hover {
+  background-color: #e9ecef;
 }
 
-@media print {
-  .relatorio-overlay {
-    position: static;
-    background-color: white;
-  }
-  
-  .relatorio-container {
-    width: 100%;
-    max-height: none;
-    box-shadow: none;
-    padding: 0;
-  }
-  
-  .btn-fechar, .acoes {
-    display: none;
-  }
+.chart-info {
+  margin-top: auto;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Estilo adicional para evitar scroll abaixo do gráfico */
+canvas {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.resumo-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.card-resumo {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(54, 162, 235, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: rgba(54, 162, 235, 1);
+}
+
+.card-icon-lucro {
+  background-color: rgba(75, 192, 92, 0.2);
+  color: rgba(75, 192, 92, 1);
+}
+
+.card-icon-margem {
+  background-color: rgba(255, 159, 64, 0.2);
+  color: rgba(255, 159, 64, 1);
+}
+
+.card-icon-produtos {
+  background-color: rgba(153, 102, 255, 0.2);
+  color: rgba(153, 102, 255, 1);
+}
+
+.card-icon-clientes {
+  background-color: rgba(255, 99, 132, 0.2);
+  color: rgba(255, 99, 132, 1);
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-content h5 {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  font-weight: 600;
+}
+
+.card-content .valor {
+  margin: 5px 0 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
 }
 
 @media (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .graficos-container {
+  .charts-container {
     grid-template-columns: 1fr;
   }
+  
+  .relatorio-content {
+    width: 95%;
+    max-height: 95vh;
+    padding: 15px;
+  }
+  
+  .chart-container {
+    height: 350px;
+  }
+  
+  .chart-wrapper {
+    height: 270px;
+  }
+}
+
+.mapa-container {
+  grid-column: 1 / -1;
+  height: 500px;
+}
+
+.mapa-wrapper {
+    width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mapa-info {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #333;
+}
+
+.relatorio-acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.btn-exportar, 
+.btn-fechar {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-exportar {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-exportar:hover {
+  background-color: #2ecc71;
+}
+
+.btn-fechar {
+  background-color: #7f8c8d;
+  color: white;
+}
+
+.btn-fechar:hover {
+  background-color: #95a5a6;
 }
 </style> 

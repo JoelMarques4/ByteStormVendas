@@ -1,0 +1,1001 @@
+Latitude;Longitude;Data;CPF;CNPJ;nome_cliente;regiao;estado;produto;quantidade;valor_unitario;lucro_total
+-10,710213;-45,555939;15/03/2025;23257176074;;Davi Castro;Nordeste;Pernambuco;Mesa para Computador;16;520,85;3191,25
+-7,931154;-38,838825;08/04/2025;85320760760;;Dra. Ana Livia Moura;Nordeste;Pernambuco;Roteador TP-Link;16;172,97;1191,37
+-6,835995;-47,976009;28/05/2024;;46653890000131;Comercio Equipamentos SA;Nordeste;Maranhao;Smart TV LG;4;2257,23;3951,16
+-9,261445;-40,996058;14/09/2024;;51028500000172;Comercio Varejo SA;Nordeste;Paraiba;Mesa para Computador;17;298,25;2125,55
+-0,107352;-59,586406;11/10/2025;09239609881;;Benjamim Pacheco;Norte;Tocantins;Cabo HDMI;9;22,59;79,59
+-20,392853;-60,458856;22/03/2024;;18077146000109;Distribuidora Componentes;Centro-Oeste;Mato Grosso;Notebook Dell Inspiron;7;3405,13;11860,44
+-15,169591;-44,854267;11/06/2025;69916415374;;Dr. Noah Caldeira;Sudeste;Minas Gerais;Caixa de Som Bluetooth;9;178,01;601,2
+-14,598584;-39,162233;04/09/2025;76186196976;;Sr. Matheus Abreu;Nordeste;Bahia;Mesa para Computador;11;375,22;1830,39
+3,290216;-51,650678;21/04/2025;62779214015;;Francisco Pimenta;Norte;Amazonas;Caixa de Som Bluetooth;9;206,68;780,22
+-31,72014;-57,981865;03/11/2024;;53600499000134;Comercio Internacional SA;Sul;Parana;Monitor Acer;6;1073,2;2995,05
+2,455787;-67,432543;10/12/2025;;99950017000177;Distribuidora Nacional;Norte;Amapa;Tablet Apple iPad;11;2794,05;9792,45
+-23,440636;-50,976049;04/10/2025;;67229492000162;Comercio Internacional SA;Sul;Parana;Notebook Dell Inspiron;18;3088,0;20927,59
+-22,935279;-46,241486;16/04/2025;;19934813000187;Global Distribuidora;Sudeste;Rio de Janeiro;Webcam Logitech;12;310,58;1715,4
+-7,939329;-40,550424;09/09/2024;58836427995;;Isaque Carvalho;Nordeste;Sergipe;Cabo HDMI;11;53,54;262,62
+-23,63439;-56,879566;21/03/2025;20769310150;;Dom Abreu;Centro-Oeste;Mato Grosso;HD Externo Seagate;11;599,2;3158,84
+-14,184736;-49,073001;13/02/2025;04219233342;;Dra. Heloisa Cassiano;Sudeste;Rio de Janeiro;Pendrive SanDisk;4;35,19;59,97
+-17,510631;-45,264551;03/07/2024;94973680974;;Calebe Mendes;Nordeste;Bahia;Carregador Portatil;20;100,35;867,4
+-24,781257;-49,067624;09/08/2025;;69159192000180;Industria Eletronica Brasil;Sul;Rio Grande do Sul;Roteador TP-Link;2;164,52;137,12
+-14,100176;-45,302436;16/07/2024;;86650023000167;Solucoes Corporativas;Sudeste;Rio de Janeiro;Roteador TP-Link;11;178,21;613,69
+-18,691979;-39,052607;05/09/2025;93330491000;;Gabrielly Garcia;Sudeste;Sao Paulo;Fone de Ouvido JBL;6;245,83;522,6
+-16,902542;-38,785073;21/11/2024;;49886555000171;Importadora Produtos Eletronicos;Nordeste;Pernambuco;Cadeira Gamer;16;1123,02;6863,32
+1,093602;-66,07245;27/07/2024;15927017959;;Rafael Aragao;Norte;Para;HD Externo Seagate;4;364,91;487,89
+-26,986862;-49,518316;26/01/2025;;37365361000141;Varejo Digital LTDA;Sul;Parana;Impressora HP;16;543,32;2677,72
+-27,629164;-50,559172;08/10/2025;;45702163000154;Industria Nacional Tecnologia;Sul;Santa Catarina;Carregador Portatil;9;90,21;243,62
+-11,516191;-39,75951;20/01/2024;;64445004000166;Global Distribuidora;Nordeste;Maranhao;Pendrive SanDisk;9;51,4;155,53
+-17,486895;-39,652699;04/04/2025;25594532153;;Bento Sampaio;Sudeste;Espirito Santo;Tablet Apple iPad;2;3951,43;2988,11
+-1,758808;-36,635192;06/02/2024;;75419733000164;Empresa Brasileira Tecnologia;Nordeste;Alagoas;Cadeira Gamer;6;766,38;1380,88
+-18,558962;-50,802793;01/10/2025;;51176285000157;Suprimentos Tecnicos LTDA;Sudeste;Rio de Janeiro;Estabilizador SMS;15;181,77;934,84
+-23,047865;-42,5452;03/10/2025;88155631729;;Lavinia Fogaca;Sudeste;Minas Gerais;Caixa de Som Bluetooth;15;189,0;973,53
+-15,902933;-47,277628;29/04/2025;;47045387000166;Global Distribuidora;Centro-Oeste;Mato Grosso;Estabilizador SMS;14;153,13;769,55
+-13,225633;-38,969337;24/11/2025;;79493251000105;Varejo Digital LTDA;Nordeste;Sergipe;Caixa de Som Bluetooth;6;146,55;415,53
+4,223342;-51,240089;28/09/2025;;39881544000145;Distribuidora Nacional;Norte;Amazonas;HD Externo Seagate;6;446,64;820,27
+-19,280744;-50,812711;16/02/2024;;54030319000199;Industria Nacional Tecnologia;Centro-Oeste;Goias;Caixa de Som Bluetooth;7;194,57;450,52
+-22,368548;-40,625758;25/08/2024;44977502809;;Sra. Raquel Marques;Sudeste;Sao Paulo;Estabilizador SMS;3;139,39;194,96
+-20,149401;-52,936782;18/12/2024;;99923847000105;Suprimentos Digitais LTDA;Centro-Oeste;Distrito Federal;Notebook Dell Inspiron;9;3041,65;8585,46
+-3,882875;-38,423849;09/07/2025;;04234204000148;Atacadista Informatica;Nordeste;Paraiba;Impressora HP;17;835,53;6692,16
+-17,057252;-41,238756;27/05/2025;19400595697;;Ian Câmara;Nordeste;Piaui;Roteador TP-Link;16;156,18;867,81
+-12,079763;-52,117096;27/07/2024;;58003001000170;Industria Eletronica Brasil;Centro-Oeste;Goias;Webcam Logitech;20;265,49;1729,77
+-33,640349;-57,746953;24/01/2025;05447415101;;Dr. Jose Fogaca;Sul;Rio Grande do Sul;Roteador TP-Link;13;221,51;1436,71
+-31,917036;-56,454116;12/08/2024;54926924102;;Valentina Azevedo;Sul;Rio Grande do Sul;Tablet Apple iPad;1;3277,12;1270,86
+-26,993782;-51,144091;13/04/2025;;78867193000170;Varejo Digital LTDA;Sul;Parana;Impressora HP;17;502,37;4209,82
+-24,584289;-39,557169;09/08/2024;14250619400;;Daniela Marques;Sudeste;Sao Paulo;Monitor Acer;5;1052,4;1869,58
+-26,227775;-56,285183;14/06/2025;;93363344000146;Varejo Digital LTDA;Sul;Parana;Pendrive SanDisk;9;65,17;197,98
+1,179136;-52,167897;18/09/2024;84774577944;;Olivia Pires;Norte;Roraima;Smartphone Samsung Galaxy;11;1607,03;7634,7
+-2,840834;-52,732059;19/03/2024;47386668600;;Ayla Câmara;Norte;Rondonia;Teclado Mecanico Logitech;11;350,37;1225,93
+-15,278016;-45,752835;15/06/2024;;59832503000176;Suprimentos Digitais LTDA;Nordeste;Sergipe;Carregador Portatil;17;127,28;855,96
+-27,53752;-56,986328;27/10/2024;;07341327000176;Comercio Internacional SA;Sul;Rio Grande do Sul;Cabo HDMI;6;23,7;58,43
+-8,785774;-44,204506;19/02/2024;99422325595;;Erick Andrade;Nordeste;Rio Grande do Norte;Webcam Logitech;7;264,82;597,55
+-12,62778;-53,255554;18/09/2025;;81931395000148;Empresa Brasileira Tecnologia;Centro-Oeste;Mato Grosso do Sul;Carregador Portatil;14;127,28;714,24
+-2,960568;-66,716229;20/07/2024;80425493342;;Henry Gabriel Rocha;Norte;Tocantins;Notebook Dell Inspiron;11;2828,78;10802,46
+-15,777667;-60,053454;20/03/2025;;30967026000174;Varejo Digital LTDA;Centro-Oeste;Goias;Cabo HDMI;20;20,53;148,01
+1,087362;-51,350023;01/10/2024;;44384302000186;Comercio Internacional SA;Norte;Roraima;Notebook Dell Inspiron;17;3106,2;23154,93
+-15,782563;-49,149789;21/10/2024;05933211621;;Ryan Guerra;Centro-Oeste;Mato Grosso do Sul;HD Externo Seagate;18;568,26;4794,61
+-19,541082;-50,524279;04/01/2024;74496482703;;Beatriz Santos;Sudeste;Minas Gerais;Mesa para Computador;16;594,23;3297,74
+-11,100427;-56,209629;30/10/2024;75475420939;;Dr. Nicolas Lima;Centro-Oeste;Goias;Smartphone Samsung Galaxy;19;1646,3;13326,65
+-24,752325;-50,778961;22/10/2024;;49339407000137;Empresa Brasileira Tecnologia;Sul;Parana;Cadeira Gamer;17;847,8;7035,31
+-12,572814;-47,779949;18/01/2024;81436489903;;Thales Rocha;Nordeste;Bahia;Carregador Portatil;7;92,16;206,82
+-10,27618;-36,309167;20/06/2024;86393109394;;Srta. Larissa Barros;Nordeste;Maranhao;Fone de Ouvido JBL;14;198,81;1389,03
+0,220105;-57,167926;03/09/2024;48648180295;;Amanda Correia;Norte;Amazonas;Mesa para Computador;12;549,48;2747,86
+-3,086258;-62,451698;02/02/2025;13088942107;;Maya Costela;Norte;Para;Impressora HP;17;688,97;5292,54
+-15,281515;-42,791645;21/03/2024;;39852347000106;Atacadista Informatica;Sudeste;Minas Gerais;HD Externo Seagate;7;677,39;2049,6
+-4,654865;-35,979589;04/05/2024;37926393002;;Nina da Costa;Nordeste;Maranhao;Smartphone Samsung Galaxy;7;1672,5;5253,57
+-22,36819;-52,973371;06/08/2025;43847917986;;Rebeca Vieira;Centro-Oeste;Mato Grosso;Notebook Dell Inspiron;13;3063,97;12968,08
+-13,925468;-46,919296;22/01/2025;;02280446000142;Empresa Brasileira Tecnologia;Nordeste;Bahia;Carregador Portatil;3;157,41;233,32
+-1,592785;-41,717237;05/01/2024;;53174631000193;Distribuidora Componentes;Nordeste;Pernambuco;Fone de Ouvido JBL;7;89,69;233,07
+-8,321923;-43,862579;21/03/2025;;79896837000110;Global Distribuidora;Nordeste;Alagoas;Smartphone Samsung Galaxy;10;1641,97;7187,49
+-28,571327;-51,004014;29/09/2025;;02337739000119;Comercio Equipamentos SA;Sul;Parana;Monitor Acer;7;779,29;2691,44
+-13,852798;-39,442831;12/05/2024;21217574301;;Mateus Sales;Nordeste;Paraiba;HD Externo Seagate;11;346,99;1816,21
+-22,609717;-55,331156;04/10/2024;;07578023000127;Empresa Brasileira Tecnologia;Sul;Santa Catarina;Impressora HP;1;863,48;428,07
+-9,327436;-35,951649;16/06/2024;09720839287;;Dr. Diogo Viana;Nordeste;Sergipe;Teclado Mecanico Logitech;4;440,29;805,48
+-15,297341;-52,408994;04/02/2024;;88560437000120;Comercio Eletronico Brasil;Centro-Oeste;Mato Grosso do Sul;Carregador Portatil;4;179,95;239,37
+2,625545;-66,479374;07/01/2024;76502082220;;Stephany das Neves;Norte;Amapa;Camera Canon;5;2798,93;4263,9
+-8,283475;-40,917187;29/08/2025;30719386756;;Luiz Henrique da Rosa;Nordeste;Pernambuco;Impressora HP;8;720,65;2286,47
+1,84972;-64,236067;25/11/2025;;04936993000169;Comercio Eletronico Brasil;Norte;Rondonia;Notebook Dell Inspiron;5;3081,67;5900,91
+-2,346938;-51,377744;29/03/2025;67717481545;;Lorenzo Caldeira;Norte;Amazonas;Smartphone Samsung Galaxy;13;2286,05;11134,06
+-16,728845;-46,877343;14/08/2024;;89267871000180;Suprimentos Digitais LTDA;Sudeste;Minas Gerais;Pendrive SanDisk;8;32,28;84,1
+-20,629118;-46,01986;11/01/2024;02643467507;;Pedro Silveira;Sudeste;Rio de Janeiro;Camera Canon;7;2397,1;6849,13
+-22,470913;-57,447026;29/09/2024;72215948302;;Ágatha Silveira;Centro-Oeste;Mato Grosso do Sul;Fone de Ouvido JBL;10;132,68;591,01
+-15,782937;-49,460899;13/04/2025;61801401039;;Apollo Oliveira;Sudeste;Sao Paulo;Smart TV LG;18;2625,8;17033,01
+-30,198902;-56,611864;15/08/2024;32485045364;;Maria Luiza Cavalcante;Sul;Santa Catarina;Teclado Mecanico Logitech;20;440,23;3474,54
+-20,311698;-53,82559;21/10/2024;30548698147;;Stella Aragao;Centro-Oeste;Mato Grosso do Sul;Fone de Ouvido JBL;9;125,55;508,72
+-19,633567;-54,148006;10/07/2025;68452138105;;Eloah Mendes;Centro-Oeste;Mato Grosso do Sul;Carregador Portatil;17;114,89;647,99
+-11,348399;-59,025209;13/05/2024;02483821600;;Vitor Gabriel Mendonca;Centro-Oeste;Distrito Federal;Notebook Dell Inspiron;8;2926,26;7149,44
+-25,233585;-56,633793;21/03/2025;;02010130000130;Distribuidora Nacional;Sul;Parana;Fone de Ouvido JBL;16;139,83;692,79
+-11,525701;-38,485906;30/03/2024;;05336056000135;Inovacao Digital SA;Nordeste;Rio Grande do Norte;Monitor Acer;1;956,18;317,36
+-2,158303;-55,386676;23/11/2024;;74558919000131;Tech Solutions LTDA;Norte;Tocantins;Cabo HDMI;13;39,41;213,19
+3,473886;-72,106919;12/06/2025;;92357251000146;Industria Eletronica Brasil;Norte;Roraima;Mouse sem fio Microsoft;14;78,78;539,96
+-19,360063;-48,781584;12/06/2025;25011638774;;Ana Vitoria Almeida;Sudeste;Espirito Santo;Estabilizador SMS;5;137,53;296,92
+-3,924956;-72,612544;14/04/2025;25977237391;;Lavinia Monteiro;Norte;Rondonia;Teclado Mecanico Logitech;18;423,68;3038,09
+-1,838207;-56,986938;30/08/2024;;81145887000108;Comercio Eletronico Brasil;Norte;Rondonia;Smart TV LG;10;2106,04;9109,28
+-18,96792;-57,764799;20/07/2024;05128148645;;Olivia Camargo;Centro-Oeste;Distrito Federal;Notebook Dell Inspiron;10;3223,11;9887,59
+-19,463914;-48,633339;08/09/2024;;86628532000193;Suprimentos Digitais LTDA;Sudeste;Rio de Janeiro;Teclado Mecanico Logitech;14;283,84;1745,64
+-30,147789;-50,592717;09/09/2025;66838659816;;Diego Peixoto;Sul;Santa Catarina;Cadeira Gamer;9;619,91;2091,28
+-6,873095;-37,595792;24/10/2025;85893036751;;Pedro Henrique Lima;Nordeste;Pernambuco;Pendrive SanDisk;4;80,26;114,68
+-1,710212;-54,836675;21/07/2024;;98451884000103;Atacadista Informatica;Norte;Rondonia;Caixa de Som Bluetooth;15;212,26;1107,48
+-2,87854;-45,082408;26/11/2025;32307082107;;Hellena Camargo;Nordeste;Paraiba;HD Externo Seagate;15;540,23;2656,86
+-21,458114;-50,472796;28/10/2025;;25002687000125;Global Distribuidora;Sudeste;Rio de Janeiro;Notebook Dell Inspiron;1;3367,31;1607,14
+-19,725521;-40,472472;02/06/2025;30506605469;;Breno Barros;Sudeste;Rio de Janeiro;Fone de Ouvido JBL;14;194,21;1139,0
+-1,932731;-57,114871;21/07/2024;99266803480;;Paulo Barbosa;Norte;Rondonia;Smart TV LG;13;2018,0;8041,2
+-11,232585;-41,370875;25/03/2025;45666037927;;Julia Machado;Nordeste;Bahia;Monitor Acer;3;971,48;1339,25
+-4,698472;-70,615136;15/09/2025;33365723986;;Sra. Juliana Casa Grande;Norte;Amapa;Cadeira Gamer;15;959,13;5344,13
+-31,181594;-57,985634;08/05/2024;42711314405;;Emilly da Paz;Sul;Santa Catarina;Camera Canon;16;2273,94;16332,35
+-2,215364;-45,193163;18/09/2025;41392421160;;Maria Luisa Andrade;Nordeste;Bahia;Mesa para Computador;15;540,5;2885,96
+-12,393055;-52,500292;11/01/2024;80665289499;;Emilly Correia;Centro-Oeste;Goias;Pendrive SanDisk;20;80,52;781,64
+1,135734;-54,216175;01/06/2025;;95675139000141;Industria Eletronica Brasil;Norte;Amazonas;Estabilizador SMS;19;137,45;810,57
+0,420964;-56,767217;25/04/2024;20610835017;;Esther Mendonca;Norte;Roraima;Smartphone Samsung Galaxy;7;1704,81;5191,11
+-18,971427;-46,978317;15/07/2025;;13201213000123;Importadora Produtos Eletronicos;Centro-Oeste;Mato Grosso;Pendrive SanDisk;10;71,9;249,05
+-7,657917;-39,851302;25/12/2024;;85817664000109;Varejo Digital LTDA;Nordeste;Ceara;Pendrive SanDisk;6;30,63;69,92
+-10,272325;-45,712018;04/10/2025;;94702501000163;Tech Solutions LTDA;Nordeste;Bahia;Teclado Mecanico Logitech;2;281,26;225,03
+-11,954021;-36,106653;07/09/2024;;51385972000182;Solucoes Corporativas;Nordeste;Pernambuco;Cabo HDMI;14;46,25;195,7
+-4,188937;-60,012149;17/06/2025;97378617016;;Matheus Borges;Norte;Amazonas;Fone de Ouvido JBL;8;249,96;677,36
+-8,773712;-49,06032;28/05/2025;57380042300;;Ana Sophia Aragao;Centro-Oeste;Mato Grosso do Sul;Cabo HDMI;5;37,71;58,63
+-24,240661;-57,462088;13/12/2025;41847235433;;Maria Sophia Moraes;Sul;Rio Grande do Sul;Fone de Ouvido JBL;10;136,48;647,25
+-8,222493;-47,041238;30/06/2024;47217309425;;Jose Freitas;Nordeste;Sergipe;Fone de Ouvido JBL;14;169,37;1143,76
+-8,332679;-37,672742;23/06/2024;21561763454;;Enzo Siqueira;Nordeste;Alagoas;Fone de Ouvido JBL;1;149,99;51,4
+-22,114818;-45,181517;01/05/2025;64119439402;;Gustavo Henrique Borges;Sudeste;Sao Paulo;Notebook Dell Inspiron;10;3118,25;15325,52
+-15,921509;-49,539971;28/09/2024;;04769571000146;Tecnologia Avancada LTDA;Sudeste;Espirito Santo;Smart TV LG;10;2831,1;8695,07
+-10,149584;-51,87644;07/01/2025;68887531072;;Diogo Novaes;Centro-Oeste;Goias;Caixa de Som Bluetooth;6;106,86;318,79
+-17,466171;-54,367059;04/12/2024;;53446398000150;Inovacao Digital SA;Centro-Oeste;Distrito Federal;Monitor Acer;14;1115,9;4715,04
+-22,638907;-57,52926;28/12/2025;;60150480000107;Comercio Equipamentos SA;Sul;Parana;Cadeira Gamer;7;803,76;2477,57
+-33,233315;-52,260313;13/10/2024;26862334948;;Caio Araujo;Sul;Santa Catarina;Mouse sem fio Microsoft;5;88,13;159,31
+-23,851212;-49,196979;25/04/2024;;07599183000152;Tech Solutions LTDA;Sudeste;Sao Paulo;Fone de Ouvido JBL;19;110,64;1001,16
+-1,676615;-64,764512;03/07/2024;79343051336;;Srta. Maria Laura Guerra;Norte;Para;Monitor Acer;5;1012,75;1649,3
+-1,315231;-71,843923;15/07/2025;35931976930;;Antônio Almeida;Norte;Rondonia;HD Externo Seagate;17;336,3;2699,68
+-5,765703;-35,852018;26/10/2024;;75138178000100;Distribuidora Nacional;Nordeste;Rio Grande do Norte;Cadeira Gamer;4;753,91;1277,83
+-0,975227;-55,237685;28/10/2025;29913544106;;Vitor Hugo da Luz;Norte;Amazonas;Webcam Logitech;14;321,08;1736,37
+-18,46256;-60,750212;26/05/2025;;61188248000112;Comercio Varejo SA;Centro-Oeste;Mato Grosso;Cadeira Gamer;11;965,93;5290,47
+-2,963886;-39,465925;07/06/2024;;51781449000175;Comercio Equipamentos SA;Nordeste;Pernambuco;Fone de Ouvido JBL;7;215,87;500,75
+-27,986975;-48,081978;22/01/2024;98959939196;;Arthur Miguel Oliveira;Sul;Santa Catarina;Tablet Apple iPad;13;3382,94;16289,1
+-14,413305;-48,712414;02/07/2024;;78769201000145;Comercio Eletronico Brasil;Sudeste;Rio de Janeiro;Notebook Dell Inspiron;14;3194,35;19919,36
+-15,382243;-41,374653;04/03/2024;;95066137000155;Solucoes Corporativas;Sudeste;Sao Paulo;Fone de Ouvido JBL;6;244,07;598,56
+-27,371456;-53,909588;01/10/2025;19866436039;;Emanuelly Ferreira;Sul;Santa Catarina;Webcam Logitech;14;301,78;1538,35
+-24,728605;-54,630022;08/07/2024;;17282529000148;Comercio Varejo SA;Sul;Santa Catarina;Roteador TP-Link;17;155,16;1057,52
+-33,513483;-48,303498;14/01/2024;;83403854000146;Distribuidora Componentes;Sul;Parana;HD Externo Seagate;1;631,54;259,18
+-18,998943;-48,14836;11/06/2025;59001580637;;Maria Luiza Martins;Sudeste;Rio de Janeiro;Impressora HP;3;517,92;734,97
+2,218864;-57,515229;21/05/2025;;60039066000117;Empresa Brasileira Tecnologia;Norte;Para;Fone de Ouvido JBL;1;111,24;47,23
+-24,516579;-54,500446;21/03/2024;;11027418000109;Solucoes Corporativas;Sul;Parana;Mesa para Computador;16;330,29;1894,87
+3,637311;-66,400498;16/12/2024;;15658658000162;Comercio Equipamentos SA;Norte;Roraima;Monitor Acer;2;783,72;623,88
+-19,032325;-49,239457;10/08/2025;71910891215;;Carolina Vargas;Centro-Oeste;Goias;Smartphone Samsung Galaxy;13;2257,98;9954,68
+-21,618046;-56,591724;24/02/2024;95126611100;;Diego Casa Grande;Centro-Oeste;Mato Grosso;Mesa para Computador;3;462,06;670,52
+-2,981984;-50,390573;30/05/2025;;83750461000109;Solucoes Corporativas;Norte;Para;Monitor Acer;15;661,69;4817,78
+-16,703358;-54,953962;05/12/2024;90909091250;;Henry Gabriel Ferreira;Centro-Oeste;Mato Grosso do Sul;Camera Canon;10;1921,98;6815,34
+-11,003146;-60,394994;10/06/2024;;52548171000153;Solucoes Corporativas;Centro-Oeste;Goias;HD Externo Seagate;15;404,96;2014,47
+-32,58809;-50,374655;03/08/2024;01496174887;;Rebeca Abreu;Sul;Rio Grande do Sul;Tablet Apple iPad;6;3602,56;10340,93
+-16,924317;-40,452199;15/08/2024;;23125463000185;Tecnologia Avancada LTDA;Nordeste;Paraiba;Webcam Logitech;18;295,28;2239,27
+-23,717909;-55,137605;18/02/2025;;55198662000100;Global Distribuidora;Sul;Parana;Mouse sem fio Microsoft;18;75,08;491,2
+-18,002083;-50,885024;21/11/2025;;22111621000185;Comercio Varejo SA;Sudeste;Sao Paulo;Caixa de Som Bluetooth;5;257,66;563,22
+1,647348;-65,621138;09/10/2025;;07643750000120;Industria Nacional Tecnologia;Norte;Rondonia;Caixa de Som Bluetooth;8;257,82;680,63
+-19,589702;-45,286471;02/11/2024;;16456507000194;Suprimentos Tecnicos LTDA;Sudeste;Espirito Santo;Mouse sem fio Microsoft;4;103,48;186,01
+-20,924062;-49,894271;26/11/2024;;98067046000122;Solucoes Corporativas;Sudeste;Espirito Santo;Smartphone Samsung Galaxy;2;1828,9;1495,22
+-23,749144;-54,294457;07/09/2024;;60247077000192;Global Distribuidora;Sul;Santa Catarina;Cadeira Gamer;4;595,48;1109,58
+-10,781086;-42,809644;20/09/2025;;10545052000105;Comercio Equipamentos SA;Nordeste;Sergipe;HD Externo Seagate;11;661,21;2558,65
+-3,288984;-69,041688;01/12/2025;;86285432000101;Inovacao Digital SA;Norte;Acre;Teclado Mecanico Logitech;4;260,83;364,84
+-22,295025;-46,775369;15/02/2025;44527461524;;Pietro Peixoto;Sudeste;Rio de Janeiro;Mesa para Computador;3;394,06;382,27
+-21,224871;-42,293818;22/03/2025;;83218379000138;Importadora Produtos Eletronicos;Sudeste;Rio de Janeiro;Estabilizador SMS;8;96,37;242,78
+-11,209085;-50,121412;16/05/2025;25225904483;;Mariah Santos;Centro-Oeste;Distrito Federal;Tablet Apple iPad;2;2511,76;1996,8
+-4,395508;-69,076189;25/12/2024;;57146963000115;Industria Eletronica Brasil;Norte;Roraima;Fone de Ouvido JBL;20;185,39;1623,89
+-23,138633;-48,037434;01/10/2025;17698539792;;Bryan Silveira;Sudeste;Sao Paulo;Fone de Ouvido JBL;4;119,82;179,65
+-19,69723;-60,810542;25/01/2025;;92256386000115;Comercio Eletronico Brasil;Centro-Oeste;Mato Grosso do Sul;Mesa para Computador;17;342,45;2822,45
+-2,986001;-54,741774;20/04/2025;85896330715;;Dr. Enrico Aparecida;Norte;Tocantins;Fone de Ouvido JBL;16;136,0;1070,54
+-25,708769;-56,991605;17/09/2025;22893366376;;Luiz Miguel Barros;Sul;Parana;Notebook Dell Inspiron;5;3322,52;5139,4
+-29,632127;-57,971598;23/02/2025;;74130332000127;Inovacao Digital SA;Sul;Santa Catarina;Cadeira Gamer;5;540,94;1193,87
+-17,515236;-36,104216;16/05/2025;40551922230;;Pietra da Mota;Nordeste;Ceara;Notebook Dell Inspiron;13;3115,41;18482,66
+-17,092807;-48,544938;27/01/2025;94076454286;;Yuri Aragao;Centro-Oeste;Distrito Federal;Smart TV LG;14;2072,03;11328,64
+-15,216748;-37,837088;03/08/2024;20788096320;;Dr. Yan Rodrigues;Nordeste;Sergipe;Impressora HP;7;486,36;1168,83
+-13,975439;-40,370993;31/05/2025;41155513053;;Davi Lucas Azevedo;Nordeste;Bahia;Roteador TP-Link;2;118,2;115,66
+-10,93662;-39,443729;07/09/2024;;39462319000174;Global Distribuidora;Nordeste;Piaui;Notebook Dell Inspiron;16;3256,51;24637,55
+-20,016549;-47,127385;19/04/2024;09784659034;;Raquel Pimenta;Sudeste;Sao Paulo;Estabilizador SMS;11;138,66;591,65
+-17,384137;-47,495305;09/12/2025;54260127926;;Yago da Rocha;Sudeste;Minas Gerais;Smart TV LG;6;2923,28;6439,6
+3,329431;-52,175583;02/12/2025;64293979204;;Eloah Caldeira;Norte;Para;Cabo HDMI;2;18,98;12,53
+-8,63357;-55,141982;03/10/2024;61570375801;;Agatha Borges;Centro-Oeste;Mato Grosso;Pendrive SanDisk;17;56,89;470,52
+-9,743264;-36,533689;28/01/2024;;80689923000131;Distribuidora Componentes;Nordeste;Alagoas;Pendrive SanDisk;6;68,48;191,93
+-10,63651;-44,007263;19/03/2025;46338180155;;Bella Vasconcelos;Nordeste;Paraiba;Smart TV LG;9;2863,87;11535,46
+-18,074822;-46,705236;17/04/2024;09178957460;;Eloa da Luz;Centro-Oeste;Mato Grosso;Estabilizador SMS;5;124,58;263,11
+-24,273472;-48,178945;20/08/2025;01870582454;;Sophie Marques;Sul;Parana;Camera Canon;9;1744,65;4824,08
+-4,683613;-35,816935;07/07/2024;;60703537000140;Comercio Varejo SA;Nordeste;Sergipe;Webcam Logitech;13;265,08;1066,24
+-23,781071;-56,681929;25/06/2025;;52892037000175;Industria Nacional Tecnologia;Sul;Rio Grande do Sul;Carregador Portatil;8;91,4;303,32
+-13,463432;-58,588103;24/04/2024;51676598928;;Livia Nunes;Centro-Oeste;Mato Grosso;Tablet Apple iPad;4;3907,89;5388,67
+-11,919828;-43,025378;31/10/2025;95256080695;;Mariah Barros;Nordeste;Bahia;Cadeira Gamer;15;992,21;4813,25
+-21,509936;-43,495964;28/02/2024;35199146629;;Elisa Moraes;Sudeste;Sao Paulo;Fone de Ouvido JBL;2;191,73;126,87
+-22,509443;-54,586924;14/03/2025;;08630787000187;Industria Nacional Tecnologia;Centro-Oeste;Mato Grosso do Sul;Cadeira Gamer;2;743,47;617,95
+-9,749007;-60,739286;01/02/2025;16609726205;;Sra. Valentina Cirino;Centro-Oeste;Distrito Federal;Caixa de Som Bluetooth;16;290,13;1436,31
+-7,078665;-38,511563;18/03/2025;;99643775000142;Tech Solutions LTDA;Nordeste;Maranhao;Carregador Portatil;20;152,46;1414,94
+-3,973445;-45,510975;06/06/2024;87447698652;;Brayan Pacheco;Nordeste;Bahia;Camera Canon;4;3315,41;5940,6
+-21,461845;-55,046013;11/03/2025;;84289329000104;Comercio Internacional SA;Centro-Oeste;Mato Grosso do Sul;Estabilizador SMS;14;113,87;577,82
+-16,153746;-41,127752;12/07/2025;49800831967;;Ana Carolina Pereira;Sudeste;Minas Gerais;Monitor Acer;12;820,48;3087,44
+-24,537078;-54,345262;19/04/2024;;11374514000123;Comercio Eletronico Brasil;Sul;Rio Grande do Sul;Roteador TP-Link;1;193,87;60,62
+4,623809;-51,927923;22/10/2024;13014912255;;Cecilia Rodrigues;Norte;Acre;Camera Canon;14;2787,43;14634,75
+-15,12864;-40,572629;31/01/2024;;31863928000123;Tecnologia Avancada LTDA;Sudeste;Espirito Santo;Pendrive SanDisk;2;90,92;82,18
+-16,317967;-47,236873;08/11/2024;;61644618000189;Distribuidora Nacional;Sudeste;Sao Paulo;Cabo HDMI;12;15,66;92,25
+-2,596762;-40,623995;09/03/2025;15704836631;;Gustavo Henrique Santos;Nordeste;Ceara;Tablet Apple iPad;17;3544,99;29723,46
+-17,813652;-60,330772;26/08/2024;88222016555;;Mariane Novais;Centro-Oeste;Distrito Federal;Impressora HP;8;666,16;2631,99
+-3,536735;-65,713498;07/03/2024;16515864540;;Joao Miguel Pires;Norte;Amazonas;Carregador Portatil;17;121,27;1003,87
+-25,886715;-52,214553;02/03/2024;04197926278;;Marcela Pires;Sul;Rio Grande do Sul;Monitor Acer;6;1169,63;2331,06
+-17,781546;-47,409428;06/12/2024;26121007095;;Raquel Nascimento;Nordeste;Pernambuco;Mesa para Computador;12;515,2;2319,35
+-3,693658;-59,298638;16/04/2025;18746264213;;Arthur Porto;Norte;Para;Caixa de Som Bluetooth;16;281,6;2174,91
+-7,478506;-35,110383;19/10/2024;;98623697000151;Comercio Equipamentos SA;Nordeste;Rio Grande do Norte;HD Externo Seagate;9;574,8;2389,55
+4,86707;-53,026932;30/04/2025;;55629475000133;Suprimentos Digitais LTDA;Norte;Roraima;Fone de Ouvido JBL;10;164,49;640,02
+-9,824513;-38,801559;12/08/2024;56583858223;;Luiz Felipe da Costa;Nordeste;Rio Grande do Norte;Pendrive SanDisk;6;61,71;168,86
+0,763799;-66,509383;13/11/2025;;44354975000193;Empresa Brasileira Tecnologia;Norte;Amazonas;HD Externo Seagate;3;597,35;701,65
+-33,143156;-55,654411;21/01/2025;04124980493;;Amanda Souza;Sul;Santa Catarina;Cadeira Gamer;6;907,44;1997,43
+-31,045965;-48,806676;20/11/2024;70145153495;;Dr. Leandro Moura;Sul;Santa Catarina;Impressora HP;13;625,9;2865,52
+-24,805352;-48,237275;15/10/2024;93345512327;;Yago Santos;Sudeste;Minas Gerais;Roteador TP-Link;3;134,27;144,32
+-22,095611;-56,604652;04/10/2025;;36834470000106;Comercio Equipamentos SA;Sul;Rio Grande do Sul;Roteador TP-Link;17;153,16;1042,56
+-10,882633;-56,680939;26/07/2025;;18241702000122;Comercio Internacional SA;Centro-Oeste;Distrito Federal;HD Externo Seagate;11;477,8;2288,84
+-25,630028;-51,084035;16/06/2025;;94469065000124;Importadora Tecnologia;Sul;Rio Grande do Sul;Mouse sem fio Microsoft;3;85,91;109,68
+-3,6652;-65,281786;27/11/2025;47268105886;;Lucas Leao;Norte;Para;Caixa de Som Bluetooth;5;101,47;248,19
+-22,579323;-52,55452;27/04/2025;;57283473000160;Tech Solutions LTDA;Centro-Oeste;Distrito Federal;Mesa para Computador;12;252,68;1026,89
+-13,86518;-39,617473;02/07/2025;;92527647000194;Distribuidora Componentes;Nordeste;Alagoas;Impressora HP;18;836,79;6298,02
+-19,914624;-46,720988;09/03/2025;54125137862;;Catarina Pastor;Sudeste;Minas Gerais;Carregador Portatil;14;168,43;1012,97
+-15,210575;-50,190393;19/05/2024;;42780520000104;Industria Nacional Tecnologia;Sudeste;Espirito Santo;Webcam Logitech;5;312,78;565,2
+-1,584472;-52,81504;07/12/2024;59351192180;;Davi Luiz Freitas;Norte;Tocantins;Tablet Apple iPad;10;3539,16;17340,5
+-17,756229;-58,367331;13/05/2024;;38474035000135;Solucoes Corporativas;Centro-Oeste;Mato Grosso do Sul;Carregador Portatil;6;70,57;159,93
+-17,605448;-46,158862;18/09/2024;;07570581000146;Industria Eletronica Brasil;Nordeste;Paraiba;Camera Canon;5;2536,66;4326,86
+-17,991472;-36,355265;26/11/2024;;68826174000141;Suprimentos Digitais LTDA;Nordeste;Paraiba;Cadeira Gamer;19;1059,67;6741,61
+-8,708827;-58,051949;14/04/2024;;68190336000106;Tecnologia Avancada LTDA;Centro-Oeste;Goias;HD Externo Seagate;16;393,15;2191,65
+-12,316996;-37,426687;11/04/2024;;96569737000107;Suprimentos Digitais LTDA;Nordeste;Paraiba;Tablet Apple iPad;1;3789,36;1580,62
+-9,204645;-45,988401;20/03/2024;;35762421000134;Importadora Produtos Eletronicos;Nordeste;Sergipe;Monitor Acer;14;1020,15;6457,44
+-23,811074;-50,445124;12/11/2025;;01788971000100;Comercio Equipamentos SA;Sudeste;Rio de Janeiro;Pendrive SanDisk;14;86,59;527,2
+-17,866632;-46,34427;25/02/2025;;37455357000174;Importadora Tecnologia;Centro-Oeste;Distrito Federal;Carregador Portatil;17;111,47;704,48
+-2,977305;-59,1406;04/03/2025;35908900966;;Pedro Nascimento;Norte;Roraima;Camera Canon;3;1583,16;1524,1
+-13,373365;-35,43799;25/11/2024;86841690508;;Ana Vitoria Ferreira;Nordeste;Bahia;Impressora HP;14;636,31;3335,04
+-4,765224;-40,338543;06/07/2024;28132880129;;Maysa Mendonca;Nordeste;Pernambuco;Smartphone Samsung Galaxy;8;2173,03;7415,35
+-31,89701;-51,87968;07/08/2025;;16669747000177;Suprimentos Tecnicos LTDA;Sul;Parana;Roteador TP-Link;15;195,52;1373,54
+-12,044141;-38,595124;09/05/2025;65800126844;;Ana Luiza Barros;Nordeste;Paraiba;Roteador TP-Link;8;246,55;966,2
+-25,516769;-52,800252;16/10/2024;;98583086000127;Tech Solutions LTDA;Sul;Santa Catarina;Tablet Apple iPad;14;3832,48;22028,0
+3,851111;-65,119793;22/01/2024;15932386908;;Marcelo Goncalves;Norte;Roraima;Notebook Dell Inspiron;13;3080,18;13755,05
+-17,58007;-43,549246;15/03/2024;73667410867;;Liz Vasconcelos;Nordeste;Piaui;Tablet Apple iPad;13;3733,02;23920,11
+-15,426458;-45,35268;01/02/2024;;23601156000123;Inovacao Digital SA;Sudeste;Minas Gerais;Carregador Portatil;8;168,44;487,59
+-24,569192;-46,969516;04/11/2025;56263801913;;Maria Alice Santos;Sudeste;Minas Gerais;Webcam Logitech;4;368,5;576,11
+-13,751354;-47,563888;27/10/2024;;56755268000198;Suprimentos Tecnicos LTDA;Centro-Oeste;Mato Grosso do Sul;Roteador TP-Link;15;125,89;716,17
+-14,54168;-42,524073;31/07/2025;;83529563000107;Distribuidora Nacional;Nordeste;Pernambuco;Caixa de Som Bluetooth;16;224,55;1111,85
+-7,836091;-42,863254;20/06/2025;;25986329000102;Importadora Produtos Eletronicos;Nordeste;Pernambuco;Tablet Apple iPad;17;3006,68;23541,42
+-14,459553;-50,618996;17/11/2024;;82618779000178;Empresa Brasileira Tecnologia;Centro-Oeste;Goias;Cadeira Gamer;6;597,55;1107,99
+-17,5459;-50,041768;18/12/2024;;03253786000147;Suprimentos Tecnicos LTDA;Centro-Oeste;Distrito Federal;Camera Canon;19;3325,93;30578,52
+-21,48421;-47,778653;05/11/2025;;55107755000181;Distribuidora Nacional;Sudeste;Espirito Santo;Roteador TP-Link;11;93,92;441,95
+-3,237647;-42,636775;25/09/2025;45395539255;;Lucas Sales;Nordeste;Rio Grande do Norte;Cadeira Gamer;20;1168,12;11034,7
+-13,139648;-57,914903;24/01/2024;;77082790000126;Varejo Digital LTDA;Centro-Oeste;Goias;Tablet Apple iPad;2;3155,36;2006,42
+0,567657;-67,000436;30/10/2025;03739351705;;Henry Novais;Norte;Amapa;HD Externo Seagate;1;572,18;199,61
+-24,312444;-50,387533;14/01/2024;;65130950000186;Solucoes Corporativas;Sul;Parana;Notebook Dell Inspiron;15;3450,01;20579,55
+-2,725752;-40,232335;25/02/2025;;29056430000107;Suprimentos Digitais LTDA;Nordeste;Ceara;Smartphone Samsung Galaxy;12;1693,96;6748,12
+-29,361578;-54,644391;14/03/2024;62424337705;;Maya da Rocha;Sul;Santa Catarina;Tablet Apple iPad;15;3773,23;27908,95
+-22,700273;-39,124513;19/02/2025;;85609413000120;Tech Solutions LTDA;Sudeste;Sao Paulo;HD Externo Seagate;6;454,7;984,55
+-22,762627;-48,680322;01/02/2025;24096020028;;Eloa Teixeira;Sudeste;Espirito Santo;Teclado Mecanico Logitech;14;247,77;1534,82
+-15,257425;-39,699918;28/11/2024;34207734120;;Joao Lucas Aparecida;Sudeste;Sao Paulo;Webcam Logitech;16;228,97;1676,73
+-16,029277;-46,088777;31/07/2024;50154130842;;Lais Peixoto;Nordeste;Bahia;Mouse sem fio Microsoft;9;114,53;430,07
+-25,08023;-52,846269;06/10/2025;;55768169000188;Global Distribuidora;Sul;Santa Catarina;Pendrive SanDisk;12;90,1;419,48
+-9,25098;-49,602288;08/05/2025;04317813386;;Lara Novais;Centro-Oeste;Mato Grosso do Sul;Carregador Portatil;20;92,6;830,21
+-11,225061;-58,294398;14/11/2024;61754638627;;Otavio da Rocha;Centro-Oeste;Mato Grosso do Sul;Caixa de Som Bluetooth;7;125,35;382,99
+3,69328;-69,791257;07/08/2025;74425591747;;Maria Alice Gomes;Norte;Amapa;Monitor Acer;11;1109,28;4637,44
+-4,462181;-63,132921;31/01/2025;;84627868000106;Tech Solutions LTDA;Norte;Amapa;Cabo HDMI;1;55,33;25,23
+1,895661;-72,439526;14/10/2024;97728656538;;Maria Fernanda Cunha;Norte;Amapa;Pendrive SanDisk;3;74,56;93,18
+2,600126;-58,243665;28/04/2025;;41256234000181;Importadora Produtos Eletronicos;Norte;Rondonia;Smartphone Samsung Galaxy;15;1239,46;7063,22
+-11,44747;-48,771507;09/08/2024;79534727830;;Liz Oliveira;Centro-Oeste;Goias;Smartphone Samsung Galaxy;7;2447,11;8230,55
+-22,792559;-49,144421;30/05/2025;;43059743000140;Suprimentos Digitais LTDA;Centro-Oeste;Mato Grosso;Cadeira Gamer;14;1064,11;5236,4
+-3,126715;-67,745474;20/11/2024;84618030003;;Bruna da Mata;Norte;Tocantins;Camera Canon;17;2349,12;14178,73
+-31,698343;-49,448553;12/11/2025;;70393480000183;Comercio Equipamentos SA;Sul;Rio Grande do Sul;Carregador Portatil;17;103,18;762,99
+-22,382864;-56,102427;01/05/2024;;73388730000185;Varejo Digital LTDA;Sul;Parana;Camera Canon;10;3192,67;11354,5
+-16,405917;-47,627647;10/01/2024;17010422400;;Emanuel Alves;Sudeste;Espirito Santo;Pendrive SanDisk;17;59,26;411,58
+-17,641334;-41,388653;31/10/2025;94882466260;;Dra. Vitoria Cardoso;Sudeste;Minas Gerais;Camera Canon;4;1611,52;2173,2
+-21,312635;-46,261502;25/01/2024;;12205403000156;Tech Solutions LTDA;Centro-Oeste;Mato Grosso do Sul;HD Externo Seagate;10;373,41;1577,18
+-19,002983;-46,499392;29/04/2025;35542935478;;Eduarda Macedo;Centro-Oeste;Mato Grosso do Sul;Tablet Apple iPad;19;3669,77;22764,91
+-3,71749;-63,801117;01/10/2024;56897496723;;Sr. Josue Dias;Norte;Amapa;Tablet Apple iPad;18;3124,9;27396,72
+-19,728272;-46,109742;13/01/2024;15402306869;;Carolina Carvalho;Sudeste;Espirito Santo;Caixa de Som Bluetooth;4;181,34;250,37
+-17,351365;-46,378368;21/04/2024;01209024438;;Dr. Anthony Gabriel Sampaio;Sudeste;Espirito Santo;Estabilizador SMS;5;136,89;304,19
+-23,234798;-49,666745;08/07/2024;;71222910000167;Importadora Tecnologia;Centro-Oeste;Goias;Smartphone Samsung Galaxy;17;1710,06;9184,27
+-32,852608;-50,142284;16/01/2024;;10277610000190;Suprimentos Digitais LTDA;Sul;Santa Catarina;Cadeira Gamer;8;617,36;1514,09
+0,388207;-66,003716;08/07/2024;;60171496000198;Comercio Equipamentos SA;Norte;Amapa;Smart TV LG;8;2164,07;6762,36
+-15,75845;-35,018863;03/02/2024;;01261354000152;Suprimentos Digitais LTDA;Nordeste;Pernambuco;Teclado Mecanico Logitech;3;359,62;446,79
+-22,849535;-44,139027;04/03/2025;82668716632;;Caua Monteiro;Sudeste;Rio de Janeiro;Carregador Portatil;14;127,91;798,73
+-22,407163;-57,59699;22/10/2024;;54256194000110;Global Distribuidora;Sul;Santa Catarina;Cadeira Gamer;1;1185,24;415,73
+-15,293621;-41,522778;25/11/2025;;26038943000105;Industria Nacional Tecnologia;Sudeste;Espirito Santo;Roteador TP-Link;13;202,09;913,1
+-8,414329;-49,98101;27/05/2024;01601272979;;Maitê Alves;Centro-Oeste;Goias;HD Externo Seagate;18;698,34;4274,87
+-22,277623;-57,209573;16/02/2024;56124870533;;Srta. Stella Farias;Centro-Oeste;Mato Grosso;Roteador TP-Link;3;102,97;124,01
+-26,178522;-56,779109;10/01/2025;;71249462000195;Industria Eletronica Brasil;Sul;Santa Catarina;Fone de Ouvido JBL;7;192,41;528,14
+-18,112583;-41,55638;31/03/2024;;36561710000138;Industria Nacional Tecnologia;Sudeste;Minas Gerais;Tablet Apple iPad;1;2729,18;824,67
+-11,296346;-50,619082;09/07/2024;38946988290;;Olivia da Luz;Centro-Oeste;Goias;Carregador Portatil;2;137,27;108,79
+-27,055282;-48,098257;12/04/2025;65521364200;;Yuri Porto;Sul;Parana;Teclado Mecanico Logitech;6;290,48;801,64
+-12,742889;-41,760058;13/07/2025;42377486770;;Lucas Gabriel da Mata;Nordeste;Maranhao;Impressora HP;16;747,08;4421,71
+-20,912531;-40,969674;12/08/2024;30536046980;;Bernardo Fonseca;Sudeste;Espirito Santo;HD Externo Seagate;3;639,93;699,81
+-13,174732;-45,795931;24/09/2025;11050749006;;Enzo Pires;Nordeste;Ceara;HD Externo Seagate;19;437,94;3993,02
+4,293566;-60,139421;02/05/2025;01928998640;;Mirella Caldeira;Norte;Amapa;Webcam Logitech;14;301,08;1703,85
+-2,51571;-64,340023;07/11/2025;99705846936;;Srta. Rebeca Fernandes;Norte;Amazonas;Impressora HP;18;519,97;3690,83
+-8,315766;-37,229152;05/04/2024;;66049059000182;Solucoes Corporativas;Nordeste;Ceara;Roteador TP-Link;3;213,56;214,9
+-27,233245;-52,01387;16/08/2024;34534742100;;Davi Cavalcante;Sul;Santa Catarina;Roteador TP-Link;12;206,1;858,35
+-2,967026;-36,252893;24/11/2024;;63128144000148;Distribuidora Nacional;Nordeste;Ceara;Mesa para Computador;17;586,77;3276,59
+-1,266406;-53,703673;20/11/2025;;64998168000110;Comercio Internacional SA;Norte;Acre;Mouse sem fio Microsoft;3;66,74;94,93
+-22,376171;-54,623384;20/06/2024;;48025688000190;Suprimentos Tecnicos LTDA;Sul;Santa Catarina;Smart TV LG;1;2106,61;891,59
+-12,586084;-46,49628;12/10/2025;;31906492000102;Atacadista Informatica;Centro-Oeste;Goias;Notebook Dell Inspiron;1;2980,87;907,82
+-12,008005;-54,47764;26/04/2024;;63850224000102;Importadora Produtos Eletronicos;Centro-Oeste;Distrito Federal;Estabilizador SMS;20;113,85;698,6
+-31,408818;-52,949753;01/03/2024;66229136414;;Lunna Correia;Sul;Rio Grande do Sul;Cabo HDMI;4;29,19;45,09
+-18,372317;-56,586847;18/01/2024;38658686060;;Dra. Jade Montenegro;Centro-Oeste;Mato Grosso;Cadeira Gamer;19;998,63;5734,76
+-0,323975;-53,815695;13/04/2024;;10020591000112;Industria Nacional Tecnologia;Norte;Acre;Cabo HDMI;7;51,87;130,73
+-23,325795;-43,071962;28/09/2025;26878030307;;Mirella Guerra;Sudeste;Rio de Janeiro;Smart TV LG;3;2798,29;3735,77
+-17,779305;-42,497008;14/08/2025;;60103370000186;Inovacao Digital SA;Sudeste;Minas Gerais;Cabo HDMI;5;30,87;70,48
+-17,748212;-45,796887;31/03/2024;;57358734000164;Importadora Produtos Eletronicos;Nordeste;Piaui;Notebook Dell Inspiron;5;2907,38;6550,33
+-23,518025;-53,58282;20/07/2025;;48083195000107;Suprimentos Digitais LTDA;Sul;Santa Catarina;Caixa de Som Bluetooth;7;159,92;462,73
+-14,359206;-55,271635;13/08/2025;27802271177;;Srta. Mariana Abreu;Centro-Oeste;Goias;Impressora HP;14;897,65;4816,53
+-16,95045;-43,322032;28/07/2025;94979223451;;Joao Pinto;Sudeste;Sao Paulo;HD Externo Seagate;14;681,13;3102,39
+-23,220427;-39,78327;19/04/2024;;14098713000144;Distribuidora Nacional;Sudeste;Rio de Janeiro;Impressora HP;5;697,01;1404,78
+-26,868913;-50,401545;12/02/2025;86182208414;;Dr. Luiz Fernando Lopes;Sul;Santa Catarina;Webcam Logitech;3;210,75;302,84
+-26,737546;-49,36083;28/08/2025;;77658639000193;Varejo Digital LTDA;Sul;Rio Grande do Sul;Cadeira Gamer;2;604,49;549,07
+-3,119211;-37,524908;16/05/2025;;11798739000107;Comercio Internacional SA;Nordeste;Alagoas;Monitor Acer;12;1010,75;4532,14
+-1,92747;-44,474733;12/06/2024;16483122845;;Isaac da Conceicao;Nordeste;Piaui;Roteador TP-Link;20;174,77;1165,15
+-2,397215;-67,062217;01/05/2025;;73858194000134;Inovacao Digital SA;Norte;Para;Mouse sem fio Microsoft;10;87,64;290,65
+-11,472458;-52,378884;17/12/2024;;96517681000139;Importadora Tecnologia;Centro-Oeste;Goias;Teclado Mecanico Logitech;17;277,09;1583,68
+3,015339;-51,79185;07/05/2025;;50316135000139;Global Distribuidora;Norte;Para;Smartphone Samsung Galaxy;12;2041,69;7885,83
+-18,106715;-45,927731;28/11/2024;60022119183;;Eloa Vieira;Sudeste;Rio de Janeiro;Notebook Dell Inspiron;2;2881,53;2562,57
+-21,02256;-40,360329;13/07/2025;11141744244;;Caio Sales;Sudeste;Espirito Santo;Webcam Logitech;18;220,95;1803,64
+-24,680766;-52,438551;09/07/2025;;26986055000106;Global Distribuidora;Sul;Santa Catarina;Cadeira Gamer;4;693,65;987,85
+-15,82205;-45,091788;27/05/2024;;01054116000176;Suprimentos Digitais LTDA;Sudeste;Minas Gerais;Smart TV LG;6;1953,88;3535,43
+-25,101395;-49,62688;19/03/2024;;23944480000144;Distribuidora Componentes;Sul;Rio Grande do Sul;Mouse sem fio Microsoft;9;70,11;263,47
+-20,66454;-52,186013;04/09/2024;;67070105000198;Tech Solutions LTDA;Centro-Oeste;Mato Grosso;Camera Canon;19;2124,86;12457,94
+-18,580569;-43,48379;22/02/2024;;67404698000181;Comercio Eletronico Brasil;Sudeste;Rio de Janeiro;Smartphone Samsung Galaxy;17;2324,48;16469,75
+-0,373085;-62,391789;06/12/2025;;09432579000136;Comercio Varejo SA;Norte;Acre;Estabilizador SMS;13;184,06;1180,9
+3,997771;-56,349298;17/06/2025;;18367707000104;Industria Eletronica Brasil;Norte;Roraima;Teclado Mecanico Logitech;9;230,79;791,21
+-16,905708;-46,07295;17/06/2024;;91038067000170;Global Distribuidora;Nordeste;Rio Grande do Norte;Smartphone Samsung Galaxy;19;1669,78;10063,28
+-1,22163;-50,876276;27/12/2025;;40718898000152;Suprimentos Digitais LTDA;Norte;Acre;Tablet Apple iPad;18;3380,93;20671,49
+-17,937082;-48,243786;01/09/2025;11724945769;;Luna Jesus;Sudeste;Espirito Santo;Estabilizador SMS;6;168,83;409,75
+-27,511517;-52,354614;26/02/2025;21614912459;;Heitor da Mata;Sul;Rio Grande do Sul;Tablet Apple iPad;16;2960,35;19526,78
+-2,086314;-37,577799;03/08/2025;91928754163;;Ana Clara Jesus;Nordeste;Paraiba;Pendrive SanDisk;11;44,29;153,87
+-14,374577;-53,528539;23/05/2024;08353052369;;Davi Luiz Pastor;Centro-Oeste;Mato Grosso do Sul;Teclado Mecanico Logitech;11;344,7;1471,39
+-18,02174;-58,653308;02/01/2025;;61728145000106;Importadora Produtos Eletronicos;Centro-Oeste;Distrito Federal;Monitor Acer;16;897,57;6066,21
+0,864586;-56,553432;20/07/2025;;56426740000149;Distribuidora Nacional;Norte;Amapa;Camera Canon;18;2911,31;21578,11
+-8,464035;-46,490586;07/08/2025;;71607268000134;Industria Nacional Tecnologia;Nordeste;Alagoas;Cabo HDMI;13;17,93;86,93
+-16,471157;-41,440051;14/06/2024;25104636089;;Theo Santos;Nordeste;Piaui;Estabilizador SMS;15;171,67;1017,17
+-1,385638;-39,541557;15/12/2025;39585724995;;Caio Castro;Nordeste;Piaui;Cadeira Gamer;10;548,4;2398,66
+-20,081122;-43,293586;06/06/2025;62105935770;;Rhavi Brito;Sudeste;Minas Gerais;Impressora HP;9;774,1;2876,29
+-2,172943;-54,504773;06/12/2024;;33387879000125;Importadora Produtos Eletronicos;Norte;Amapa;Impressora HP;17;640,09;5263,07
+-14,323628;-57,62642;23/02/2025;55654226045;;Andre Fogaca;Centro-Oeste;Mato Grosso;Caixa de Som Bluetooth;18;240,75;1910,59
+-9,273746;-47,353667;25/08/2025;56030336495;;Pedro Lopes;Nordeste;Bahia;Roteador TP-Link;16;212,23;1068,61
+-27,811738;-49,649914;26/09/2025;66650631191;;Luara Farias;Sul;Rio Grande do Sul;Roteador TP-Link;3;181,57;250,2
+-8,285477;-55,630612;22/03/2024;07408659005;;Maria Helena Pastor;Centro-Oeste;Goias;HD Externo Seagate;10;503,04;1633,19
+-16,167632;-52,161778;14/09/2024;53521021149;;Francisco Gomes;Centro-Oeste;Goias;Fone de Ouvido JBL;7;114,87;358,73
+-14,529784;-47,831324;27/06/2025;23005095630;;Dra. Ana Carolina Nogueira;Sudeste;Espirito Santo;Mesa para Computador;17;444,5;3328,88
+-13,938027;-48,817503;12/09/2024;;40723819000100;Industria Nacional Tecnologia;Centro-Oeste;Distrito Federal;Teclado Mecanico Logitech;12;412,92;2343,21
+-27,358667;-56,129861;01/08/2025;39810164599;;Eloa Caldeira;Sul;Parana;Estabilizador SMS;5;196,03;409,16
+-3,089351;-45,066892;08/03/2025;08084711393;;Sra. Hellena Montenegro;Nordeste;Pernambuco;Fone de Ouvido JBL;20;85,49;590,14
+-33,134388;-51,559621;06/09/2025;73786949590;;Arthur Montenegro;Sul;Santa Catarina;Monitor Acer;5;911,81;2109,65
+-4,187314;-47,419292;04/01/2024;61266887083;;Sr. Matheus Sousa;Nordeste;Ceara;Impressora HP;11;559,35;1849,14
+-31,95066;-52,455239;12/01/2024;86469493629;;Jose Pedro Azevedo;Sul;Rio Grande do Sul;Camera Canon;3;1624,82;1618,49
+-16,236272;-54,150154;29/07/2024;;72366154000102;Tech Solutions LTDA;Centro-Oeste;Mato Grosso do Sul;Camera Canon;5;2849,58;5374,21
+-21,742355;-47,838643;18/07/2025;42564515606;;Nicole Ferreira;Sudeste;Rio de Janeiro;Notebook Dell Inspiron;9;2836,78;10544,67
+-4,902846;-56,796953;30/01/2024;47871505882;;Luiz Gustavo Borges;Norte;Acre;Webcam Logitech;11;206,52;738,29
+-27,183905;-57,266721;01/08/2024;;88024002000161;Comercio Equipamentos SA;Sul;Parana;Impressora HP;3;605,52;566,07
+-16,937028;-46,675167;19/03/2024;92866614445;;Barbara Goncalves;Sudeste;Espirito Santo;Pendrive SanDisk;9;31,37;117,79
+-22,201921;-49,695859;28/03/2025;;01440905000145;Importadora Produtos Eletronicos;Sul;Parana;Impressora HP;14;818,44;5245,54
+-16,737708;-49,735779;15/06/2024;;88069233000191;Distribuidora Nacional;Sudeste;Minas Gerais;Cabo HDMI;10;56,53;256,04
+-14,524034;-47,164946;17/06/2024;;89273594000118;Inovacao Digital SA;Sudeste;Minas Gerais;Fone de Ouvido JBL;18;144,81;1016,02
+-19,536233;-48,559583;20/11/2024;60083325808;;Gael Novaes;Centro-Oeste;Mato Grosso;Smart TV LG;14;2531,77;16535,52
+-22,664712;-40,80418;28/02/2024;;11830429000122;Comercio Equipamentos SA;Sudeste;Rio de Janeiro;Monitor Acer;9;884,95;3261,07
+-11,366948;-52,422675;18/05/2024;98712925462;;Guilherme Fogaca;Centro-Oeste;Mato Grosso;Caixa de Som Bluetooth;13;146,45;768,94
+-22,675566;-48,870267;17/01/2025;;93390242000110;Atacadista Informatica;Centro-Oeste;Goias;Webcam Logitech;7;190,76;557,26
+-18,571375;-51,328319;08/11/2025;78390546922;;Arthur Gabriel Brito;Centro-Oeste;Goias;Cadeira Gamer;7;1054,56;3341,61
+-33,57396;-52,967647;20/04/2025;11721743774;;Isaac Rezende;Sul;Parana;Pendrive SanDisk;12;58,07;308,98
+-19,213816;-45,051749;06/12/2025;98268772123;;Laura da Rocha;Sudeste;Sao Paulo;Roteador TP-Link;18;240,51;1824,57
+-16,667121;-56,030022;24/02/2024;59121967393;;Dr. Dante Casa Grande;Centro-Oeste;Mato Grosso do Sul;Webcam Logitech;16;256,72;1331,8
+-25,395881;-56,208408;10/05/2024;;39164696000127;Industria Nacional Tecnologia;Sul;Santa Catarina;Roteador TP-Link;3;99,58;113,78
+-11,032251;-40,104853;17/11/2025;56489018012;;Lunna Cardoso;Nordeste;Rio Grande do Norte;Smartphone Samsung Galaxy;11;1424,21;6811,61
+-12,744138;-55,044224;01/04/2024;;81586007000139;Suprimentos Tecnicos LTDA;Centro-Oeste;Goias;Pendrive SanDisk;11;77,44;307,7
+-13,261856;-44,619884;08/06/2025;;87056803000146;Comercio Varejo SA;Nordeste;Pernambuco;Tablet Apple iPad;12;3817,0;18425,49
+-10,910659;-46,576404;01/04/2024;02421964890;;Ana Rios;Centro-Oeste;Goias;Monitor Acer;9;1104,99;4287,98
+-16,12863;-48,015331;11/01/2025;96866912008;;Mariana Abreu;Centro-Oeste;Distrito Federal;Estabilizador SMS;7;175,49;416,88
+-8,199182;-47,388973;21/11/2024;;31694104000177;Comercio Varejo SA;Nordeste;Rio Grande do Norte;Impressora HP;16;643,43;5066,06
+-22,829638;-48,081219;28/01/2024;60986883700;;Thomas Gomes;Sul;Rio Grande do Sul;Notebook Dell Inspiron;8;2883,6;10292,43
+-12,82558;-46,510597;02/11/2025;;90347835000105;Industria Nacional Tecnologia;Centro-Oeste;Distrito Federal;HD Externo Seagate;2;605,07;555,82
+-4,243275;-54,931902;13/06/2024;;10716278000113;Industria Nacional Tecnologia;Norte;Tocantins;Estabilizador SMS;3;91,89;133,2
+-8,837645;-44,925374;25/09/2024;;02627583000100;Empresa Brasileira Tecnologia;Nordeste;Alagoas;Monitor Acer;9;674,45;2279,02
+-29,899871;-51,068735;18/12/2025;27148760569;;Juliana Pacheco;Sul;Santa Catarina;Impressora HP;20;617,29;5642,32
+-18,047211;-49,484449;12/12/2024;64826554834;;Dra. Agatha Abreu;Sudeste;Minas Gerais;HD Externo Seagate;10;559,56;2626,97
+-20,977576;-41,007599;23/07/2024;;56295030000127;Importadora Produtos Eletronicos;Sudeste;Espirito Santo;Cabo HDMI;7;29,21;75,43
+-20,41907;-57,583776;04/02/2025;;03917153000196;Empresa Brasileira Tecnologia;Centro-Oeste;Mato Grosso do Sul;Smart TV LG;15;2872,27;20901,96
+-15,225703;-44,263164;01/02/2024;;26397236000105;Atacadista Informatica;Sudeste;Espirito Santo;Pendrive SanDisk;18;75,95;423,1
+-20,939217;-56,123451;03/01/2024;;79779051000113;Atacadista Informatica;Centro-Oeste;Mato Grosso;Monitor Acer;6;1014,72;2568,49
+-16,127741;-55,950797;17/08/2025;;39247731000171;Solucoes Corporativas;Centro-Oeste;Mato Grosso do Sul;Caixa de Som Bluetooth;12;210,8;1033,17
+-0,077179;-55,645639;24/04/2024;34243533458;;Benjamim Sales;Norte;Amazonas;Teclado Mecanico Logitech;6;422,95;769,85
+3,354774;-54,834216;08/04/2025;;20402850000123;Atacadista Informatica;Norte;Amazonas;Caixa de Som Bluetooth;16;248,31;1494,32
+-20,790203;-50,552056;09/07/2025;;56183479000101;Tech Solutions LTDA;Sudeste;Minas Gerais;Carregador Portatil;5;130,26;240,75
+-2,808041;-70,078496;19/06/2024;65773490021;;Pedro Albuquerque;Norte;Amapa;Smart TV LG;5;2789,13;6432,44
+-20,648299;-46,454203;27/08/2025;62905947969;;Maria Luisa Leao;Centro-Oeste;Goias;Teclado Mecanico Logitech;6;315,17;569,52
+-11,769354;-57,476261;12/07/2024;77839494366;;Emanuel Moreira;Centro-Oeste;Mato Grosso do Sul;Cadeira Gamer;2;1035,36;666,78
+-15,784316;-58,546116;06/08/2024;;99883946000100;Industria Nacional Tecnologia;Centro-Oeste;Distrito Federal;Fone de Ouvido JBL;9;85,04;266,74
+2,201149;-69,836716;13/11/2025;;88964858000117;Distribuidora Nacional;Norte;Tocantins;Impressora HP;4;619,3;952,56
+-17,423903;-44,11923;27/07/2025;69501546900;;Sr. Henry Gabriel Correia;Sudeste;Rio de Janeiro;Cadeira Gamer;12;973,11;4700,98
+-6,093776;-35,774946;29/10/2025;17816950675;;Rafaela Abreu;Nordeste;Bahia;Smart TV LG;4;2740,1;4594,07
+-8,90018;-49,721711;23/05/2025;;04531376000183;Importadora Produtos Eletronicos;Centro-Oeste;Mato Grosso do Sul;Monitor Acer;6;716,62;1323,62
+-23,70457;-51,654142;19/06/2025;26436000100;;Ravy Vasconcelos;Centro-Oeste;Mato Grosso;HD Externo Seagate;11;398,24;1669,73
+-4,043358;-36,574581;04/09/2024;65940421490;;Jose Pedro da Rocha;Nordeste;Alagoas;Webcam Logitech;2;365,38;260,09
+-26,669997;-53,895895;23/06/2024;40447063952;;Miguel Cavalcanti;Sul;Parana;Tablet Apple iPad;2;3142,75;2578,77
+-23,795425;-53,972889;07/03/2025;;54922962000127;Inovacao Digital SA;Sul;Parana;Roteador TP-Link;1;108,72;39,12
+-22,375029;-55,760953;07/04/2024;;39277108000161;Tech Solutions LTDA;Centro-Oeste;Mato Grosso;Mouse sem fio Microsoft;1;62,52;27,9
+-5,208343;-41,368862;20/06/2025;;89770090000103;Comercio Varejo SA;Nordeste;Alagoas;Monitor Acer;1;986,41;492,81
+-4,717788;-37,437085;19/07/2024;77517964569;;Isis Lopes;Nordeste;Sergipe;Carregador Portatil;17;91,6;585,51
+-8,883158;-45,985989;16/10/2025;20504952269;;Maria Liz Sa;Nordeste;Sergipe;Fone de Ouvido JBL;4;199,94;335,69
+-22,390659;-52,248666;04/01/2025;;33317202000110;Inovacao Digital SA;Sul;Santa Catarina;Camera Canon;8;3164,17;8929,7
+-25,479925;-53,683496;08/07/2024;53152112823;;Srta. Emilly Pacheco;Sul;Parana;Estabilizador SMS;15;147,84;834,21
+-23,993383;-46,868834;13/04/2024;67221555443;;Aurora Siqueira;Centro-Oeste;Goias;Smartphone Samsung Galaxy;2;2438,49;2373,67
+-15,88304;-41,261809;21/07/2025;;43681575000120;Comercio Equipamentos SA;Sudeste;Espirito Santo;Monitor Acer;12;1165,91;6890,03
+-0,559165;-70,805034;11/01/2025;;43015805000111;Comercio Internacional SA;Norte;Rondonia;Estabilizador SMS;9;132,46;445,71
+-4,792166;-37,830488;20/12/2025;;94937242000150;Importadora Produtos Eletronicos;Nordeste;Ceara;HD Externo Seagate;8;339,37;984,81
+-12,391188;-40,700372;22/07/2024;46808587531;;Gabriela Câmara;Nordeste;Alagoas;Cadeira Gamer;20;786,05;6649,01
+-22,717728;-40,118158;08/10/2025;16285944466;;Maria Julia Duarte;Sudeste;Minas Gerais;Cadeira Gamer;7;573,35;1364,88
+-17,2834;-45,161398;25/01/2024;;92757684000199;Comercio Internacional SA;Sudeste;Espirito Santo;Tablet Apple iPad;3;3927,21;5328,37
+-25,231309;-57,188462;25/10/2024;91021763780;;Pedro Lucas Macedo;Sul;Parana;Teclado Mecanico Logitech;8;388,52;1458,03
+-32,011292;-54,341099;18/09/2025;73190336318;;Raquel Porto;Sul;Parana;Carregador Portatil;1;128,01;38,42
+-18,33563;-49,140742;04/04/2024;45291993553;;Barbara Barros;Sudeste;Rio de Janeiro;Carregador Portatil;4;147,19;213,4
+-15,134903;-47,580475;12/07/2025;18610741311;;Dra. Maria Clara Andrade;Nordeste;Piaui;Estabilizador SMS;10;127,68;635,28
+-20,591485;-43,13697;11/04/2025;95787404840;;Lais Dias;Sudeste;Rio de Janeiro;Caixa de Som Bluetooth;6;289,69;707,9
+4,210429;-66,438793;02/01/2025;;63181737000178;Suprimentos Digitais LTDA;Norte;Acre;Notebook Dell Inspiron;6;3376,72;6427,65
+2,993906;-68,028615;31/10/2025;;18088102000176;Distribuidora Componentes;Norte;Amapa;Impressora HP;19;581,2;3673,68
+-21,961038;-47,227089;27/02/2025;72402475030;;Jade Brito;Sudeste;Sao Paulo;Webcam Logitech;20;173,59;1689,4
+-17,546533;-56,388404;06/03/2025;18567329400;;Srta. Isabelly Costela;Centro-Oeste;Mato Grosso;Estabilizador SMS;12;177,64;881,95
+-29,173732;-56,226991;12/09/2025;35693406512;;Joao Vitor Cassiano;Sul;Santa Catarina;HD Externo Seagate;1;656,93;211,58
+-28,434035;-57,920721;13/05/2024;;33915814000105;Importadora Tecnologia;Sul;Parana;Impressora HP;9;682,44;2388,41
+-17,618585;-37,201173;08/06/2024;;16693358000187;Distribuidora Componentes;Nordeste;Rio Grande do Norte;Pendrive SanDisk;20;56,08;353,05
+4,861588;-72,007438;23/07/2024;;44364630000110;Industria Nacional Tecnologia;Norte;Rondonia;Teclado Mecanico Logitech;12;389,54;1520,69
+-19,273654;-42,303753;08/06/2024;71607200244;;Dr. Bernardo Oliveira;Sudeste;Rio de Janeiro;Monitor Acer;4;802,82;1103,51
+-4,735166;-36,822411;13/01/2025;;25491266000105;Importadora Produtos Eletronicos;Nordeste;Bahia;HD Externo Seagate;9;606,62;2399,95
+-17,969853;-58,416789;28/03/2024;;76511373000199;Atacadista Informatica;Centro-Oeste;Goias;Mesa para Computador;9;567,75;1628,82
+-18,266121;-47,852433;07/11/2024;85679782626;;Isabella Sousa;Sudeste;Rio de Janeiro;Tablet Apple iPad;14;2960,53;16466,38
+-3,84061;-70,900423;05/12/2024;50216071461;;Otavio Mendes;Norte;Acre;Camera Canon;16;2785,73;19870,38
+-9,657041;-55,850358;27/04/2024;40289585120;;Marcelo Viana;Centro-Oeste;Goias;Impressora HP;7;720,98;2206,85
+-19,196976;-50,582243;09/07/2024;;56750264000117;Varejo Digital LTDA;Sudeste;Minas Gerais;Mesa para Computador;19;239,84;1455,17
+-22,173294;-57,232283;07/10/2024;12203235276;;Enzo Gabriel Pastor;Sul;Santa Catarina;Pendrive SanDisk;16;67,81;412,73
+-24,307784;-55,28588;08/11/2024;;28542730000133;Suprimentos Digitais LTDA;Sul;Rio Grande do Sul;Pendrive SanDisk;18;84,86;649,72
+-22,782294;-48,711017;06/02/2024;85717963602;;Marina Rios;Sul;Parana;Fone de Ouvido JBL;5;80,78;176,4
+-12,483987;-36,454139;08/05/2025;;61025873000143;Comercio Eletronico Brasil;Nordeste;Rio Grande do Norte;Estabilizador SMS;4;167,94;259,2
+-15,13116;-49,602023;01/02/2024;80596639414;;Isaque Moura;Sudeste;Espirito Santo;Carregador Portatil;17;96,28;592,11
+-9,920731;-44,587238;16/02/2025;26716509810;;Srta. Rebeca Sampaio;Nordeste;Bahia;Cabo HDMI;8;20,51;72,73
+-21,559512;-55,589538;12/03/2024;;42905556000177;Comercio Eletronico Brasil;Centro-Oeste;Distrito Federal;Smartphone Samsung Galaxy;4;1215,61;1644,78
+0,489023;-67,622235;30/10/2025;29504193480;;Isabella Cirino;Norte;Amazonas;Teclado Mecanico Logitech;9;387,62;1148,68
+-24,54874;-57,450449;19/02/2024;84933114056;;Valentina da Luz;Sul;Santa Catarina;Teclado Mecanico Logitech;8;330,53;942,33
+-1,228735;-44,977794;10/07/2024;;83831891000155;Tecnologia Avancada LTDA;Nordeste;Paraiba;Cabo HDMI;5;59,47;147,8
+-11,730437;-46,364233;10/04/2024;38598453226;;Maria Vieira;Centro-Oeste;Mato Grosso do Sul;Camera Canon;16;3172,2;19944,31
+3,479786;-70,400633;20/02/2025;;82457726000112;Comercio Internacional SA;Norte;Roraima;Impressora HP;17;547,94;3525,14
+-10,87512;-39,463534;22/10/2025;;20736385000167;Importadora Tecnologia;Nordeste;Alagoas;Carregador Portatil;19;140,32;1110,62
+-4,071026;-36,060305;09/03/2024;84491015813;;Srta. Alicia Duarte;Nordeste;Paraiba;Pendrive SanDisk;18;40,57;281,53
+-15,078184;-59,296512;08/07/2025;09719590807;;Andre Costa;Centro-Oeste;Distrito Federal;Teclado Mecanico Logitech;12;356,3;1401,49
+-14,439368;-42,142644;25/10/2024;29723480018;;Sr. Joao Pedro Albuquerque;Sudeste;Rio de Janeiro;Smartphone Samsung Galaxy;4;1933,37;3320,7
+-17,919399;-40,70746;21/02/2024;13712945000;;Srta. Nicole Oliveira;Nordeste;Alagoas;Impressora HP;19;529,0;3604,45
+-28,675056;-52,950606;24/12/2025;;72724102000160;Solucoes Corporativas;Sul;Santa Catarina;Teclado Mecanico Logitech;14;279,4;1212,43
+-18,547977;-56,587488;21/06/2025;24843666637;;Sr. Arthur Camargo;Centro-Oeste;Mato Grosso do Sul;Roteador TP-Link;12;89,65;382,74
+-31,479114;-51,865106;24/04/2024;79273379800;;Alana das Neves;Sul;Rio Grande do Sul;Cabo HDMI;19;42,36;302,15
+-15,544824;-46,394045;04/12/2025;;62494458000100;Comercio Equipamentos SA;Sudeste;Rio de Janeiro;Mouse sem fio Microsoft;5;84,14;129,17
+-16,033006;-45,545502;21/01/2024;58230520909;;Joao Gabriel Peixoto;Nordeste;Rio Grande do Norte;Estabilizador SMS;2;109,42;71,61
+-8,088299;-58,371154;16/09/2024;;21158654000118;Distribuidora Componentes;Centro-Oeste;Mato Grosso do Sul;Notebook Dell Inspiron;1;3188,04;1115,0
+-16,202495;-50,018265;22/11/2024;74212011301;;Fernanda Andrade;Centro-Oeste;Goias;Smart TV LG;1;1868,13;883,75
+1,474635;-56,426892;09/04/2024;72257374819;;Lunna Farias;Norte;Amazonas;Mesa para Computador;18;467,66;3561,28
+-17,775755;-39,808853;06/12/2025;27731749509;;Dr. Carlos Eduardo da Conceicao;Sudeste;Minas Gerais;Tablet Apple iPad;17;2608,93;13647,33
+0,367617;-52,193976;23/03/2024;;51931942000124;Industria Nacional Tecnologia;Norte;Roraima;Monitor Acer;6;957,69;1763,61
+-20,654491;-46,276933;20/05/2025;;73879838000170;Industria Eletronica Brasil;Sudeste;Minas Gerais;Tablet Apple iPad;7;3301,73;9356,42
+-13,376635;-42,530645;09/04/2025;;19663465000150;Global Distribuidora;Nordeste;Sergipe;HD Externo Seagate;19;382,52;2829,46
+-12,112642;-38,203124;16/01/2025;;28432535000150;Importadora Tecnologia;Nordeste;Bahia;Tablet Apple iPad;19;2838,04;23125,42
+-16,569327;-49,399547;02/09/2024;57326936617;;Maria Sophia da Mota;Centro-Oeste;Distrito Federal;Camera Canon;18;2353,81;16471,07
+-19,5275;-54,412077;23/01/2025;;43327379000151;Industria Nacional Tecnologia;Centro-Oeste;Goias;Mesa para Computador;20;292,55;2332,93
+1,973549;-65,280433;26/04/2024;;69909066000103;Atacadista Informatica;Norte;Acre;Notebook Dell Inspiron;14;2884,26;18660,54
+-22,095475;-50,401362;16/09/2025;;85543940000180;Inovacao Digital SA;Sul;Rio Grande do Sul;Webcam Logitech;20;352,54;3501,93
+-33,565539;-48,516213;24/09/2025;14191159283;;Sr. Vinicius Moraes;Sul;Rio Grande do Sul;Monitor Acer;6;858,41;1981,35
+-15,915306;-42,635396;03/03/2024;93286465372;;Isabella Duarte;Sudeste;Minas Gerais;Smartphone Samsung Galaxy;7;2348,7;6328,67
+1,11258;-59,466018;26/11/2024;;24712058000126;Comercio Equipamentos SA;Norte;Amazonas;Roteador TP-Link;18;122,39;745,89
+-23,950072;-42,994277;27/11/2025;;28610650000178;Comercio Equipamentos SA;Sudeste;Sao Paulo;Impressora HP;12;611,07;2403,67
+-10,19359;-40,687765;07/08/2025;;12472557000104;Comercio Eletronico Brasil;Nordeste;Alagoas;HD Externo Seagate;18;485,95;3103,72
+-22,182914;-48,4396;22/06/2024;;32521692000100;Distribuidora Componentes;Centro-Oeste;Mato Grosso;Mesa para Computador;6;487,16;1166,97
+2,508114;-53,603973;02/09/2024;94971953035;;Sra. Hellena Campos;Norte;Amazonas;Roteador TP-Link;17;108,28;837,96
+-11,476696;-51,679752;04/12/2024;;44889913000186;Tech Solutions LTDA;Centro-Oeste;Mato Grosso do Sul;Roteador TP-Link;4;118,14;190,23
+-13,279009;-59,098472;27/09/2024;;36107602000190;Comercio Equipamentos SA;Centro-Oeste;Mato Grosso;Teclado Mecanico Logitech;4;427,53;732,64
+-27,645749;-56,609508;25/01/2025;;84023984000116;Industria Eletronica Brasil;Sul;Rio Grande do Sul;HD Externo Seagate;3;504,21;624,62
+2,747879;-57,271768;02/12/2024;;58635556000134;Comercio Equipamentos SA;Norte;Rondonia;Impressora HP;1;775,58;373,09
+-20,666602;-46,281783;27/12/2024;01548517100;;Guilherme Fogaca;Sudeste;Rio de Janeiro;Tablet Apple iPad;17;3792,69;20010,96
+3,381511;-65,148201;21/09/2025;49179289070;;Dr. Valentim da Cruz;Norte;Acre;Mesa para Computador;10;559,31;1971,33
+1,210466;-56,479192;09/03/2025;;06881906000149;Solucoes Corporativas;Norte;Amapa;Cadeira Gamer;12;641,77;3653,43
+-24,090232;-39,913987;23/03/2024;98351582409;;Andre Andrade;Sudeste;Rio de Janeiro;Camera Canon;4;2990,37;5390,83
+3,669287;-51,659686;07/07/2024;;46491066000122;Empresa Brasileira Tecnologia;Norte;Roraima;Tablet Apple iPad;15;3040,9;16977,83
+-4,197386;-71,144183;13/09/2025;;60505316000167;Empresa Brasileira Tecnologia;Norte;Rondonia;Fone de Ouvido JBL;7;125,91;436,69
+-21,734739;-42,309528;06/06/2025;;33106640000130;Industria Eletronica Brasil;Sudeste;Minas Gerais;Impressora HP;13;885,21;3522,65
+0,290802;-52,137565;07/07/2025;26049382271;;Isabella da Mata;Norte;Acre;Camera Canon;3;3169,32;3925,89
+-19,032299;-54,607206;24/08/2025;78320492190;;Pedro Camargo;Centro-Oeste;Distrito Federal;Mouse sem fio Microsoft;17;80,94;681,4
+-23,647567;-53,612753;20/04/2024;;61162322000121;Suprimentos Digitais LTDA;Sul;Santa Catarina;Smartphone Samsung Galaxy;10;2283,2;10035,97
+-20,46405;-45,00608;26/10/2025;;71078416000170;Importadora Tecnologia;Sudeste;Sao Paulo;Monitor Acer;11;1044,54;3633,07
+-2,041438;-53,770615;20/06/2024;;13207515000109;Distribuidora Componentes;Norte;Amapa;Estabilizador SMS;3;101,66;113,31
+0,291772;-55,904337;23/04/2024;;28909564000160;Comercio Equipamentos SA;Norte;Amapa;Tablet Apple iPad;12;3372,22;20066,22
+-30,026426;-56,383933;04/10/2024;19827385100;;Henry Machado;Sul;Parana;Webcam Logitech;11;314,43;1507,52
+-22,578164;-50,736683;04/06/2024;64585381708;;Emilly da Rosa;Sul;Rio Grande do Sul;Roteador TP-Link;11;159,08;675,52
+-8,611449;-39,587417;27/01/2025;;19524681000115;Global Distribuidora;Nordeste;Rio Grande do Norte;Impressora HP;5;557,76;1075,71
+-12,505922;-60,110577;23/06/2025;19958305852;;Isabela Araujo;Centro-Oeste;Distrito Federal;Mouse sem fio Microsoft;14;58,49;261,25
+-15,242405;-37,314079;04/05/2025;;29293704000181;Comercio Internacional SA;Nordeste;Piaui;Cadeira Gamer;6;1171,9;2961,64
+-16,898627;-50,883555;04/01/2024;71632238110;;Ísis Nunes;Sudeste;Rio de Janeiro;Notebook Dell Inspiron;19;2874,46;21910,82
+-2,420932;-37,197945;12/09/2024;;90220315000137;Solucoes Corporativas;Nordeste;Pernambuco;Fone de Ouvido JBL;18;93,82;685,07
+-32,778686;-48,81382;15/03/2025;23696400653;;Ísis Sales;Sul;Rio Grande do Sul;Mouse sem fio Microsoft;18;105,39;879,73
+-33,621154;-49,37736;19/10/2025;06804704339;;Daniel Oliveira;Sul;Rio Grande do Sul;Fone de Ouvido JBL;12;182,57;813,95
+-2,546378;-44,933577;04/09/2024;17125862462;;Dr. Gael Henrique Vieira;Nordeste;Rio Grande do Norte;Notebook Dell Inspiron;17;3167,97;18703,38
+-14,327331;-47,488472;23/11/2024;;15529904000186;Comercio Internacional SA;Sudeste;Minas Gerais;Carregador Portatil;13;168,04;1002,7
+-3,171271;-42,535134;08/02/2024;;25213943000123;Importadora Tecnologia;Nordeste;Ceara;Camera Canon;1;2857,72;985,45
+-2,207189;-40,529136;26/01/2025;;51150116000148;Suprimentos Tecnicos LTDA;Nordeste;Paraiba;Tablet Apple iPad;13;3079,19;17827,61
+1,025735;-67,861332;07/06/2025;;47028016000176;Empresa Brasileira Tecnologia;Norte;Tocantins;Carregador Portatil;10;92,49;339,94
+-12,046553;-55,453369;22/10/2025;;82255517000196;Global Distribuidora;Centro-Oeste;Mato Grosso;Mouse sem fio Microsoft;9;82,0;327,34
+-24,651173;-52,469199;16/02/2024;;54241588000102;Solucoes Corporativas;Sul;Parana;Mesa para Computador;11;274,65;1173,98
+-11,518151;-46,706755;30/04/2025;;43708420000130;Atacadista Informatica;Nordeste;Piaui;Roteador TP-Link;18;92,25;629,41
+-3,764092;-43,101496;27/08/2024;63892730610;;Leandro Silva;Nordeste;Pernambuco;Cabo HDMI;5;39,8;75,04
+-23,676306;-56,627368;03/02/2025;;24580127000195;Industria Nacional Tecnologia;Sul;Santa Catarina;Pendrive SanDisk;16;98,27;743,92
+-1,547753;-50,190668;28/10/2024;;77200907000129;Distribuidora Nacional;Norte;Acre;Fone de Ouvido JBL;14;113,89;493,48
+-15,097658;-45,67092;19/08/2024;;17794991000124;Industria Eletronica Brasil;Sudeste;Minas Gerais;Mesa para Computador;12;563,2;2656,63
+3,372606;-64,671168;09/02/2024;;82355027000161;Suprimentos Tecnicos LTDA;Norte;Roraima;Fone de Ouvido JBL;2;89,54;83,01
+-18,010272;-49,346502;04/12/2024;80259558427;;Cecilia da Paz;Sudeste;Espirito Santo;Caixa de Som Bluetooth;3;117,56;112,49
+-32,797342;-57,858725;02/07/2024;46968819465;;Marcos Vinicius das Neves;Sul;Rio Grande do Sul;Roteador TP-Link;20;206,77;1864,04
+-10,102403;-58,769235;30/05/2025;;91560968000128;Tecnologia Avancada LTDA;Centro-Oeste;Mato Grosso;Camera Canon;11;1647,95;7540,35
+-2,458643;-61,806099;02/04/2025;;83272057000177;Empresa Brasileira Tecnologia;Norte;Rondonia;HD Externo Seagate;8;312,77;1079,83
+-12,891201;-55,628965;15/01/2024;;86405257000149;Comercio Eletronico Brasil;Centro-Oeste;Mato Grosso;Mouse sem fio Microsoft;1;107,46;40,78
+-22,14816;-48,216208;07/11/2024;;05678953000127;Empresa Brasileira Tecnologia;Centro-Oeste;Mato Grosso do Sul;Teclado Mecanico Logitech;10;282,88;1027,72
+2,750645;-58,811546;07/06/2024;;07762365000100;Inovacao Digital SA;Norte;Rondonia;Roteador TP-Link;13;194,41;793,17
+-10,315182;-59,342943;25/01/2024;52379793190;;Yasmin da Rocha;Centro-Oeste;Mato Grosso;Pendrive SanDisk;3;40,65;47,98
+-1,688037;-40,741538;02/08/2024;76991122106;;Enzo Cassiano;Nordeste;Maranhao;Cadeira Gamer;18;569,26;3675,32
+-0,333326;-51,662532;07/05/2024;;68696786000167;Industria Eletronica Brasil;Norte;Roraima;Roteador TP-Link;1;152,53;56,22
+-21,952802;-47,770577;27/05/2024;65240953830;;Yasmin Nascimento;Centro-Oeste;Mato Grosso;Teclado Mecanico Logitech;10;373,38;1181,72
+-6,493835;-38,635928;15/10/2025;56266220717;;Sr. Josue da Costa;Nordeste;Piaui;Webcam Logitech;8;344,12;1019,32
+2,903234;-66,303812;24/04/2024;53885453266;;Ana Laura Farias;Norte;Tocantins;Cabo HDMI;18;55,72;460,65
+-27,834597;-57,408576;08/09/2024;;60297777000191;Suprimentos Tecnicos LTDA;Sul;Parana;Monitor Acer;14;1069,36;7380,06
+-29,329175;-51,381122;19/10/2025;;21313851000164;Comercio Varejo SA;Sul;Santa Catarina;Impressora HP;8;679,64;2252,14
+-1,036154;-70,48634;22/01/2024;;61855732000158;Importadora Tecnologia;Norte;Acre;Monitor Acer;7;775,79;2374,61
+2,520268;-71,579003;29/10/2024;29110460306;;Jose Miguel Oliveira;Norte;Rondonia;Smartphone Samsung Galaxy;12;1848,69;9275,47
+3,398599;-62,223103;19/02/2025;;33357774000123;Comercio Equipamentos SA;Norte;Rondonia;Mouse sem fio Microsoft;16;114,52;629,15
+1,358225;-69,630525;02/05/2024;65487169225;;Sr. Enzo da Cruz;Norte;Roraima;Impressora HP;8;840,44;2115,9
+-23,850162;-51,955014;15/07/2024;57084586903;;Maria Cecilia Ferreira;Sul;Santa Catarina;Pendrive SanDisk;14;56,13;349,82
+-20,101578;-41,528483;17/03/2025;14452210201;;Dr. Luiz Fernando Viana;Sudeste;Sao Paulo;Mesa para Computador;9;245,61;855,49
+-17,889484;-46,941544;05/08/2025;04615549172;;Maria Eduarda Farias;Nordeste;Piaui;Mouse sem fio Microsoft;15;68,94;453,41
+-22,461872;-48,718779;08/07/2024;71126703222;;Lucas Fernandes;Sul;Santa Catarina;Notebook Dell Inspiron;18;3417,99;23296,59
+-23,333204;-48,916124;01/11/2024;;82931854000156;Importadora Tecnologia;Centro-Oeste;Distrito Federal;Impressora HP;5;727,0;1556,89
+4,258344;-71,092088;16/05/2024;84407782790;;Gustavo Henrique Macedo;Norte;Para;Camera Canon;2;2169,49;1589,32
+-10,93146;-40,210615;31/10/2025;;11088571000146;Suprimentos Tecnicos LTDA;Nordeste;Sergipe;Fone de Ouvido JBL;18;242,88;1450,11
+-24,704069;-53,913088;15/01/2025;10821142003;;Cauê Marques;Sul;Parana;Smart TV LG;17;2535,22;19960,17
+-21,169537;-46,078863;12/12/2024;;07197875000174;Atacadista Informatica;Centro-Oeste;Mato Grosso;Smartphone Samsung Galaxy;14;2381,54;11007,04
+-4,532099;-69,586354;19/11/2024;32440135380;;Aylla Goncalves;Norte;Para;Carregador Portatil;2;176,66;161,41
+-28,365475;-54,523596;02/10/2025;26818196012;;Levi Campos;Sul;Parana;Impressora HP;20;610,99;5401,29
+-15,800003;-60,337911;07/04/2024;;46516086000100;Varejo Digital LTDA;Centro-Oeste;Distrito Federal;Carregador Portatil;16;169,81;926,51
+-21,002367;-39,624691;22/06/2025;;15019260000186;Tech Solutions LTDA;Sudeste;Sao Paulo;Camera Canon;20;2463,71;21961,05
+-24,522694;-41,975159;29/03/2024;74719143946;;Ana Liz Moreira;Sudeste;Espirito Santo;Smart TV LG;1;2378,89;843,28
+-1,087021;-40,690669;19/02/2024;44252192951;;Helena da Mota;Nordeste;Alagoas;Mesa para Computador;15;562,24;3204,9
+-9,691188;-41,574402;16/09/2025;;21621724000122;Suprimentos Digitais LTDA;Nordeste;Maranhao;Fone de Ouvido JBL;15;238,11;1661,92
+-4,47123;-41,109468;02/11/2024;;36449691000152;Empresa Brasileira Tecnologia;Nordeste;Piaui;Mouse sem fio Microsoft;8;72,0;193,56
+-15,396091;-54,543412;06/11/2025;17121117878;;Mirella Fonseca;Centro-Oeste;Goias;Monitor Acer;6;1043,29;3006,89
+-28,50041;-56,406863;04/03/2025;19798234308;;Rodrigo Cavalcanti;Sul;Parana;Estabilizador SMS;2;160,61;125,19
+-22,710221;-50,842402;15/01/2025;;40599520000187;Suprimentos Digitais LTDA;Sudeste;Minas Gerais;Notebook Dell Inspiron;8;3419,32;12647,21
+-10,961286;-46,646143;12/07/2024;;40043569000159;Inovacao Digital SA;Centro-Oeste;Mato Grosso do Sul;Mesa para Computador;12;435,19;2313,23
+-12,347397;-48,12662;04/09/2024;05116206327;;Vicente Nogueira;Centro-Oeste;Goias;Caixa de Som Bluetooth;15;289,12;1725,73
+-2,142197;-64,600011;15/11/2024;;32554197000105;Comercio Internacional SA;Norte;Tocantins;Cadeira Gamer;11;984,64;4841,1
+-10,111701;-44,662991;19/08/2025;;16921652000107;Suprimentos Tecnicos LTDA;Nordeste;Rio Grande do Norte;Teclado Mecanico Logitech;2;269,77;245,19
+-23,174263;-43,450189;17/09/2025;15101525634;;Alexia Peixoto;Sudeste;Minas Gerais;Mouse sem fio Microsoft;12;97,21;464,55
+-21,575254;-44,790008;23/09/2025;92113207478;;Rodrigo Dias;Sudeste;Espirito Santo;Mouse sem fio Microsoft;9;103,29;291,02
+-1,945863;-38,570257;31/07/2025;;13504229000105;Importadora Produtos Eletronicos;Nordeste;Rio Grande do Norte;Monitor Acer;11;1066,67;5485,22
+-12,068415;-49,483984;23/12/2024;;94159708000133;Atacadista Informatica;Centro-Oeste;Distrito Federal;Mesa para Computador;15;531,76;3185,0
+-12,12432;-47,941122;04/05/2024;;95817771000182;Empresa Brasileira Tecnologia;Centro-Oeste;Mato Grosso;Roteador TP-Link;5;181,87;329,21
+-15,43633;-43,056408;16/06/2025;21284438228;;Dra. Eduarda Macedo;Sudeste;Sao Paulo;Pendrive SanDisk;14;40,91;201,03
+-9,130527;-38,927274;01/01/2024;;92872572000189;Industria Nacional Tecnologia;Nordeste;Paraiba;Pendrive SanDisk;2;78,64;59,57
+-22,061088;-55,284679;13/01/2024;;22174436000130;Global Distribuidora;Sul;Rio Grande do Sul;Mesa para Computador;12;520,77;2058,2
+-12,953302;-47,567612;23/03/2025;80969886543;;Maria Julia Vieira;Centro-Oeste;Mato Grosso;Tablet Apple iPad;5;2624,49;5410,59
+-0,208899;-53,527782;19/09/2025;;99918666000190;Industria Eletronica Brasil;Norte;Amazonas;Caixa de Som Bluetooth;18;282,35;1909,81
+-2,45686;-40,808373;17/10/2024;;85612236000131;Global Distribuidora;Nordeste;Ceara;Mouse sem fio Microsoft;18;114,73;891,09
+1,750476;-72,499333;22/05/2025;90519534026;;Vitor Hugo Araujo;Norte;Amapa;Fone de Ouvido JBL;7;169,48;437,09
+-8,897726;-50,162914;07/05/2025;;54036232000129;Inovacao Digital SA;Centro-Oeste;Mato Grosso;Mesa para Computador;13;521,11;2198,08
+1,987021;-60,717716;23/12/2025;;64487054000106;Atacadista Informatica;Norte;Amazonas;Cadeira Gamer;18;934,48;7742,37
+-17,072155;-49,773083;04/09/2025;74631726350;;Lucas Gabriel Albuquerque;Sudeste;Minas Gerais;Smartphone Samsung Galaxy;4;2293,41;2791,06
+-3,769291;-67,102844;04/02/2024;36068157270;;Ana Cecilia Nascimento;Norte;Amazonas;Smart TV LG;19;2525,73;14426,59
+-27,326806;-57,175127;02/11/2025;;28268518000120;Distribuidora Nacional;Sul;Rio Grande do Sul;Caixa de Som Bluetooth;18;220,1;1392,41
+-13,282978;-39,99893;07/09/2025;63271224188;;Matheus Monteiro;Nordeste;Piaui;Teclado Mecanico Logitech;6;424,1;943,05
+-3,445697;-50,835876;17/05/2025;;35815913000140;Comercio Eletronico Brasil;Norte;Amapa;Estabilizador SMS;1;100,32;32,65
+-23,680155;-49,130509;15/03/2024;;44564448000103;Empresa Brasileira Tecnologia;Sul;Rio Grande do Sul;Monitor Acer;18;989,25;5756,97
+-15,546945;-42,217999;16/12/2025;67482890254;;Ayla Jesus;Nordeste;Maranhao;Impressora HP;2;694,63;512,54
+-15,049136;-54,651104;26/04/2024;;06366955000143;Distribuidora Nacional;Centro-Oeste;Mato Grosso do Sul;Notebook Dell Inspiron;2;3226,16;2780,17
+-18,672693;-54,095554;14/05/2025;18470000292;;Dante Nogueira;Centro-Oeste;Goias;HD Externo Seagate;9;410,98;1404,73
+3,681059;-67,700752;02/08/2025;88608012812;;Joana Cunha;Norte;Acre;Mesa para Computador;1;432,28;145,56
+-14,490214;-35,10602;03/12/2025;61454450177;;Bella Duarte;Nordeste;Sergipe;Notebook Dell Inspiron;10;3278,31;14694,16
+-25,39072;-50,81416;27/12/2024;76568470902;;Sra. Eloa Mendes;Sul;Parana;Tablet Apple iPad;18;3622,85;28984,11
+-24,137502;-48,040097;20/01/2024;66809925244;;Maria Julia Rios;Sudeste;Sao Paulo;Webcam Logitech;8;317,93;1143,83
+-11,109165;-47,410565;08/05/2024;67180747807;;Emilly da Luz;Centro-Oeste;Distrito Federal;Teclado Mecanico Logitech;18;398,31;2473,79
+-9,829295;-54,609067;03/05/2024;99616275046;;Cecilia da Conceicao;Centro-Oeste;Goias;Pendrive SanDisk;3;92,32;116,14
+-11,780094;-53,724295;14/01/2025;28368163765;;Ayla Santos;Centro-Oeste;Mato Grosso do Sul;Mouse sem fio Microsoft;12;92,58;522,82
+-6,584465;-42,868847;24/07/2025;;94398588000127;Varejo Digital LTDA;Nordeste;Pernambuco;Notebook Dell Inspiron;5;2872,56;5746,55
+-24,164334;-40,207276;15/06/2024;;84915106000105;Distribuidora Nacional;Sudeste;Minas Gerais;Cabo HDMI;16;59,42;333,82
+-16,009373;-38,862273;22/03/2024;15222376583;;Dr. Antônio Machado;Nordeste;Maranhao;Mouse sem fio Microsoft;6;52,24;99,67
+-19,465859;-49,568413;10/08/2024;;90789523000151;Suprimentos Digitais LTDA;Sudeste;Rio de Janeiro;Cadeira Gamer;15;1104,34;5831,02
+-27,644797;-51,732198;18/01/2025;64060280151;;Murilo Peixoto;Sul;Parana;Tablet Apple iPad;2;2960,99;2144,16
+-22,323618;-39,370606;03/02/2025;33085512098;;Pietro Porto;Sudeste;Espirito Santo;Cabo HDMI;5;32,28;77,49
+-5,893961;-44,239033;10/07/2025;68611969910;;Thiago Ribeiro;Nordeste;Pernambuco;Webcam Logitech;12;346,11;2065,43
+-0,011241;-66,747566;15/05/2025;;89570401000190;Global Distribuidora;Norte;Tocantins;Camera Canon;10;2910,83;11663,9
+-31,198899;-56,684729;11/06/2024;90112115101;;Dr. Kaique Rezende;Sul;Rio Grande do Sul;Cabo HDMI;20;26,17;253,11
+-9,344193;-44,763116;09/08/2025;05803180874;;Anna Liz Pimenta;Nordeste;Paraiba;Camera Canon;17;3322,7;23213,53
+-9,339563;-47,022445;07/01/2025;39549164446;;Gael Lima;Centro-Oeste;Distrito Federal;Tablet Apple iPad;18;3388,39;20330,73
+-7,14558;-35,840744;09/09/2024;58171617450;;Vinicius Aparecida;Nordeste;Pernambuco;Camera Canon;17;1509,49;10781,79
+-17,158018;-38,133631;20/07/2024;;37801658000102;Suprimentos Tecnicos LTDA;Nordeste;Rio Grande do Norte;Estabilizador SMS;8;93,73;334,73
+3,898662;-52,85733;25/10/2024;;88819622000197;Comercio Internacional SA;Norte;Para;Cadeira Gamer;20;731,83;5802,27
+-16,006954;-50,701428;01/09/2024;;04983235000100;Suprimentos Digitais LTDA;Sudeste;Sao Paulo;Carregador Portatil;20;78,46;741,06
+-25,625317;-55,211884;25/10/2024;30846236192;;Gabriela da Cruz;Sul;Parana;Pendrive SanDisk;6;48,05;112,37
+-22,862519;-41,299404;17/04/2025;;06653637000163;Comercio Internacional SA;Sudeste;Sao Paulo;Fone de Ouvido JBL;9;144,54;549,08
+-25,459643;-53,616409;26/06/2025;;39572564000134;Atacadista Informatica;Sul;Parana;Estabilizador SMS;2;173,01;158,97
+-26,4814;-48,813154;03/11/2025;;56208840000107;Empresa Brasileira Tecnologia;Sul;Parana;Caixa de Som Bluetooth;10;222,76;907,84
+-25,819848;-48,09476;08/04/2025;;12809994000170;Tech Solutions LTDA;Sul;Rio Grande do Sul;Mesa para Computador;10;545,77;2068,22
+3,920207;-69,660174;16/06/2024;;75878227000133;Suprimentos Tecnicos LTDA;Norte;Para;Webcam Logitech;6;294,85;583,45
+-15,427126;-44,116309;14/12/2025;;56725863000180;Importadora Tecnologia;Nordeste;Sergipe;Monitor Acer;20;948,13;6834,61
+-28,530339;-53,11103;03/12/2025;;62983024000165;Suprimentos Tecnicos LTDA;Sul;Parana;Cabo HDMI;10;28,6;126,61
+-20,743915;-53,607957;04/05/2024;;29638411000199;Industria Nacional Tecnologia;Centro-Oeste;Goias;Mesa para Computador;12;287,75;1650,79
+-26,987239;-57,268387;03/05/2025;;77034045000101;Atacadista Informatica;Sul;Parana;Smart TV LG;1;2323,1;766,55
+-10,723931;-46,056568;15/06/2024;46434708874;;Ayla da Costa;Nordeste;Rio Grande do Norte;Caixa de Som Bluetooth;19;219,37;1402,7
+-29,266359;-56,762169;27/03/2024;54506790685;;Livia Cavalcanti;Sul;Rio Grande do Sul;Caixa de Som Bluetooth;11;257,16;1412,02
+-1,759412;-46,281958;31/05/2025;73362285260;;Bernardo Pacheco;Nordeste;Ceara;Mesa para Computador;8;438,08;1072,25
+-3,260969;-41,787901;23/07/2025;;28895202000168;Importadora Produtos Eletronicos;Nordeste;Sergipe;Webcam Logitech;1;224,53;100,94
+-1,320988;-58,659825;24/05/2025;;97299155000102;Atacadista Informatica;Norte;Tocantins;Mesa para Computador;12;567,74;3171,41
+-15,016318;-46,525842;10/07/2024;78257739421;;Mateus Rocha;Centro-Oeste;Goias;Webcam Logitech;12;216,58;1250,34
+-32,110424;-56,58248;06/05/2024;75265160850;;Sr. Davi Lucca Fogaca;Sul;Rio Grande do Sul;Caixa de Som Bluetooth;12;148,34;871,69
+-23,916097;-52,392343;29/06/2025;;61060649000192;Distribuidora Nacional;Sul;Rio Grande do Sul;HD Externo Seagate;4;486,33;917,86
+-15,675452;-39,159089;28/06/2025;;16710633000123;Tecnologia Avancada LTDA;Nordeste;Paraiba;Mesa para Computador;11;278,98;1236,52
+-18,025281;-43,193441;30/09/2024;;72386930000136;Suprimentos Tecnicos LTDA;Sudeste;Rio de Janeiro;Roteador TP-Link;15;131,75;929,76
+-25,715866;-55,917741;14/10/2024;;43116676000158;Global Distribuidora;Sul;Parana;Carregador Portatil;8;105,03;260,05
+-9,615306;-54,109827;22/09/2025;12753830924;;Maria Cecilia Novaes;Centro-Oeste;Goias;Roteador TP-Link;20;242,36;1570,92
+-1,012849;-69,826586;10/06/2024;98376563360;;Maria Fernanda Nunes;Norte;Amapa;Impressora HP;20;487,13;4007,93
+-16,01622;-47,225474;10/04/2025;57082452802;;Rebeca Farias;Sudeste;Minas Gerais;Roteador TP-Link;18;89,89;805,44
+-10,837067;-47,000527;26/01/2025;;28013995000144;Comercio Internacional SA;Nordeste;Paraiba;Tablet Apple iPad;13;2928,81;12862,73
+-31,319379;-49,956127;31/01/2024;;68995280000159;Atacadista Informatica;Sul;Santa Catarina;Webcam Logitech;12;209,74;1175,88
+-8,823768;-58,3055;03/04/2024;;10923193000106;Comercio Equipamentos SA;Centro-Oeste;Mato Grosso;Monitor Acer;11;651,12;2390,67
+-31,720895;-51,813499;03/04/2025;56233052610;;Carolina Macedo;Sul;Rio Grande do Sul;Monitor Acer;8;1131,68;3967,36
+-8,276743;-37,977162;11/10/2025;04081559813;;Luan Marques;Nordeste;Sergipe;Mesa para Computador;18;448,55;3180,7
+-1,756746;-51,27534;26/06/2025;;07909488000113;Industria Nacional Tecnologia;Norte;Acre;Cabo HDMI;17;47,99;291,5
+-19,403336;-49,811769;23/05/2025;46830908647;;Joao Miguel Nascimento;Sudeste;Minas Gerais;Impressora HP;4;551,83;875,38
+-17,466933;-47,843798;21/04/2024;59706771751;;Sr. Yan Alves;Nordeste;Paraiba;Monitor Acer;16;1017,92;7276,54
+-3,5539;-69,940656;05/06/2025;53943669424;;Heloisa Lima;Norte;Amazonas;Pendrive SanDisk;9;40,94;169,47
+-23,601561;-51,975771;15/11/2024;58198055509;;Breno Rocha;Centro-Oeste;Distrito Federal;Smartphone Samsung Galaxy;18;2140,74;12172,52
+-11,098149;-45,014706;19/07/2024;96507590002;;Rafaela Rocha;Nordeste;Paraiba;Pendrive SanDisk;2;49,8;45,24
+-22,889406;-46,354027;27/08/2024;50666155127;;Rafael Brito;Centro-Oeste;Distrito Federal;Mesa para Computador;8;577,44;2157,99
+-25,178321;-57,165002;23/06/2024;00011600527;;Srta. Emanuelly Melo;Sul;Parana;Caixa de Som Bluetooth;7;250,73;770,36
+-29,422609;-55,437592;02/12/2024;47362179367;;Manuela Leao;Sul;Rio Grande do Sul;HD Externo Seagate;9;339,23;1161,97
+0,777922;-50,439413;27/05/2025;;76768532000135;Comercio Varejo SA;Norte;Acre;Smartphone Samsung Galaxy;6;1912,75;5181,36
+-10,091894;-37,051583;20/09/2025;25437389914;;Henry Gabriel Novais;Nordeste;Alagoas;Smart TV LG;5;2943,21;6085,93
+3,048002;-68,514911;12/02/2025;57184933168;;Leticia da Rocha;Norte;Rondonia;Camera Canon;19;3110,72;28121,07
+-17,264181;-42,396567;28/03/2025;69359858706;;Theo Monteiro;Sudeste;Sao Paulo;Tablet Apple iPad;3;2738,4;3392,27
+-21,905081;-59,672466;09/06/2025;94434625837;;Sra. Emanuelly Azevedo;Centro-Oeste;Mato Grosso;Roteador TP-Link;4;113,44;178,63
+-23,898737;-54,11122;19/08/2024;;84353242000159;Solucoes Corporativas;Centro-Oeste;Mato Grosso do Sul;Fone de Ouvido JBL;18;106,34;735,04
+-17,594729;-59,875713;31/03/2025;46463362271;;Maria Eduarda Silveira;Centro-Oeste;Mato Grosso;Cabo HDMI;11;51,24;236,75
+-16,316923;-47,417216;11/09/2025;;13735948000137;Importadora Produtos Eletronicos;Centro-Oeste;Mato Grosso;Estabilizador SMS;13;176,99;848,4
+-3,710085;-72,145954;13/01/2025;;49249796000100;Distribuidora Nacional;Norte;Amapa;Mouse sem fio Microsoft;9;59,76;195,74
+-20,056396;-47,382964;23/09/2025;04120709108;;Brayan das Neves;Sudeste;Rio de Janeiro;HD Externo Seagate;15;586,75;3510,22
+-17,392984;-39,396288;26/02/2024;;27949591000102;Tech Solutions LTDA;Sudeste;Espirito Santo;Webcam Logitech;4;345,96;579,46
+-17,371143;-60,392853;03/04/2025;;24444061000106;Global Distribuidora;Centro-Oeste;Mato Grosso do Sul;Fone de Ouvido JBL;17;242,36;1494,43
+-17,407134;-47,412067;29/01/2024;32543538623;;Luiz Miguel Caldeira;Sudeste;Espirito Santo;Monitor Acer;16;728,69;4919,24
+-21,515396;-56,73132;04/05/2024;;60733399000141;Suprimentos Tecnicos LTDA;Centro-Oeste;Mato Grosso;HD Externo Seagate;12;403,92;1883,71
+-11,785446;-38,681643;27/08/2025;;82383604000129;Inovacao Digital SA;Nordeste;Pernambuco;Impressora HP;5;831,13;1620,57
+-33,730739;-56,00369;19/11/2024;;36166183000167;Tech Solutions LTDA;Sul;Parana;Carregador Portatil;12;90,21;407,98
+-23,732636;-47,672049;20/06/2024;;72624589000100;Industria Nacional Tecnologia;Sudeste;Sao Paulo;Tablet Apple iPad;19;2811,29;16284,43
+-24,477289;-47,947644;26/11/2024;;24832224000128;Varejo Digital LTDA;Sudeste;Rio de Janeiro;Estabilizador SMS;3;196,66;247,85
+-21,532083;-45,687308;18/07/2025;70745520626;;Stephany Campos;Sudeste;Espirito Santo;Mesa para Computador;8;331,9;957,61
+-14,56799;-60,890414;15/08/2024;55513187108;;Benjamim Ramos;Centro-Oeste;Goias;Camera Canon;7;3003,43;8898,35
+-9,286997;-46,578332;23/08/2024;31248588320;;Barbara Vargas;Centro-Oeste;Distrito Federal;Smartphone Samsung Galaxy;13;2437,36;14031,9
+-24,693654;-41,130014;08/02/2024;;00018840000181;Solucoes Corporativas;Sudeste;Sao Paulo;Cadeira Gamer;3;651,59;858,42
+-27,139834;-49,595434;19/08/2024;86431699785;;Rafael Vargas;Sul;Santa Catarina;Impressora HP;1;634,51;237,73
+-7,885113;-45,216043;27/12/2024;;88464118000111;Comercio Internacional SA;Nordeste;Piaui;Impressora HP;1;506,12;153,79
+-11,726068;-44,966101;30/12/2024;82390689795;;Ravi Lucca Borges;Nordeste;Sergipe;Mouse sem fio Microsoft;8;97,61;250,11
+-0,340555;-60,640185;20/07/2025;;75272047000103;Importadora Tecnologia;Norte;Amapa;Tablet Apple iPad;17;3166,07;19767,63
+-24,247433;-51,132191;19/02/2025;;04301077000152;Empresa Brasileira Tecnologia;Sul;Santa Catarina;Estabilizador SMS;20;151,17;1197,32
+-16,165383;-49,771023;25/10/2025;;75659241000146;Tech Solutions LTDA;Sudeste;Minas Gerais;Caixa de Som Bluetooth;4;207,71;267,22
+-8,575832;-49,950995;10/01/2024;;16240391000151;Atacadista Informatica;Centro-Oeste;Mato Grosso;Mouse sem fio Microsoft;14;78,96;451,11
+-4,969677;-69,629725;17/04/2024;01390637069;;Juliana Mendes;Norte;Amazonas;HD Externo Seagate;17;383,91;2260,4
+-9,319444;-39,904145;24/02/2024;07361101518;;Ryan Almeida;Nordeste;Rio Grande do Norte;Smartphone Samsung Galaxy;8;1209,89;3344,97
+-15,47312;-49,177792;24/11/2024;12702232914;;Sarah Martins;Sudeste;Sao Paulo;Pendrive SanDisk;4;90,85;169,26
+-29,809652;-54,493548;31/05/2025;;50227330000192;Distribuidora Nacional;Sul;Rio Grande do Sul;Impressora HP;1;766,24;316,07
+-8,71898;-37,4797;20/08/2024;;96493728000171;Comercio Eletronico Brasil;Nordeste;Rio Grande do Norte;Cadeira Gamer;8;844,02;3188,1
+-14,851771;-50,513711;17/12/2024;;58110193000113;Suprimentos Digitais LTDA;Sudeste;Espirito Santo;Impressora HP;18;786,01;6004,61
+-13,274126;-43,984443;27/01/2025;19462758409;;Srta. Cecilia Aparecida;Nordeste;Sergipe;Roteador TP-Link;5;80,24;178,53
+2,462446;-63,815211;04/03/2024;;80428955000183;Tecnologia Avancada LTDA;Norte;Amazonas;Carregador Portatil;2;119,86;74,48
+-16,603746;-47,156206;08/10/2024;;77820446000197;Tech Solutions LTDA;Centro-Oeste;Distrito Federal;Teclado Mecanico Logitech;19;384,8;3311,72
+-19,841819;-56,517881;27/08/2024;35512582607;;Yuri Oliveira;Centro-Oeste;Mato Grosso do Sul;Mouse sem fio Microsoft;18;88,13;774,78
+-1,303243;-40,067978;13/05/2024;;01787089000140;Comercio Eletronico Brasil;Nordeste;Bahia;Mouse sem fio Microsoft;8;110,92;319,48
+-6,614589;-45,449493;06/01/2025;;45262119000170;Suprimentos Tecnicos LTDA;Nordeste;Paraiba;Monitor Acer;2;655,27;503,64
+-3,46125;-51,099086;03/03/2024;;01006389000145;Distribuidora Nacional;Norte;Acre;Teclado Mecanico Logitech;12;205,52;1072,56
+-18,629036;-45,422455;26/07/2025;66267799158;;Rael Gomes;Sudeste;Sao Paulo;Teclado Mecanico Logitech;13;337,91;1985,11
+-3,476244;-45,609328;17/06/2025;;71112346000120;Suprimentos Tecnicos LTDA;Nordeste;Piaui;Smartphone Samsung Galaxy;10;2452,99;7497,12
+-16,292949;-56,597967;20/01/2025;32892314453;;Augusto Almeida;Centro-Oeste;Goias;Camera Canon;6;2989,39;6937,95
+-13,275172;-47,872775;20/01/2025;71385567058;;Joao Miguel Monteiro;Nordeste;Paraiba;Webcam Logitech;8;317,42;1226,66
+-24,112401;-45,844252;07/06/2024;;81402027000102;Tecnologia Avancada LTDA;Sudeste;Espirito Santo;HD Externo Seagate;9;390,04;1144,31
+-21,99521;-50,089801;23/04/2024;59278699470;;Sr. Samuel Fernandes;Sudeste;Minas Gerais;Impressora HP;16;706,41;5277,76
+-2,603043;-61,299625;20/05/2024;51458561801;;Ana Laura Campos;Norte;Rondonia;Fone de Ouvido JBL;8;176,14;522,53
+-26,917067;-54,420524;21/04/2025;92931010090;;Bianca Siqueira;Sul;Santa Catarina;Fone de Ouvido JBL;5;242,61;371,03
+-1,859409;-52,473663;01/06/2025;24972598956;;Aurora Almeida;Norte;Amapa;HD Externo Seagate;18;382,36;2883,36
+-30,512167;-56,662257;12/03/2025;55784431412;;Sabrina Mendes;Sul;Rio Grande do Sul;Fone de Ouvido JBL;19;97,13;646,42
+-26,463568;-57,393568;24/04/2025;41461495415;;Erick Nascimento;Sul;Santa Catarina;Smart TV LG;11;2778,03;12272,93
+-21,192983;-49,501783;24/08/2025;;44562632000114;Inovacao Digital SA;Sudeste;Minas Gerais;Roteador TP-Link;18;108,9;675,23
+-26,674647;-54,140819;05/11/2025;;80911506000191;Atacadista Informatica;Sul;Rio Grande do Sul;Pendrive SanDisk;17;94,93;514,66
+-0,154256;-54,227812;18/11/2025;;01921366000166;Empresa Brasileira Tecnologia;Norte;Acre;Estabilizador SMS;4;100,32;199,53
+-16,54404;-41,484115;04/02/2024;84541076900;;Maria Isis Costela;Sudeste;Rio de Janeiro;Pendrive SanDisk;19;37,41;225,46
+-3,04363;-35,095354;01/09/2025;;81713418000148;Comercio Internacional SA;Nordeste;Paraiba;Estabilizador SMS;11;138,76;719,26
+4,066343;-68,81589;17/07/2024;;12472558000159;Global Distribuidora;Norte;Amapa;Roteador TP-Link;10;84,96;401,73
+-17,176788;-40,024547;18/10/2024;;88575731000106;Importadora Tecnologia;Sudeste;Minas Gerais;HD Externo Seagate;8;528,92;1544,94
+-15,554961;-42,200756;30/09/2025;50454997000;;Joao Miguel Ribeiro;Sudeste;Espirito Santo;Caixa de Som Bluetooth;15;223,22;1429,5
+-22,391773;-49,496352;31/12/2024;;87095512000167;Empresa Brasileira Tecnologia;Sudeste;Minas Gerais;Pendrive SanDisk;14;93,06;626,55
+-14,195086;-41,259696;07/02/2024;31164963074;;Ana Liz da Rocha;Sudeste;Minas Gerais;Mesa para Computador;13;433,57;2024,69
+4,983472;-51,159776;05/07/2024;15688079029;;Enzo Porto;Norte;Amazonas;Impressora HP;20;645,13;5294,07
+-31,146705;-48,28118;05/12/2025;;86002164000173;Industria Nacional Tecnologia;Sul;Santa Catarina;Estabilizador SMS;15;157,28;982,51
+-22,034364;-49,742839;22/12/2024;70048127400;;Catarina Freitas;Sudeste;Espirito Santo;Fone de Ouvido JBL;2;198,27;181,61
+-29,099648;-56,261486;25/04/2024;;73934825000157;Comercio Varejo SA;Sul;Parana;HD Externo Seagate;16;471,77;3233,34
+-20,338067;-43,844097;01/12/2025;68861940110;;Yasmin Mendonca;Sudeste;Espirito Santo;Fone de Ouvido JBL;4;176,81;249,67
+-19,103804;-59,408473;29/10/2025;62269110420;;Lucca Pastor;Centro-Oeste;Distrito Federal;HD Externo Seagate;18;418,89;3441,54
+-15,31835;-50,987334;02/10/2024;69111200120;;Emanuelly da Luz;Sudeste;Rio de Janeiro;Mesa para Computador;1;260,41;98,63
+-29,738819;-55,738341;05/08/2025;;30249571000125;Tech Solutions LTDA;Sul;Parana;Webcam Logitech;3;161,52;215,63
+-31,869466;-50,426701;24/01/2025;;93513953000134;Industria Eletronica Brasil;Sul;Parana;Smartphone Samsung Galaxy;1;2216,03;1099,39
+-19,319393;-44,163221;03/04/2025;;91095816000100;Distribuidora Nacional;Sudeste;Espirito Santo;HD Externo Seagate;7;458,01;1204,69
+-23,947475;-53,116594;20/12/2024;;11793216000178;Industria Eletronica Brasil;Sul;Parana;Webcam Logitech;4;377,02;523,41
+2,63403;-66,827094;18/05/2025;91067147225;;Josue Abreu;Norte;Roraima;Cabo HDMI;18;31,78;196,67
+-18,981646;-57,613607;08/10/2025;;24964035000109;Tech Solutions LTDA;Centro-Oeste;Distrito Federal;Mesa para Computador;10;393,94;1378,18
+2,463959;-53,267022;14/09/2025;97355647261;;Liam Freitas;Norte;Tocantins;Tablet Apple iPad;20;3500,75;21470,22
+-23,213276;-56,895028;06/08/2025;70629178267;;Joao Gabriel Cardoso;Sul;Rio Grande do Sul;Roteador TP-Link;10;184,82;611,26
+-23,423249;-44,700837;13/01/2024;;12036077000109;Suprimentos Tecnicos LTDA;Sudeste;Sao Paulo;Pendrive SanDisk;4;76,54;114,11
+3,735581;-69,098966;04/12/2025;84457200824;;Jose Pedro Viana;Norte;Tocantins;Impressora HP;9;760,64;2438,6
+-22,257604;-53,206099;27/05/2025;;58669018000160;Importadora Tecnologia;Sul;Rio Grande do Sul;Smart TV LG;9;2823,21;11750,24
+4,019985;-72,667939;01/02/2025;;92810280000111;Tech Solutions LTDA;Norte;Tocantins;Monitor Acer;5;1082,39;2238,27
+-17,008209;-48,023231;18/02/2025;94246486345;;Lavinia Barbosa;Sudeste;Espirito Santo;Camera Canon;1;2605,08;1301,09
+-18,645477;-49,321214;17/07/2024;;44859053000138;Global Distribuidora;Sudeste;Espirito Santo;Carregador Portatil;8;159,82;418,64
+-4,177762;-61,533362;04/10/2025;;44257781000170;Suprimentos Digitais LTDA;Norte;Para;Mesa para Computador;10;213,75;705,76
+-8,675199;-60,81542;07/06/2025;66716801839;;Raquel Borges;Centro-Oeste;Mato Grosso do Sul;Carregador Portatil;15;84,71;419,84
+-30,520729;-55,442886;17/08/2024;;25374789000171;Global Distribuidora;Sul;Santa Catarina;Mouse sem fio Microsoft;2;56,06;53,12
+-17,628933;-58,022235;16/07/2024;;27355288000173;Suprimentos Tecnicos LTDA;Centro-Oeste;Distrito Federal;Notebook Dell Inspiron;16;2905,1;20927,62
+-25,227918;-51,522563;05/04/2024;;56982341000164;Distribuidora Nacional;Sul;Rio Grande do Sul;Tablet Apple iPad;16;3984,15;19211,31
+-17,202179;-50,361459;26/01/2025;;96104014000124;Tecnologia Avancada LTDA;Sudeste;Espirito Santo;Tablet Apple iPad;5;2735,38;6389,03
+0,512852;-54,586987;11/08/2024;17001186686;;Eloa Cassiano;Norte;Amapa;Caixa de Som Bluetooth;14;150,17;1049,13
+-1,521519;-58,380964;23/03/2024;;13819904000195;Comercio Eletronico Brasil;Norte;Roraima;Mouse sem fio Microsoft;7;61,9;193,15
+-4,90623;-38,533886;30/01/2024;;08782841000100;Suprimentos Tecnicos LTDA;Nordeste;Piaui;Caixa de Som Bluetooth;6;233,36;666,1
+-13,87016;-46,440549;02/01/2025;;34048448000105;Importadora Produtos Eletronicos;Nordeste;Ceara;Smartphone Samsung Galaxy;12;1265,24;6527,41
+-1,314065;-40,820273;18/12/2025;;17649615000146;Comercio Varejo SA;Nordeste;Bahia;Monitor Acer;4;839,62;1542,48
+-28,065984;-53,224507;12/12/2024;;06229516000199;Comercio Eletronico Brasil;Sul;Parana;Smartphone Samsung Galaxy;20;2315,98;15761,5
+-25,341266;-56,570558;14/11/2024;40865358907;;Srta. Aurora Ramos;Sul;Parana;Mouse sem fio Microsoft;20;109,89;940,99
+-19,221547;-49,882361;23/03/2024;;85070166000137;Comercio Varejo SA;Sudeste;Minas Gerais;Fone de Ouvido JBL;13;83,41;345,73
+-17,19565;-53,598038;23/09/2025;;92571544000121;Importadora Tecnologia;Centro-Oeste;Mato Grosso do Sul;Pendrive SanDisk;7;45,56;125,7
+-19,480812;-60,229158;11/01/2025;34903207439;;Marina Garcia;Centro-Oeste;Mato Grosso do Sul;Mesa para Computador;2;535,78;527,33
+-15,973718;-46,029313;30/09/2025;;92907916000148;Distribuidora Componentes;Centro-Oeste;Mato Grosso;Smart TV LG;10;2948,11;14239,09
+2,95073;-65,831822;12/12/2025;76522999854;;Sophia Araujo;Norte;Acre;Pendrive SanDisk;19;76,01;580,91
+-22,998825;-50,216573;17/05/2024;;96275690000160;Comercio Eletronico Brasil;Sudeste;Minas Gerais;Pendrive SanDisk;9;61,98;258,89
+-33,464335;-56,737724;11/07/2024;;78057946000181;Empresa Brasileira Tecnologia;Sul;Rio Grande do Sul;Estabilizador SMS;9;113,44;427,94
+-13,908595;-59,206707;24/07/2024;;80697446000156;Comercio Varejo SA;Centro-Oeste;Distrito Federal;Estabilizador SMS;6;101,93;281,12
+-21,199462;-43,040255;15/01/2025;;63146035000153;Industria Nacional Tecnologia;Sudeste;Espirito Santo;Teclado Mecanico Logitech;15;240,73;1531,69
+-12,863468;-38,841385;07/05/2025;48219188111;;Luisa Ferreira;Nordeste;Piaui;Monitor Acer;3;1097,46;1253,04
+-11,929394;-46,083081;29/05/2025;;86684607000153;Varejo Digital LTDA;Centro-Oeste;Goias;Tablet Apple iPad;6;2827,13;8063,19
+-0,28496;-54,994249;17/06/2025;;65782660000117;Empresa Brasileira Tecnologia;Norte;Tocantins;Estabilizador SMS;16;138,11;753,64
+-19,009205;-57,914659;27/10/2024;65130511344;;Isadora Nogueira;Centro-Oeste;Mato Grosso;Impressora HP;11;770,34;3427,68
+-32,184513;-52,443449;19/01/2025;25835567545;;Srta. Maria Isis Correia;Sul;Rio Grande do Sul;Webcam Logitech;8;196,06;744,39
+-2,266115;-62,100785;16/09/2024;90629250227;;Sra. Maria Luiza Cunha;Norte;Acre;Fone de Ouvido JBL;14;173,94;1143,71
+-22,724521;-43,344596;30/09/2025;;60002902000199;Atacadista Informatica;Sudeste;Minas Gerais;Cabo HDMI;7;43,97;133,18
+-2,173509;-50,492374;19/02/2025;;14727592000152;Varejo Digital LTDA;Norte;Roraima;Roteador TP-Link;2;186,69;119,49
+-15,368312;-44,531267;25/11/2024;09032463500;;Jade Leao;Sudeste;Sao Paulo;Carregador Portatil;19;140,03;918,21
+2,332085;-56,466479;22/08/2025;;67653501000148;Comercio Varejo SA;Norte;Tocantins;Teclado Mecanico Logitech;6;323,94;800,12
+-19,392005;-56,100739;02/11/2025;;86732059000190;Atacadista Informatica;Centro-Oeste;Goias;Notebook Dell Inspiron;6;3218,19;8950,79
+-15,695677;-45,734594;21/03/2024;;90180423000123;Industria Eletronica Brasil;Nordeste;Sergipe;Smart TV LG;15;2171,51;11578,08
+-3,974327;-44,157521;08/03/2024;20040713890;;Otavio Macedo;Nordeste;Pernambuco;Mouse sem fio Microsoft;17;79,28;479,91
+-23,822894;-56,103528;18/05/2025;;12081473000140;Tech Solutions LTDA;Sul;Rio Grande do Sul;Roteador TP-Link;13;114,5;512,79
+-21,582663;-49,487964;15/04/2024;02137865599;;Thomas Borges;Sudeste;Espirito Santo;Cabo HDMI;1;51,87;18,03
+-22,891725;-50,979155;16/09/2025;;20034602000177;Tech Solutions LTDA;Centro-Oeste;Mato Grosso;Webcam Logitech;10;237,34;784,92
+0,872914;-54,898736;02/12/2025;;61873385000196;Global Distribuidora;Norte;Rondonia;Webcam Logitech;20;393,37;2527,13
+-15,484368;-53,209022;30/07/2024;75244396609;;Isadora Vieira;Centro-Oeste;Mato Grosso;Teclado Mecanico Logitech;16;356,05;2150,16
+-21,399862;-45,247419;27/03/2024;;57165836000163;Industria Nacional Tecnologia;Sudeste;Minas Gerais;Pendrive SanDisk;2;62,48;54,86
+-24,512284;-48,428392;23/02/2025;;00934318000140;Importadora Tecnologia;Sudeste;Rio de Janeiro;Notebook Dell Inspiron;5;3470,74;5856,91
+-15,050217;-35,897881;09/11/2024;;88181210000174;Importadora Tecnologia;Nordeste;Sergipe;Cabo HDMI;11;24,71;112,37
+-22,455283;-53,843706;10/10/2024;;13838309000105;Industria Eletronica Brasil;Sul;Santa Catarina;Tablet Apple iPad;20;3680,25;25600,1
+-15,739425;-43,068361;31/12/2024;28643158402;;Levi Borges;Nordeste;Sergipe;Smart TV LG;7;2542,8;5955,15
+-19,741613;-48,224973;19/09/2024;;32811856000133;Solucoes Corporativas;Sudeste;Rio de Janeiro;Estabilizador SMS;1;135,85;54,61
+-14,404007;-45,125407;29/08/2025;60439387825;;Maria Julia Sousa;Sudeste;Rio de Janeiro;Webcam Logitech;6;324,71;892,5
+4,574824;-60,401819;06/08/2025;;20833565000167;Global Distribuidora;Norte;Roraima;Mesa para Computador;11;598,91;2221,45
+-8,327499;-46,948052;22/01/2024;84340375055;;Fernanda da Costa;Centro-Oeste;Mato Grosso;Smart TV LG;2;2709,22;1839,28
+-10,01259;-46,315945;13/06/2025;;38865486000101;Suprimentos Digitais LTDA;Nordeste;Sergipe;Estabilizador SMS;4;185,82;359,91
+-33,976192;-48,873066;11/06/2024;92199416356;;Sra. Ana Livia Almeida;Sul;Santa Catarina;Fone de Ouvido JBL;4;89,25;146,44
+-17,047608;-47,77887;13/06/2024;;98265683000103;Tech Solutions LTDA;Nordeste;Paraiba;Smartphone Samsung Galaxy;3;1681,95;1530,67
+-9,711158;-35,937222;23/03/2024;;92992454000104;Inovacao Digital SA;Nordeste;Alagoas;Camera Canon;12;2299,22;9841,42
+-16,348432;-45,238675;05/12/2024;;24619663000157;Tech Solutions LTDA;Sudeste;Espirito Santo;Smart TV LG;5;2586,59;4862,03
+-7,534496;-40,804591;19/01/2025;30096780371;;Aylla Alves;Nordeste;Bahia;Mouse sem fio Microsoft;11;105,21;577,85
+-23,550259;-56,773745;12/02/2024;53408256713;;Dr. Vinicius Guerra;Centro-Oeste;Mato Grosso do Sul;Monitor Acer;6;995,24;2598,4
+-20,818418;-55,188035;09/12/2024;;87318105000171;Atacadista Informatica;Centro-Oeste;Mato Grosso do Sul;Monitor Acer;9;949,41;3704,72
+-15,459002;-46,5864;10/11/2025;47964315439;;Ayla Mendonca;Sudeste;Sao Paulo;Webcam Logitech;15;226,65;1222,87
+-16,944682;-56,709003;07/05/2025;;93924289000116;Varejo Digital LTDA;Centro-Oeste;Mato Grosso do Sul;Caixa de Som Bluetooth;20;234,46;2343,56
+-19,842082;-41,257526;18/11/2024;;34416420000175;Atacadista Informatica;Sudeste;Sao Paulo;Camera Canon;8;3318,9;10819,62
+3,982516;-70,112157;28/03/2024;68943055447;;Luisa Rodrigues;Norte;Tocantins;Monitor Acer;4;1078,17;1877,64
+1,790478;-69,42623;24/01/2025;;54154667000178;Suprimentos Tecnicos LTDA;Norte;Acre;Fone de Ouvido JBL;13;205,96;924,42
+2,635736;-70,50129;20/02/2024;;65294118000115;Distribuidora Componentes;Norte;Acre;Teclado Mecanico Logitech;11;331,68;1642,31
+-4,970742;-57,821668;01/10/2024;;32692392000193;Inovacao Digital SA;Norte;Amazonas;Notebook Dell Inspiron;17;3146,98;19054,55
+-12,755118;-39,538646;02/02/2025;19710177958;;Gustavo Henrique Mendes;Nordeste;Maranhao;HD Externo Seagate;19;366,76;2969,83
+-32,455073;-56,543074;27/12/2024;;86064076000104;Suprimentos Digitais LTDA;Sul;Santa Catarina;Mouse sem fio Microsoft;10;110,0;521,56
+-23,18291;-50,555091;01/02/2024;;93752820000110;Atacadista Informatica;Sudeste;Rio de Janeiro;HD Externo Seagate;16;663,39;3423,22
+-28,387147;-51,148473;13/01/2025;;74143553000130;Comercio Equipamentos SA;Sul;Rio Grande do Sul;Teclado Mecanico Logitech;20;441,91;3554,26
+-32,712743;-55,782601;19/05/2024;15625794014;;Heloisa Sales;Sul;Santa Catarina;Camera Canon;6;2300,22;6342,91
+-6,602154;-36,45766;10/03/2024;;88435818000188;Comercio Varejo SA;Nordeste;Alagoas;Camera Canon;3;2499,41;3606,06
+0,321198;-66,009159;06/09/2024;03219659225;;Henry Gabriel Abreu;Norte;Para;Pendrive SanDisk;11;64,71;343,18
+2,963654;-72,565465;30/12/2025;11314158414;;Sr. Carlos Eduardo Vieira;Norte;Acre;Estabilizador SMS;11;130,41;589,62
+-10,965572;-40,873691;29/10/2024;16894084645;;Oliver Dias;Nordeste;Pernambuco;Fone de Ouvido JBL;12;106,49;452,42
+-28,961346;-53,454933;26/09/2024;94621193848;;Ana Julia Fonseca;Sul;Santa Catarina;Impressora HP;11;840,59;4177,02
+-26,820177;-48,877439;25/09/2025;42041272406;;Mariana Brito;Sul;Parana;Notebook Dell Inspiron;1;3323,21;1191,56
+-31,537594;-50,895803;08/08/2024;67425536773;;Maria Julia Lopes;Sul;Santa Catarina;Teclado Mecanico Logitech;11;351,76;1477,64
+-25,84921;-50,315341;04/06/2024;07108751690;;Dra. Marina Correia;Sul;Rio Grande do Sul;Cadeira Gamer;12;708,68;3399,98
+-16,329159;-36,512744;23/01/2024;;35706008000152;Industria Eletronica Brasil;Nordeste;Paraiba;Camera Canon;4;2273,48;3194,7
+2,74312;-56,824095;06/10/2024;55620613259;;Dr. Raul Goncalves;Norte;Rondonia;Notebook Dell Inspiron;19;3145,51;29271,66
+-9,852596;-58,293785;08/06/2025;;00586201000112;Suprimentos Digitais LTDA;Centro-Oeste;Mato Grosso;Fone de Ouvido JBL;1;210,73;76,42
+2,188669;-50,125152;03/12/2025;65929265461;;Anthony Silveira;Norte;Rondonia;Estabilizador SMS;5;173,63;420,97
+0,445141;-58,700276;20/12/2025;36694256086;;Lais Mendes;Norte;Roraima;Mesa para Computador;5;208,48;467,27
+-8,304489;-48,221623;01/01/2024;;66378988000135;Distribuidora Componentes;Centro-Oeste;Distrito Federal;Fone de Ouvido JBL;9;150,72;675,17
+-15,679059;-44,374421;14/05/2025;;05180157000160;Comercio Varejo SA;Sudeste;Minas Gerais;Roteador TP-Link;5;228,64;414,61
+-15,399286;-47,29206;27/09/2024;84331429849;;Luna Dias;Centro-Oeste;Mato Grosso do Sul;Smart TV LG;3;2136,49;2194,45
+-21,858921;-56,145569;28/12/2024;;54148744000187;Solucoes Corporativas;Centro-Oeste;Distrito Federal;Caixa de Som Bluetooth;8;279,38;1018,08
+-13,486184;-53,593564;11/01/2025;;85518563000129;Atacadista Informatica;Centro-Oeste;Mato Grosso;Monitor Acer;19;905,59;6834,16
+-19,696016;-50,554514;29/04/2025;;73214354000102;Inovacao Digital SA;Sudeste;Sao Paulo;Cadeira Gamer;19;1158,72;9391,09
+-12,894598;-59,360151;14/08/2024;55605935755;;Mateus Cassiano;Centro-Oeste;Distrito Federal;Fone de Ouvido JBL;15;234,21;1079,77
+0,368187;-56,053751;01/12/2024;;41981199000163;Inovacao Digital SA;Norte;Roraima;Cadeira Gamer;7;942,65;2512,38
+-16,703364;-41,263114;19/11/2025;;14748611000127;Empresa Brasileira Tecnologia;Sudeste;Minas Gerais;Tablet Apple iPad;11;2762,52;11981,76
+-3,55363;-58,539315;13/08/2025;;57760216000172;Suprimentos Digitais LTDA;Norte;Amazonas;Mouse sem fio Microsoft;15;103,95;522,17
+-23,820633;-54,019686;08/01/2025;;91548503000151;Distribuidora Nacional;Sul;Parana;Carregador Portatil;10;83,6;373,8
+-23,132979;-56,984195;09/07/2024;05541324947;;Catarina Mendes;Sul;Rio Grande do Sul;Estabilizador SMS;14;116,5;635,54
+4,427329;-70,771195;21/05/2024;41695037758;;Maria Julia Farias;Norte;Acre;Caixa de Som Bluetooth;15;213,03;1591,3
+-27,793748;-52,828418;08/08/2024;;03945509000103;Comercio Varejo SA;Sul;Parana;Estabilizador SMS;5;135,61;329,28
+-27,298699;-56,461371;25/06/2024;;00559034000110;Solucoes Corporativas;Sul;Parana;Monitor Acer;4;1066,13;1293,81
+-16,383623;-41,269934;28/08/2024;;05098854000176;Global Distribuidora;Sudeste;Espirito Santo;Impressora HP;6;758,4;2003,65
+1,960527;-60,352549;29/09/2025;59104473272;;Maria Eduarda Teixeira;Norte;Amazonas;Roteador TP-Link;11;194,52;938,5
+-15,418159;-58,836358;30/04/2024;55212713765;;Gustavo Henrique Sa;Centro-Oeste;Mato Grosso;Caixa de Som Bluetooth;12;171,04;1021,71
+-4,526922;-47,599267;10/03/2024;68528810240;;Maria Luiza Silveira;Nordeste;Pernambuco;Impressora HP;2;702,62;565,08
+-30,249923;-49,646988;30/09/2024;91007251379;;Breno Machado;Sul;Parana;Fone de Ouvido JBL;10;152,59;639,7
+-1,446484;-35,123233;14/07/2024;00682125776;;Manuela Farias;Nordeste;Pernambuco;HD Externo Seagate;15;504,4;2498,81
+-26,809424;-54,073197;30/04/2024;;15054941000185;Suprimentos Tecnicos LTDA;Sul;Parana;Teclado Mecanico Logitech;1;281,08;123,09
+-19,699178;-44,62239;26/07/2024;00301693994;;Leonardo Cardoso;Sudeste;Minas Gerais;Camera Canon;19;3264,85;23080,27
+-20,306946;-50,110332;12/08/2025;62512873145;;Davi da Cruz;Sudeste;Espirito Santo;Smart TV LG;15;2416,44;12612,58
+-22,575511;-50,534056;27/02/2025;74877049126;;Luiz Fernando Rodrigues;Sudeste;Minas Gerais;Mesa para Computador;15;407,28;2313,79
+-0,845522;-60,898456;31/01/2024;;28495800000140;Distribuidora Componentes;Norte;Rondonia;Tablet Apple iPad;9;2923,81;12451,45
+-4,26739;-61,372968;25/11/2024;27722293000;;Sr. Pedro Ferreira;Norte;Tocantins;Monitor Acer;11;900,81;3801,71
+-18,462737;-42,383678;27/08/2025;;62849077000198;Atacadista Informatica;Sudeste;Rio de Janeiro;Tablet Apple iPad;16;2717,04;20743,21
+-7,169391;-44,894796;22/05/2025;09626518340;;Srta. Maya Santos;Nordeste;Maranhao;Notebook Dell Inspiron;3;3357,67;4668,56
+-28,309665;-50,407406;12/11/2025;89015060681;;Liam Mendonca;Sul;Rio Grande do Sul;Cadeira Gamer;11;653,33;3061,01
+-16,271724;-36,301026;12/01/2024;;91339922000183;Comercio Varejo SA;Nordeste;Alagoas;Smartphone Samsung Galaxy;8;1351,47;3415,46
+-14,303157;-47,891371;06/10/2024;17520935779;;Mathias Silva;Centro-Oeste;Mato Grosso;HD Externo Seagate;7;569,84;1497,12
+-33,409707;-56,603214;02/08/2024;;91073716000174;Distribuidora Nacional;Sul;Parana;HD Externo Seagate;20;488,8;4531,95
+-22,672532;-57,193052;14/03/2024;;88319850000106;Suprimentos Digitais LTDA;Sul;Santa Catarina;Estabilizador SMS;9;198,57;711,93
+-15,442014;-44,936745;18/11/2025;;38752627000171;Suprimentos Tecnicos LTDA;Sudeste;Rio de Janeiro;HD Externo Seagate;12;482,87;2793,82
+-9,592694;-40,806318;06/04/2025;93805499388;;Melissa Novais;Nordeste;Sergipe;Estabilizador SMS;11;165,82;659,39
+-3,119215;-62,270562;08/10/2024;;70542573000122;Industria Nacional Tecnologia;Norte;Amazonas;Teclado Mecanico Logitech;17;337,35;2073,6
+-17,730916;-58,535448;07/04/2025;;92473967000109;Inovacao Digital SA;Centro-Oeste;Distrito Federal;Smart TV LG;2;2781,82;1969,07
+-3,345295;-41,972727;06/03/2024;;40978064000186;Inovacao Digital SA;Nordeste;Ceara;Mesa para Computador;7;316,25;742,35
+-9,71075;-51,686019;08/10/2025;99024127858;;Carlos Eduardo Brito;Centro-Oeste;Mato Grosso;Fone de Ouvido JBL;1;145,76;45,09
+-30,33708;-51,986937;30/04/2025;;53300791000131;Importadora Tecnologia;Sul;Santa Catarina;Teclado Mecanico Logitech;7;301,4;1028,35
+-30,095122;-54,600086;16/11/2025;;02560780000150;Industria Eletronica Brasil;Sul;Rio Grande do Sul;Carregador Portatil;10;88,65;340,82
+-0,64528;-69,354817;26/10/2024;;51198900000126;Importadora Tecnologia;Norte;Tocantins;Roteador TP-Link;7;138,3;317,84
+-22,598787;-49,041445;17/11/2025;;88873865000103;Comercio Eletronico Brasil;Sudeste;Espirito Santo;Smart TV LG;11;2926,94;12452,72
+3,442417;-51,520219;28/08/2025;36663849000;;Mirella Correia;Norte;Tocantins;Webcam Logitech;18;161,39;949,91
+0,330785;-71,567601;13/02/2025;37385343260;;Milena Mendes;Norte;Roraima;Roteador TP-Link;3;99,07;97,39
+4,64197;-66,147359;14/02/2024;68749196286;;Ana Rezende;Norte;Para;Webcam Logitech;7;261,74;882,87
+-7,654819;-40,683875;05/10/2025;;42666634000128;Comercio Varejo SA;Nordeste;Maranhao;Webcam Logitech;13;253,06;1163,11
+-22,191795;-48,810331;27/01/2024;;88709288000119;Tecnologia Avancada LTDA;Sudeste;Minas Gerais;Mesa para Computador;13;542,57;3188,29
+-3,164312;-40,399529;26/01/2025;60047840609;;Bianca Lima;Nordeste;Maranhao;Smart TV LG;6;2039,77;4804,61
+-13,768602;-58,445787;06/04/2025;08267782915;;Maria Julia Lima;Centro-Oeste;Mato Grosso;Monitor Acer;7;747,77;1720,3
+-0,994001;-71,528254;24/11/2025;;75640336000118;Comercio Eletronico Brasil;Norte;Amapa;Smart TV LG;3;2352,19;2379,25
+-16,672351;-40,772117;09/12/2024;;76605386000127;Distribuidora Componentes;Sudeste;Rio de Janeiro;Smart TV LG;7;2813,95;8500,41
+-9,964594;-60,194935;11/01/2025;;84178518000100;Comercio Internacional SA;Centro-Oeste;Goias;Fone de Ouvido JBL;11;231,69;907,2
+-13,33746;-58,36094;28/08/2025;65016029040;;Helena Machado;Centro-Oeste;Distrito Federal;Tablet Apple iPad;7;3178,09;8318,32
+-9,024937;-56,890848;11/04/2025;87283415700;;Erick Lima;Centro-Oeste;Goias;Smart TV LG;19;2259,33;17475,54
+-8,880493;-50,781811;28/02/2025;;81625669000170;Global Distribuidora;Centro-Oeste;Goias;Teclado Mecanico Logitech;3;250,49;284,24
+-19,467898;-60,289532;04/11/2024;09117299250;;Benjamim Oliveira;Centro-Oeste;Mato Grosso;Carregador Portatil;13;133,08;811,15
+0,711896;-55,398578;06/02/2024;;13012713000117;Suprimentos Digitais LTDA;Norte;Para;Roteador TP-Link;5;143,0;323,41
+-17,808699;-50,04893;07/04/2024;35803221090;;Sr. Otto Almeida;Centro-Oeste;Mato Grosso do Sul;Carregador Portatil;10;112,05;547,01
+-21,8438;-47,063389;15/11/2024;38219510013;;Marcelo Rodrigues;Sudeste;Rio de Janeiro;Tablet Apple iPad;19;3168,21;24380,1
+-13,235904;-42,471185;21/09/2025;;48514574000104;Importadora Tecnologia;Nordeste;Alagoas;Mouse sem fio Microsoft;9;76,27;301,63
+-27,038207;-49,363383;21/05/2024;;83816281000182;Empresa Brasileira Tecnologia;Sul;Parana;Notebook Dell Inspiron;6;2867,62;6069,46
+-12,06806;-46,101856;02/10/2025;;71555097000147;Industria Nacional Tecnologia;Centro-Oeste;Distrito Federal;Estabilizador SMS;14;196,78;994,87
+-11,403903;-51,189713;25/04/2024;10864964692;;Cauê da Conceicao;Centro-Oeste;Mato Grosso;Camera Canon;5;2892,34;7220,67
+-14,185255;-45,021399;21/08/2024;;80119986000152;Atacadista Informatica;Nordeste;Alagoas;Fone de Ouvido JBL;5;201,31;433,44
+-17,221809;-39,854422;16/04/2024;11568768850;;Ana Julia Garcia;Sudeste;Sao Paulo;Camera Canon;11;2210,01;8160,3
+-16,739419;-57,255161;14/03/2025;29524063832;;Dra. Lavinia Sa;Centro-Oeste;Distrito Federal;Estabilizador SMS;7;149,8;461,36
+-5,702352;-46,816824;17/09/2025;05320735332;;Dr. Renan Nogueira;Nordeste;Alagoas;Notebook Dell Inspiron;20;3392,61;28600,08
+-1,102981;-62,364132;22/09/2025;12784614697;;Erick Goncalves;Norte;Amazonas;Smart TV LG;2;2226,32;1476,71
+-22,440592;-39,173383;27/03/2025;60703175998;;Emilly da Rosa;Sudeste;Sao Paulo;Mouse sem fio Microsoft;5;64,21;150,0
+-18,259929;-45,750619;19/05/2025;;77298700000139;Global Distribuidora;Sudeste;Minas Gerais;HD Externo Seagate;13;400,38;1821,37
+-2,768369;-37,277717;05/11/2024;16404992884;;Erick Garcia;Nordeste;Ceara;Impressora HP;13;829,78;4921,78
+-26,143398;-49,857843;06/10/2025;;48968538000110;Suprimentos Digitais LTDA;Sul;Santa Catarina;Pendrive SanDisk;14;37,44;225,1
+-23,640102;-52,541488;07/08/2025;20341823597;;Dr. Calebe Casa Grande;Sul;Parana;Carregador Portatil;9;179,92;498,64
+-22,832922;-55,626707;15/08/2024;06701195040;;Aylla Câmara;Sul;Rio Grande do Sul;Carregador Portatil;10;121,17;500,98
+-19,912014;-42,41796;06/08/2025;;33988939000165;Comercio Varejo SA;Sudeste;Sao Paulo;Carregador Portatil;2;105,59;79,24
+-9,779785;-35,354425;17/12/2025;;01768214000175;Distribuidora Componentes;Nordeste;Ceara;Impressora HP;12;626,1;2522,1
+2,03687;-69,231842;26/07/2025;00858813920;;Igor Ramos;Norte;Rondonia;Carregador Portatil;6;146,3;416,11
+-21,080804;-51,586367;18/07/2025;;62820550000104;Comercio Internacional SA;Centro-Oeste;Mato Grosso do Sul;Roteador TP-Link;12;222,13;941,07
+-3,003516;-52,528292;08/06/2024;;74579541000152;Suprimentos Tecnicos LTDA;Norte;Tocantins;Tablet Apple iPad;7;2549,61;6789,31
+-26,112369;-52,72805;21/11/2024;35807392205;;Lorena Lima;Sul;Parana;Smart TV LG;16;2983,3;18404,53
+-9,295645;-44,766917;07/03/2025;;71676349000196;Comercio Varejo SA;Nordeste;Rio Grande do Norte;Mouse sem fio Microsoft;16;58,09;415,47
+-17,093271;-39,138778;23/07/2025;80874338077;;Alicia Fernandes;Nordeste;Alagoas;Impressora HP;4;481,67;859,36
+-16,626573;-50,685787;05/11/2024;84959767650;;Clara Garcia;Sudeste;Rio de Janeiro;Smartphone Samsung Galaxy;14;2140,98;14815,31
+-16,711313;-49,140695;23/04/2025;;82247363000190;Comercio Eletronico Brasil;Centro-Oeste;Mato Grosso do Sul;Pendrive SanDisk;6;63,87;175,69
+-24,837096;-56,703364;06/09/2024;78103539937;;Heloisa da Cruz;Sul;Parana;Pendrive SanDisk;6;56,83;148,39
+-26,624788;-57,915692;29/12/2024;;43749024000150;Suprimentos Tecnicos LTDA;Sul;Rio Grande do Sul;Estabilizador SMS;2;104,78;72,22
+-11,033146;-41,708766;10/12/2025;04405333254;;Ryan Cavalcanti;Nordeste;Sergipe;Tablet Apple iPad;4;2839,3;4363,12
+-6,957863;-35,215311;08/06/2025;02347846108;;Cauê Costa;Nordeste;Pernambuco;Roteador TP-Link;3;108,96;148,14
+-20,444334;-43,842582;17/07/2024;53822465305;;Lunna Camargo;Sudeste;Minas Gerais;Cadeira Gamer;18;657,33;4654,6
+-20,687005;-49,896166;28/01/2025;;52635723000160;Inovacao Digital SA;Sudeste;Sao Paulo;Roteador TP-Link;14;187,66;1100,88
+-9,999398;-47,056874;24/04/2024;53837880001;;Luana Sa;Centro-Oeste;Mato Grosso do Sul;Mesa para Computador;19;445,9;2979,77
+0,714014;-56,861282;30/10/2024;98722075690;;Henry Gabriel Castro;Norte;Roraima;Caixa de Som Bluetooth;9;148,3;559,86
+-33,502179;-50,275116;23/10/2025;;99432356000161;Industria Eletronica Brasil;Sul;Parana;HD Externo Seagate;17;458,54;3005,98
+-12,581887;-47,855436;13/06/2025;18955598475;;Nathan Mendes;Centro-Oeste;Mato Grosso;HD Externo Seagate;10;482,92;1537,15
+2,850913;-57,073196;07/11/2025;;86867584000112;Importadora Produtos Eletronicos;Norte;Amazonas;Teclado Mecanico Logitech;4;246,06;481,2
+-18,704659;-40,788279;01/07/2024;69602456566;;Dr. Marcelo Novais;Sudeste;Espirito Santo;Teclado Mecanico Logitech;19;275,2;2224,22
+-8,959742;-50,497128;22/01/2024;;39531730000154;Tecnologia Avancada LTDA;Centro-Oeste;Goias;Impressora HP;5;506,88;806,48
+-13,224127;-38,906392;27/05/2025;;51668944000172;Comercio Internacional SA;Nordeste;Maranhao;Camera Canon;6;2372,82;5376,37
+-9,551337;-44,339636;23/06/2024;;33804339000108;Suprimentos Tecnicos LTDA;Nordeste;Sergipe;Impressora HP;9;689,7;2941,24
+-2,120978;-47,493772;12/12/2024;12399609131;;Sra. Isabel Aragao;Nordeste;Rio Grande do Norte;Smart TV LG;3;1894,3;1933,83
+-9,506051;-52,343863;13/11/2025;;38676189000100;Suprimentos Tecnicos LTDA;Centro-Oeste;Distrito Federal;Cabo HDMI;10;57,17;184,6
+-32,966125;-52,714799;08/04/2024;;38188709000135;Empresa Brasileira Tecnologia;Sul;Santa Catarina;Smart TV LG;6;1891,14;3771,76
+-6,801514;-47,071435;22/03/2025;;58227698000162;Comercio Equipamentos SA;Nordeste;Paraiba;Impressora HP;10;654,91;2406,89
+-24,000688;-49,507863;15/04/2024;;98362527000160;Distribuidora Nacional;Sul;Santa Catarina;Fone de Ouvido JBL;14;223,58;1052,97
+-14,097438;-43,43457;18/11/2024;99344878889;;Ana Sophia Souza;Sudeste;Sao Paulo;Cabo HDMI;10;51,15;213,78
+-15,729419;-56,71744;10/03/2025;;30200225000152;Varejo Digital LTDA;Centro-Oeste;Distrito Federal;Cabo HDMI;18;44,71;325,34
+4,095083;-69,0449;27/12/2025;59582337427;;Valentim Porto;Norte;Acre;Fone de Ouvido JBL;18;244,34;1537,17
+-2,035872;-61,950499;24/02/2025;30383490030;;Igor da Paz;Norte;Amapa;Webcam Logitech;1;340,98;161,35
+-3,673191;-50,936484;10/02/2024;;05725001000117;Industria Eletronica Brasil;Norte;Roraima;Estabilizador SMS;15;116,57;829,34
+-22,625984;-48,286382;29/09/2024;;16066356000168;Comercio Equipamentos SA;Sudeste;Espirito Santo;Notebook Dell Inspiron;6;3350,65;8668,9
+1,882984;-50,849251;29/12/2025;17663718410;;Joao Gabriel Sales;Norte;Roraima;Tablet Apple iPad;1;2700,96;909,64
+0,618778;-60,177004;03/11/2025;;48972467000120;Comercio Equipamentos SA;Norte;Rondonia;Caixa de Som Bluetooth;12;179,08;727,25
+-21,372073;-47,336733;02/05/2024;;11148941000193;Comercio Equipamentos SA;Sudeste;Rio de Janeiro;Roteador TP-Link;18;105,67;790,78
+-23,320599;-50,435987;06/08/2025;;44118258000162;Distribuidora Componentes;Centro-Oeste;Mato Grosso do Sul;Pendrive SanDisk;13;92,93;410,62
+-17,767218;-42,487594;25/09/2025;;38882180000155;Tech Solutions LTDA;Sudeste;Minas Gerais;Fone de Ouvido JBL;17;124,09;752,77
+-19,979198;-44,620236;11/03/2024;;21097266000174;Industria Nacional Tecnologia;Sudeste;Rio de Janeiro;Smart TV LG;20;1896,52;14357,21
+2,738941;-59,977981;25/07/2024;48862918992;;Sophie Cardoso;Norte;Roraima;Cabo HDMI;20;59,91;511,7
+-24,48991;-51,30961;09/03/2025;;68802446000173;Solucoes Corporativas;Sul;Parana;Cabo HDMI;20;33,21;268,85
+2,308273;-71,05491;01/03/2025;67410354275;;Elisa Pacheco;Norte;Amazonas;Carregador Portatil;19;86,56;643,31
+-24,291148;-47,334521;23/10/2025;65844105443;;Caua Araujo;Sudeste;Espirito Santo;Mouse sem fio Microsoft;18;85,45;616,42
+-15,518543;-46,153578;22/12/2024;09339886054;;Vinicius Macedo;Sudeste;Minas Gerais;Teclado Mecanico Logitech;5;261,79;449,3
+-30,8517;-48,370093;14/11/2024;;44904977000109;Distribuidora Componentes;Sul;Santa Catarina;Cadeira Gamer;5;941,6;1981,18
+-14,355184;-43,673647;02/12/2025;34185615000;;Maitê Casa Grande;Nordeste;Alagoas;Cadeira Gamer;11;933,09;4707,63
+-22,952233;-60,850317;17/10/2024;;35199705000164;Importadora Tecnologia;Centro-Oeste;Goias;Tablet Apple iPad;1;3217,71;1430,8
+-13,298981;-49,859109;05/06/2024;;72403830000170;Comercio Eletronico Brasil;Centro-Oeste;Goias;Notebook Dell Inspiron;12;3464,9;20155,0
+-4,335702;-36,714853;03/04/2025;;11762032000140;Importadora Tecnologia;Nordeste;Piaui;Impressora HP;15;512,96;3055,45
+3,195644;-56,635693;30/08/2024;23165055890;;Yasmin Farias;Norte;Acre;Webcam Logitech;17;372,01;2274,65
+0,175021;-53,754441;14/07/2024;04988953866;;Mariana Carvalho;Norte;Tocantins;Webcam Logitech;3;305,56;327,27
+-31,057378;-51,570491;16/03/2025;;21453381000134;Solucoes Corporativas;Sul;Parana;Monitor Acer;11;856,05;3319,75
+-1,462004;-64,626548;25/05/2024;61287357385;;Juliana Lopes;Norte;Amazonas;Carregador Portatil;11;135,89;533,74
+-14,616357;-48,124802;10/05/2024;;26008712000140;Tecnologia Avancada LTDA;Sudeste;Minas Gerais;Cabo HDMI;2;55,31;49,49
+-24,457179;-44,959524;30/10/2025;06610191794;;Lara Cavalcante;Sudeste;Rio de Janeiro;Mouse sem fio Microsoft;9;51,92;152,45
+-16,606413;-49,203295;18/09/2025;;64142171000138;Inovacao Digital SA;Sudeste;Minas Gerais;Impressora HP;4;819,04;1023,61
+-26,644745;-55,863809;25/10/2024;;34380011000166;Industria Nacional Tecnologia;Sul;Santa Catarina;Carregador Portatil;2;179,45;138,84
+-14,189758;-58,531502;19/09/2024;;54663947000101;Global Distribuidora;Centro-Oeste;Distrito Federal;HD Externo Seagate;11;358,34;1922,73
+3,776869;-58,427689;23/11/2025;01536548561;;Nina Sampaio;Norte;Amapa;Impressora HP;16;689,25;4079,03
+-15,949987;-43,553657;16/02/2024;47311920728;;Ana Sophia Cirino;Nordeste;Paraiba;Tablet Apple iPad;8;2892,87;10508,99
+-17,626048;-43,323719;17/03/2025;67202251701;;Carolina Novais;Nordeste;Alagoas;Tablet Apple iPad;16;3450,82;17493,3
+-20,793844;-39,062876;25/08/2025;92369572426;;Maria Laura Oliveira;Sudeste;Sao Paulo;Mouse sem fio Microsoft;17;90,27;692,17
+-27,280664;-51,869828;27/07/2024;78922030011;;Bento Nogueira;Sul;Rio Grande do Sul;Carregador Portatil;10;156,59;780,07
+-19,604519;-46,872917;01/01/2024;;04804726000138;Comercio Eletronico Brasil;Sudeste;Rio de Janeiro;Webcam Logitech;19;228,34;2097,68
+-11,075629;-53,558762;24/11/2025;80429282036;;Luara da Paz;Centro-Oeste;Mato Grosso;Mouse sem fio Microsoft;20;97,27;689,11
+-16,491399;-43,004187;13/02/2025;;23567640000183;Importadora Produtos Eletronicos;Nordeste;Piaui;Camera Canon;3;2422,83;2570,85
+-21,899439;-48,212218;06/10/2024;;63955639000140;Comercio Varejo SA;Centro-Oeste;Mato Grosso do Sul;Cabo HDMI;14;44,25;267,3
+-2,910629;-61,219035;28/11/2025;;25426352000134;Inovacao Digital SA;Norte;Tocantins;Camera Canon;15;3091,07;20749,86
+-5,087402;-45,653319;07/08/2025;83287565010;;Maria Alice Nogueira;Nordeste;Rio Grande do Norte;Tablet Apple iPad;3;3696,06;5416,96
+-2,549941;-70,275497;12/04/2024;18189735888;;Davi Lucas Cavalcante;Norte;Tocantins;Tablet Apple iPad;14;2518,85;11594,62
+-12,594513;-50,602396;24/07/2025;29464070552;;Pedro Pastor;Centro-Oeste;Distrito Federal;Smart TV LG;7;2155,41;7247,58
+-27,648065;-51,734332;28/06/2024;;03539716000150;Distribuidora Nacional;Sul;Rio Grande do Sul;Fone de Ouvido JBL;16;88,5;572,72
+-15,225819;-38,292895;21/11/2024;17177251553;;Vitor Castro;Nordeste;Pernambuco;Smartphone Samsung Galaxy;16;2437,82;14842,86
+-17,94623;-50,378413;15/01/2025;05458969677;;Elisa Cavalcanti;Centro-Oeste;Mato Grosso do Sul;Cadeira Gamer;13;1028,84;6252,47
+-25,212097;-50,422272;26/06/2024;83901906053;;Srta. Joana Viana;Sul;Parana;Pendrive SanDisk;12;51,63;233,83
+-23,897582;-52,954434;27/04/2024;93780490102;;Theodoro Cassiano;Sul;Santa Catarina;Cabo HDMI;2;43,94;27,29
+-21,343399;-51,824873;17/09/2025;;53299584000104;Comercio Internacional SA;Centro-Oeste;Mato Grosso;HD Externo Seagate;6;673,39;1754,93
+-7,849221;-46,259773;21/11/2025;;06957905000130;Distribuidora Componentes;Nordeste;Maranhao;Carregador Portatil;9;122,2;511,01
+-16,921143;-35,313965;08/01/2024;;15917086000199;Suprimentos Digitais LTDA;Nordeste;Paraiba;Webcam Logitech;19;230,54;1579,5
+-7,881876;-37,515713;26/02/2025;33394065100;;Sr. Erick Aparecida;Nordeste;Rio Grande do Norte;Smart TV LG;8;1802,49;4827,34
+-14,063334;-41,94829;29/09/2024;;78991910000170;Comercio Eletronico Brasil;Sudeste;Espirito Santo;Smartphone Samsung Galaxy;10;2461,89;11655,18
+-8,280831;-50,260202;11/02/2024;39879701976;;Daniela Cavalcante;Centro-Oeste;Distrito Federal;Smart TV LG;17;1974,53;12412,4
+-24,749109;-47,248241;04/03/2024;;83277582000185;Comercio Equipamentos SA;Sudeste;Sao Paulo;Webcam Logitech;11;290,98;1191,27
+-9,718876;-38,710025;09/09/2025;82004344199;;Sra. Maria Julia Fonseca;Nordeste;Sergipe;Monitor Acer;14;1154,67;5082,25
+-4,999515;-51,934031;26/09/2024;36627712504;;Joana Almeida;Norte;Amazonas;Caixa de Som Bluetooth;5;264,26;457,08
+-15,706112;-37,739725;25/03/2024;;43562447000167;Importadora Tecnologia;Nordeste;Alagoas;Carregador Portatil;6;86,1;211,24
+-23,178619;-42,082043;22/11/2024;;38259936000104;Importadora Produtos Eletronicos;Sudeste;Sao Paulo;Cabo HDMI;18;44,98;393,86
+-28,921465;-51,874717;15/10/2025;;81456411000198;Comercio Varejo SA;Sul;Parana;Impressora HP;14;692,07;3603,69
+4,539505;-57,305794;21/04/2024;;33257195000109;Tech Solutions LTDA;Norte;Roraima;Cadeira Gamer;16;1186,8;7164,06
+4,065982;-61,202066;08/06/2025;01640012800;;Luana Cirino;Norte;Roraima;Mouse sem fio Microsoft;12;94,89;440,89
+-20,954213;-54,031737;05/02/2024;62380695970;;Yan Araujo;Centro-Oeste;Mato Grosso do Sul;HD Externo Seagate;3;472,77;707,04
+-4,71609;-55,61136;10/03/2025;30316673790;;Dr. Miguel Barros;Norte;Rondonia;Smartphone Samsung Galaxy;3;1803,93;2199,65
+-1,445151;-36,148721;16/11/2025;;12326589000100;Tecnologia Avancada LTDA;Nordeste;Alagoas;Pendrive SanDisk;1;87,7;30,85
+-23,488019;-46,316586;07/02/2025;08657108720;;Sr. Isaque Lima;Sudeste;Minas Gerais;Monitor Acer;15;898,45;6132,12
+-10,780545;-55,10959;15/02/2025;49144269781;;Sra. Nicole Cavalcanti;Centro-Oeste;Mato Grosso do Sul;Camera Canon;2;2578,86;1857,91
+-18,4305;-48,659249;06/03/2024;09653606875;;Emilly Viana;Sudeste;Rio de Janeiro;Teclado Mecanico Logitech;17;204,28;1368,91
+-15,210296;-40,357805;09/12/2025;91233328832;;Rodrigo da Mota;Nordeste;Alagoas;Monitor Acer;16;692,37;4276,85
+-23,241004;-48,997809;24/12/2025;;16400800000130;Suprimentos Digitais LTDA;Sudeste;Minas Gerais;Teclado Mecanico Logitech;7;417,12;903,15
+-33,977837;-54,157305;19/07/2024;;71180490000101;Suprimentos Tecnicos LTDA;Sul;Parana;Teclado Mecanico Logitech;19;210,58;1248,7
+-9,592736;-55,326911;03/03/2024;;31692928000108;Tech Solutions LTDA;Centro-Oeste;Mato Grosso;Pendrive SanDisk;1;48,12;19,48
+-9,079075;-40,027488;20/07/2024;77106953458;;Leonardo Leao;Nordeste;Paraiba;Roteador TP-Link;5;236,74;454,55
+-16,016035;-50,85457;25/05/2024;75633875010;;Sarah Macedo;Centro-Oeste;Goias;Webcam Logitech;6;332,99;724,83
+-4,886278;-70,713711;03/05/2024;;11573346000103;Distribuidora Componentes;Norte;Amapa;Smart TV LG;16;1960,26;14266,02
+-15,256126;-43,527782;28/03/2025;;83859425000188;Comercio Internacional SA;Nordeste;Maranhao;Cabo HDMI;10;47,48;199,01
+4,240224;-59,723379;15/02/2025;;78158462000129;Distribuidora Componentes;Norte;Acre;Fone de Ouvido JBL;17;91,3;518,26
+-12,604722;-56,275721;24/09/2025;45455291009;;Maria Julia Silveira;Centro-Oeste;Goias;Smart TV LG;6;2233,45;5086,63
+-24,496521;-40,235514;09/02/2024;;77242430000144;Inovacao Digital SA;Sudeste;Sao Paulo;Notebook Dell Inspiron;20;3181,79;27747,36
+-14,787686;-54,770544;16/07/2025;37832796235;;Sofia Rios;Centro-Oeste;Goias;Estabilizador SMS;9;187,7;831,01
+-12,648603;-58,722124;25/09/2024;86149798275;;Joao Dias;Centro-Oeste;Goias;Roteador TP-Link;20;88,87;836,1
+-22,758131;-50,536097;17/08/2024;02668554071;;Thiago Borges;Sudeste;Espirito Santo;Estabilizador SMS;5;113,79;278,71
+-6,577436;-44,933266;22/02/2025;88402089178;;Dra. Maria Cecilia Machado;Nordeste;Paraiba;Smart TV LG;1;2388,03;767,26
+-1,56289;-47,912972;09/12/2025;;08305196000134;Global Distribuidora;Nordeste;Alagoas;Impressora HP;1;766,44;264,08
+-6,809158;-43,07823;01/10/2025;;41162171000102;Suprimentos Digitais LTDA;Nordeste;Paraiba;Camera Canon;17;3006,15;22396,19
+-26,379827;-51,752785;02/10/2024;28423523780;;Brayan Teixeira;Sul;Rio Grande do Sul;Monitor Acer;10;664,83;2793,94
+-23,277191;-50,537139;28/02/2024;;30662536000133;Comercio Eletronico Brasil;Sul;Rio Grande do Sul;Roteador TP-Link;14;114,55;772,93
+-14,98503;-42,072495;22/04/2024;17826993334;;Dr. Pietro Câmara;Nordeste;Piaui;Cabo HDMI;8;18,12;50,32
+1,296814;-62,653931;18/09/2025;07285666130;;Caua Mendonca;Norte;Acre;Webcam Logitech;8;248,29;638,43
+-23,011482;-48,915345;30/09/2024;58009973491;;Pedro Siqueira;Sul;Rio Grande do Sul;HD Externo Seagate;16;680,78;4781,22
+-22,542388;-49,450892;23/07/2025;61812081006;;Sr. Isaque da Rocha;Centro-Oeste;Goias;Teclado Mecanico Logitech;12;227,09;908,42
+-21,173741;-44,736838;29/10/2024;;04054935000101;Tecnologia Avancada LTDA;Sudeste;Sao Paulo;Tablet Apple iPad;19;3543,59;28869,59
+-1,680397;-59,039933;28/08/2024;81477136495;;Dra. Jade Santos;Norte;Acre;Monitor Acer;10;1091,87;5360,1
+-16,001026;-39,953859;06/12/2024;;92897991000175;Comercio Equipamentos SA;Sudeste;Minas Gerais;Roteador TP-Link;5;238,82;408,53
+-13,753438;-44,118055;04/03/2024;48748336165;;Lorenzo Costela;Nordeste;Ceara;Impressora HP;4;690,66;1207,64
+-18,17209;-54,200263;05/11/2024;39733697800;;Cecilia Aragao;Centro-Oeste;Mato Grosso;Tablet Apple iPad;20;3489,65;25586,68
+-19,129927;-55,645935;06/03/2024;60441415784;;Apollo Pinto;Centro-Oeste;Mato Grosso;Cabo HDMI;4;15,01;28,48
+-17,460062;-38,588371;23/05/2024;61078304130;;Jade da Mata;Nordeste;Pernambuco;Estabilizador SMS;10;153,29;587,47

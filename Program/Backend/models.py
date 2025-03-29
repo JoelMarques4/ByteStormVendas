@@ -13,5 +13,4 @@ class LangflowResponse(BaseModel):
 class VendasRegiao(BaseModel):
     """Modelo para dados de vendas de uma região."""
     resumo: Dict[str, Any]
-    graficos: Dict[str, str]
     dados_tabela: List[Dict[str, Any]] 

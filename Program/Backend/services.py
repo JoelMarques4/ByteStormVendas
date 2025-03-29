@@ -1,6 +1,8 @@
 import requests
 from typing import Dict, List, Any
 from fastapi import HTTPException
+import pandas as pd
+from datetime import datetime
 
 from data_store import data_store
 from config import DEFAULT_API_TOKEN, LANGFLOW_API_URL
@@ -90,19 +92,25 @@ class VendasService:
                 "total_vendas": 0,
                 "total_produtos": 0,
                 "media_valor": 0,
-                "num_clientes": 0
+                "num_clientes": 0,
+                "total_lucro": 0,
+                "margem_lucro": 0
             }
         
         total_vendas = sum(item["Valor"] for item in dados_regiao)
         total_produtos = sum(item["Quantidade"] for item in dados_regiao)
-        media_valor = total_vendas / len(dados_regiao)
+        total_lucro = sum(item.get("Lucro", 0) for item in dados_regiao)
+        media_valor = total_vendas / len(dados_regiao) if len(dados_regiao) > 0 else 0
         clientes = set(item["Cliente"] for item in dados_regiao)
+        margem_lucro = (total_lucro / total_vendas * 100) if total_vendas > 0 else 0
         
         return {
             "total_vendas": float(total_vendas),
             "total_produtos": int(total_produtos),
             "media_valor": float(media_valor),
-            "num_clientes": len(clientes)
+            "num_clientes": len(clientes),
+            "total_lucro": float(total_lucro),
+            "margem_lucro": float(margem_lucro)
         }
     
     def obter_dados_vendas_regiao(self, regiao: str) -> Dict[str, Any]:
@@ -120,16 +128,17 @@ class VendasService:
         # Calcular o resumo dos dados
         resumo = self.calcular_resumo_vendas(dados_regiao)
         
-        # Usar dados de tabela
-        dados_tabela = dados_regiao
+        # Certificar-se de que cada item tem o campo Estado
+        for item in dados_regiao:
+            if 'Estado' not in item or not item['Estado']:
+                # Usar o primeiro estado da região como padrão se não estiver definido
+                estados_regiao = data_store.estados_por_regiao.get(regiao, [])
+                item['Estado'] = estados_regiao[0] if estados_regiao else regiao
         
-        # Usar gráficos mockados
-        graficos = data_store.graficos_mockados
-        
+        # Estrutura para o frontend
         return {
             "resumo": resumo,
-            "graficos": graficos,
-            "dados_tabela": dados_tabela
+            "dados_tabela": dados_regiao
         }
 
 # Instâncias singleton dos serviços

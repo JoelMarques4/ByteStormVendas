@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import RelatorioVendas from './RelatorioVendas.vue';
 
-const selectedRegion = ref(null);
+const selectedRegions = ref([]);
 const mapLoaded = ref(false);
 const showRelatorio = ref(false);
 
@@ -13,6 +13,15 @@ const regions = {
   CentroOeste: ['Distrito Federal', 'Goiás', 'Mato Grosso', 'Mato Grosso do Sul'],
   Sudeste: ['Espírito Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Paulo'],
   Sul: ['Paraná', 'Rio Grande do Sul', 'Santa Catarina']
+};
+
+// Cores para cada região
+const regionColors = {
+  Norte: '#3498db',
+  Nordeste: '#e74c3c',
+  CentroOeste: '#2ecc71',
+  Sudeste: '#f39c12',
+  Sul: '#9b59b6'
 };
 
 // Mapeamento de estados para regiões
@@ -28,15 +37,39 @@ const stateToRegion = {
   'BR-PR': 'Sul', 'BR-RS': 'Sul', 'BR-SC': 'Sul'
 };
 
-// Função para selecionar uma região
-const selectRegion = (region) => {
-  selectedRegion.value = region;
+// Função para alternar a seleção de uma região
+const toggleRegion = (region) => {
+  const index = selectedRegions.value.indexOf(region);
+  if (index === -1) {
+    // Se a região não está selecionada, adicione-a
+    selectedRegions.value.push(region);
+  } else {
+    // Se a região já está selecionada, remova-a
+    selectedRegions.value.splice(index, 1);
+  }
+  updateMapColors();
+};
+
+// Função para verificar se uma região está selecionada
+const isRegionSelected = (region) => {
+  return selectedRegions.value.includes(region);
+};
+
+// Função para selecionar todas as regiões
+const selectAllRegions = () => {
+  selectedRegions.value = Object.keys(regions);
+  updateMapColors();
+};
+
+// Função para limpar todas as seleções
+const clearAllRegions = () => {
+  selectedRegions.value = [];
   updateMapColors();
 };
 
 // Função para abrir o relatório
 const abrirRelatorio = () => {
-  if (selectedRegion.value) {
+  if (selectedRegions.value.length > 0) {
     showRelatorio.value = true;
   }
 };
@@ -57,15 +90,15 @@ const updateMapColors = () => {
     path.setAttribute('fill', '#FFFFFF');
   });
   
-  // Se uma região está selecionada, colorimos seus estados
-  if (selectedRegion.value) {
+  // Colorimos os estados das regiões selecionadas
+  selectedRegions.value.forEach(region => {
     paths.forEach(path => {
       const stateId = path.id;
-      if (stateToRegion[stateId] === selectedRegion.value) {
-        path.setAttribute('fill', '#3498db');
+      if (stateToRegion[stateId] === region) {
+        path.setAttribute('fill', regionColors[region]);
       }
     });
-  }
+  });
 };
 
 // Carrega o SVG e adiciona interatividade
@@ -87,7 +120,7 @@ const loadMap = async () => {
           const region = stateToRegion[stateId];
           
           if (region) {
-            selectRegion(region);
+            toggleRegion(region);
           }
         });
         
@@ -114,31 +147,62 @@ onMounted(() => {
 <template>
   <div class="map-container">
     <h2>Mapa do Brasil</h2>
+    
+    <!-- Seletor de regiões -->
+    <div class="region-selector">
+      <div class="selector-header">
+        <h3>Selecione as regiões para o relatório</h3>
+        <div class="selector-actions">
+          <button class="btn-selector" @click="selectAllRegions">Selecionar Todas</button>
+          <button class="btn-selector" @click="clearAllRegions">Limpar Seleção</button>
+        </div>
+      </div>
+      <div class="region-checkboxes">
+        <div v-for="(states, region) in regions" :key="region" class="region-checkbox">
+          <label :style="{ borderColor: regionColors[region] }">
+            <input 
+              type="checkbox" 
+              :checked="isRegionSelected(region)" 
+              @change="toggleRegion(region)"
+            />
+            <span :style="{ backgroundColor: isRegionSelected(region) ? regionColors[region] : 'transparent' }">{{ region }}</span>
+          </label>
+        </div>
+      </div>
+    </div>
+    
     <div class="map-wrapper">
       <div id="map-container" class="brazil-map"></div>
       <div v-if="!mapLoaded" class="loading">Carregando mapa...</div>
     </div>
-    <div class="region-info" v-if="selectedRegion">
-      <h3>Região {{ selectedRegion }}</h3>
-      <div class="states-list">
-        <p><strong>Estados:</strong></p>
-        <ul>
-          <li v-for="state in regions[selectedRegion]" :key="state">{{ state }}</li>
-        </ul>
+    
+    <div class="region-info" v-if="selectedRegions.length > 0">
+      <h3>Regiões Selecionadas: {{ selectedRegions.length }}</h3>
+      <div class="selected-regions">
+        <div v-for="region in selectedRegions" :key="region" class="selected-region">
+          <div class="region-tag" :style="{ backgroundColor: regionColors[region] }">
+            {{ region }}
+          </div>
+          <div class="states-list">
+            <ul>
+              <li v-for="state in regions[region]" :key="state">{{ state }}</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="acoes">
-        <button class="btn-relatorio" @click="abrirRelatorio">
+        <button class="btn-relatorio" @click="abrirRelatorio" :disabled="selectedRegions.length === 0">
           <i class="bi bi-graph-up"></i> Gerar Relatório de Vendas
         </button>
       </div>
     </div>
     <div class="region-info" v-else>
-      <p>Selecione uma região no mapa para visualizar detalhes e gerar relatórios de vendas.</p>
+      <p>Selecione pelo menos uma região no mapa para gerar relatórios de vendas.</p>
     </div>
     
     <!-- Componente de Relatório -->
     <RelatorioVendas 
-      :regiao="selectedRegion" 
+      :regioes="selectedRegions" 
       :mostrar="showRelatorio" 
       @fechar="fecharRelatorio" 
     />
@@ -154,6 +218,80 @@ onMounted(() => {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
+}
+
+.region-selector {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.selector-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.selector-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-selector {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.3s;
+}
+
+.btn-selector:hover {
+  background-color: #e0e0e0;
+}
+
+.region-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.region-checkbox label {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  border: 2px solid;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.region-checkbox label:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+.region-checkbox input {
+  display: none;
+}
+
+.region-checkbox span {
+  color: #333;
+  font-weight: 600;
+  border-radius: 16px;
+  padding: 2px 10px;
+  transition: all 0.2s;
 }
 
 .map-wrapper {
@@ -192,8 +330,34 @@ onMounted(() => {
   border: 1px solid #ddd;
   border-radius: 5px;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   background-color: #f9f9f9;
+}
+
+.selected-regions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.selected-region {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.region-tag {
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  min-width: 100px;
+  text-align: center;
+}
+
+.states-list {
+  flex: 1;
 }
 
 .states-list ul {
@@ -201,6 +365,7 @@ onMounted(() => {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 5px;
   padding-left: 20px;
+  margin: 0;
 }
 
 .acoes {
@@ -225,5 +390,26 @@ onMounted(() => {
 
 .btn-relatorio:hover {
   background-color: #2980b9;
+}
+
+.btn-relatorio:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .selector-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .selected-region {
+    flex-direction: column;
+  }
+  
+  .region-tag {
+    width: 100%;
+  }
 }
 </style> 

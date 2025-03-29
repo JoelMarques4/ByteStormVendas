@@ -1,7 +1,13 @@
 from typing import Dict, List, Any
+import csv
+import os
+from datetime import datetime
 
 class DataStore:
     """Classe para gerenciar os dados de regiões e vendas."""
+
+    def __init__(self):
+        self.dados_por_regiao = self._carregar_dados_csv()
 
     # Mapeamento de estados para regiões usando códigos do SVG
     @property
@@ -21,6 +27,28 @@ class DataStore:
             'BR-ES': 'Sudeste', 'BR-MG': 'Sudeste', 'BR-RJ': 'Sudeste', 'BR-SP': 'Sudeste',
             # Sul
             'BR-PR': 'Sul', 'BR-RS': 'Sul', 'BR-SC': 'Sul'
+        }
+    
+    # Mapeamento inverso da região para o nome no CSV
+    @property
+    def regiao_para_nome_csv(self) -> Dict[str, str]:
+        return {
+            'Norte': 'Norte',
+            'Nordeste': 'Nordeste',
+            'CentroOeste': 'Centro-Oeste',
+            'Sudeste': 'Sudeste',
+            'Sul': 'Sul'
+        }
+
+    # Mapeamento de nome CSV para região
+    @property
+    def nome_csv_para_regiao(self) -> Dict[str, str]:
+        return {
+            'Norte': 'Norte',
+            'Nordeste': 'Nordeste',
+            'Centro-Oeste': 'CentroOeste',
+            'Sudeste': 'Sudeste',
+            'Sul': 'Sul'
         }
 
     # Mapeamento inverso para listar todos os estados por região
@@ -49,56 +77,105 @@ class DataStore:
             'BR-RJ': 'Rio de Janeiro', 'BR-SP': 'São Paulo',
             'BR-PR': 'Paraná', 'BR-RS': 'Rio Grande do Sul', 'BR-SC': 'Santa Catarina'
         }
-
-    # Dados fictícios de vendas para cada região
-    @property
-    def dados_vendas_mockados(self) -> Dict[str, List[Dict[str, Any]]]:
-        return {
-            "Norte": [
-                {"ID": 1, "Data": "2023-05-15", "Produto": "Laptop", "Quantidade": 3, "Valor": 6500.00, "Estado": "BR-AM", "Cliente": "Cliente 5"},
-                {"ID": 2, "Data": "2023-06-10", "Produto": "Smartphone", "Quantidade": 5, "Valor": 4500.00, "Estado": "BR-PA", "Cliente": "Cliente 2"},
-                {"ID": 3, "Data": "2023-07-22", "Produto": "Tablet", "Quantidade": 2, "Valor": 2200.00, "Estado": "BR-AC", "Cliente": "Cliente 8"},
-                {"ID": 4, "Data": "2023-08-03", "Produto": "Monitor", "Quantidade": 4, "Valor": 3800.00, "Estado": "BR-RO", "Cliente": "Cliente 3"},
-                {"ID": 5, "Data": "2023-09-18", "Produto": "Teclado", "Quantidade": 8, "Valor": 960.00, "Estado": "BR-TO", "Cliente": "Cliente 12"}
-            ],
-            "Nordeste": [
-                {"ID": 6, "Data": "2023-04-12", "Produto": "Laptop", "Quantidade": 7, "Valor": 15400.00, "Estado": "BR-BA", "Cliente": "Cliente 9"},
-                {"ID": 7, "Data": "2023-06-23", "Produto": "Smartphone", "Quantidade": 12, "Valor": 10800.00, "Estado": "BR-CE", "Cliente": "Cliente 4"},
-                {"ID": 8, "Data": "2023-08-05", "Produto": "Tablet", "Quantidade": 6, "Valor": 6600.00, "Estado": "BR-PE", "Cliente": "Cliente 7"},
-                {"ID": 9, "Data": "2023-09-14", "Produto": "Monitor", "Quantidade": 5, "Valor": 4750.00, "Estado": "BR-MA", "Cliente": "Cliente 11"},
-                {"ID": 10, "Data": "2023-10-27", "Produto": "Teclado", "Quantidade": 15, "Valor": 1800.00, "Estado": "BR-PB", "Cliente": "Cliente 6"}
-            ],
-            "CentroOeste": [
-                {"ID": 11, "Data": "2023-05-08", "Produto": "Laptop", "Quantidade": 4, "Valor": 8800.00, "Estado": "BR-DF", "Cliente": "Cliente 14"},
-                {"ID": 12, "Data": "2023-07-19", "Produto": "Smartphone", "Quantidade": 8, "Valor": 7200.00, "Estado": "BR-GO", "Cliente": "Cliente 10"},
-                {"ID": 13, "Data": "2023-08-30", "Produto": "Tablet", "Quantidade": 3, "Valor": 3300.00, "Estado": "BR-MT", "Cliente": "Cliente 15"},
-                {"ID": 14, "Data": "2023-10-11", "Produto": "Monitor", "Quantidade": 6, "Valor": 5700.00, "Estado": "BR-MS", "Cliente": "Cliente 1"},
-                {"ID": 15, "Data": "2023-11-22", "Produto": "Teclado", "Quantidade": 10, "Valor": 1200.00, "Estado": "BR-DF", "Cliente": "Cliente 18"}
-            ],
-            "Sudeste": [
-                {"ID": 16, "Data": "2023-03-14", "Produto": "Laptop", "Quantidade": 12, "Valor": 26400.00, "Estado": "BR-SP", "Cliente": "Cliente 20"},
-                {"ID": 17, "Data": "2023-05-25", "Produto": "Smartphone", "Quantidade": 20, "Valor": 18000.00, "Estado": "BR-RJ", "Cliente": "Cliente 13"},
-                {"ID": 18, "Data": "2023-07-06", "Produto": "Tablet", "Quantidade": 10, "Valor": 11000.00, "Estado": "BR-MG", "Cliente": "Cliente 17"},
-                {"ID": 19, "Data": "2023-09-17", "Produto": "Monitor", "Quantidade": 15, "Valor": 14250.00, "Estado": "BR-ES", "Cliente": "Cliente 19"},
-                {"ID": 20, "Data": "2023-11-28", "Produto": "Teclado", "Quantidade": 25, "Valor": 3000.00, "Estado": "BR-SP", "Cliente": "Cliente 16"}
-            ],
-            "Sul": [
-                {"ID": 21, "Data": "2023-04-05", "Produto": "Laptop", "Quantidade": 5, "Valor": 11000.00, "Estado": "BR-RS", "Cliente": "Cliente 22"},
-                {"ID": 22, "Data": "2023-06-16", "Produto": "Smartphone", "Quantidade": 10, "Valor": 9000.00, "Estado": "BR-PR", "Cliente": "Cliente 21"},
-                {"ID": 23, "Data": "2023-08-27", "Produto": "Tablet", "Quantidade": 4, "Valor": 4400.00, "Estado": "BR-SC", "Cliente": "Cliente 25"},
-                {"ID": 24, "Data": "2023-10-08", "Produto": "Monitor", "Quantidade": 8, "Valor": 7600.00, "Estado": "BR-PR", "Cliente": "Cliente 23"},
-                {"ID": 25, "Data": "2023-12-19", "Produto": "Teclado", "Quantidade": 12, "Valor": 1440.00, "Estado": "BR-RS", "Cliente": "Cliente 24"}
-            ]
+    
+    def _carregar_dados_csv(self) -> Dict[str, List[Dict[str, Any]]]:
+        """Carrega os dados do arquivo CSV e organiza-os por região."""
+        resultado = {
+            "Norte": [],
+            "Nordeste": [],
+            "CentroOeste": [],
+            "Sudeste": [],
+            "Sul": []
         }
-
-    # Gráficos mockados como dados base64
-    @property
-    def graficos_mockados(self) -> Dict[str, str]:
-        return {
-            "vendas_por_produto": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
-            "quantidade_por_produto": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
-            "vendas_por_estado": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg=="
-        }
+        
+        csv_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'dadosdosprodutos.csv')
+        
+        try:
+            with open(csv_path, 'r', encoding='utf-8') as file:
+                reader = csv.reader(file, delimiter=';')
+                headers = next(reader)  # Pular o cabeçalho
+                
+                # Mapear os índices das colunas que nos interessam
+                latitude_idx = headers.index('Latitude')
+                longitude_idx = headers.index('Longitude')
+                data_idx = headers.index('Data')
+                cpf_idx = headers.index('CPF')
+                cnpj_idx = headers.index('CNPJ')
+                nome_cliente_idx = headers.index('nome_cliente')
+                regiao_idx = headers.index('regiao')
+                estado_idx = headers.index('estado')
+                produto_idx = headers.index('produto')
+                quantidade_idx = headers.index('quantidade')
+                valor_unitario_idx = headers.index('valor_unitario')
+                lucro_total_idx = headers.index('lucro_total')
+                
+                id_counter = 1
+                
+                for row in reader:
+                    if len(row) >= 12:  # Verificar se a linha tem dados suficientes
+                        try:
+                            # Converter data para o formato ISO
+                            data_parts = row[data_idx].split('/')
+                            data_iso = f"{data_parts[2]}-{data_parts[1]}-{data_parts[0]}"
+                            
+                            # Limpar e converter valores numéricos
+                            quantidade = int(row[quantidade_idx])
+                            valor_unitario = float(row[valor_unitario_idx].replace(',', '.'))
+                            lucro_total = float(row[lucro_total_idx].replace(',', '.'))
+                            valor_total = quantidade * valor_unitario
+                            
+                            # Pegar CPF ou CNPJ
+                            cpf = row[cpf_idx].strip()
+                            cnpj = row[cnpj_idx].strip()
+                            doc_fiscal = cnpj if cnpj else cpf
+                            
+                            regiao_csv = row[regiao_idx]
+                            estado = row[estado_idx]
+                            regiao_key = self.nome_csv_para_regiao.get(regiao_csv, regiao_csv)
+                            
+                            # Corrigir o código do estado para o formato SVG (BR-XX)
+                            codigo_estado = None
+                            for codigo, nome in self.nome_estado.items():
+                                if nome.lower() == estado.lower() or nome.replace(' ', '').lower() == estado.lower():
+                                    codigo_estado = codigo
+                                    break
+                            
+                            # Se não encontrou diretamente, tente encontrar pela região
+                            if not codigo_estado and regiao_key in self.estados_por_regiao:
+                                # Use o primeiro estado da região como fallback
+                                estados_da_regiao = self.estados_por_regiao[regiao_key]
+                                if estados_da_regiao:
+                                    codigo_estado = estados_da_regiao[0]
+                            
+                            # Criar entrada de dados
+                            entrada = {
+                                "ID": id_counter,
+                                "Data": data_iso,
+                                "Latitude": row[latitude_idx].replace(',', '.'),
+                                "Longitude": row[longitude_idx].replace(',', '.'),
+                                "CPF_CNPJ": doc_fiscal,
+                                "Cliente": row[nome_cliente_idx],
+                                "Regiao": regiao_csv,
+                                "Estado": codigo_estado,
+                                "Estado_Nome": estado,
+                                "Produto": row[produto_idx],
+                                "Quantidade": quantidade,
+                                "Valor_Unitario": valor_unitario,
+                                "Valor": valor_total,  # Calcular valor total
+                                "Lucro": lucro_total
+                            }
+                            
+                            # Adicionar à região correspondente
+                            if regiao_key in resultado:
+                                resultado[regiao_key].append(entrada)
+                                id_counter += 1
+                        except (ValueError, IndexError) as e:
+                            print(f"Erro ao processar linha: {row}, Erro: {e}")
+        except Exception as e:
+            print(f"Erro ao abrir ou processar o arquivo CSV: {e}")
+            # Se houver erro, retornamos dados vazios
+        
+        return resultado
 
     def get_regioes(self) -> List[str]:
         """Retorna a lista de regiões disponíveis."""
@@ -106,7 +183,7 @@ class DataStore:
 
     def get_dados_regiao(self, regiao: str) -> List[Dict[str, Any]]:
         """Retorna os dados de vendas para uma região específica."""
-        return self.dados_vendas_mockados.get(regiao, [])
+        return self.dados_por_regiao.get(regiao, [])
 
 # Instância singleton para acesso aos dados
 data_store = DataStore() 
