@@ -2,12 +2,12 @@ from sqlmodel import SQLModel, create_engine
 from models import Chat, Message
 
 # Configuração do banco de dados
-DATABASE_URL = "postgresql://postgres:12345678Oito*@localhost:5432/postgres?client_encoding=LATIN1"
+DATABASE_URL = "postgresql://postgres:12345678Oito*@localhost:5432/postgres?client_encoding=UTF8"
 engine = create_engine(
     DATABASE_URL,
     echo=True,  # Para ver as consultas SQL no console
     connect_args={
-        "client_encoding": "LATIN1",
+        "client_encoding": "UTF8",
         "options": "-c TimeZone=America/Sao_Paulo"
     }
 )
