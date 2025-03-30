@@ -181,14 +181,9 @@ http://localhost:5173
 - [ ] Exportação avançada de dados
 - [ ] Integração com mais fontes de dados
 - [ ] Sistema de notificações
-- [ ] App mobile
+- [ ] TextToSql
 
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
 
 <div align="center">
-Feito com ❤️ pela equipe ByteStorm
+Feito com ❤️ pela equipe CodeSellers
 </div> 
