@@ -91,12 +91,32 @@ def importar_csv(arquivo_csv: str):
             
         print(f"CSV carregado com sucesso. Total de linhas: {len(df)}")
         
-        # Converter colunas numéricas
-        df['latitude'] = df['Latitude'].str.replace(',', '.').astype(float)
-        df['longitude'] = df['Longitude'].str.replace(',', '.').astype(float)
-        df['quantidade'] = df['quantidade'].astype(int)
-        df['valor_unitario'] = df['valor_unitario'].str.replace(',', '.').astype(float)
-        df['lucro_total'] = df['lucro_total'].str.replace(',', '.').astype(float)
+        # Converter colunas numéricas de forma segura
+        def safe_convert_to_float(value):
+            if pd.isna(value):
+                return None
+            if isinstance(value, str):
+                return float(value.replace(',', '.'))
+            return float(value)
+
+        def safe_convert_to_int(value):
+            if pd.isna(value):
+                return None
+            if isinstance(value, str):
+                return int(float(value.replace(',', '.')))
+            return int(value)
+
+        # Converter colunas com verificação de tipo
+        if 'latitude' in df.columns:
+            df['latitude'] = df['latitude'].apply(safe_convert_to_float)
+        if 'longitude' in df.columns:
+            df['longitude'] = df['longitude'].apply(safe_convert_to_float)
+        if 'quantidade' in df.columns:
+            df['quantidade'] = df['quantidade'].apply(safe_convert_to_int)
+        if 'valor_unitario' in df.columns:
+            df['valor_unitario'] = df['valor_unitario'].apply(safe_convert_to_float)
+        if 'lucro_total' in df.columns:
+            df['lucro_total'] = df['lucro_total'].apply(safe_convert_to_float)
         
         # Renomear colunas para corresponder ao modelo
         df.columns = df.columns.str.lower()
@@ -161,6 +181,13 @@ def importar_csv(arquivo_csv: str):
         
     except Exception as e:
         print(f"Erro durante a importação: {str(e)}")
+        # Adicionar mais informações de debug
+        print("\nInformações adicionais de debug:")
+        print(f"Tipos de dados das colunas:")
+        for col in df.columns:
+            print(f"{col}: {df[col].dtype}")
+        print("\nPrimeiras linhas do DataFrame:")
+        print(df.head())
 
 def verificar_csv(arquivo_csv: str):
     """Função para analisar o CSV antes de importar"""
