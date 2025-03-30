@@ -1,16 +1,16 @@
 from fastapi import APIRouter
 
 from models import QueryInput, LangflowResponse, VendasRegiao
-from services import langflow_service, vendas_service
+from services import llama_service, vendas_service
 
 # Criar os roteadores para cada grupo de endpoints
 chat_router = APIRouter(prefix="/api", tags=["chat"])
 vendas_router = APIRouter(prefix="/api/vendas", tags=["vendas"])
 
 @chat_router.post("/query", response_model=LangflowResponse)
-async def query_langflow(query_input: QueryInput):
+async def query_llama(query_input: QueryInput):
     """Envia uma consulta para o assistente de chat e retorna a resposta."""
-    response = await langflow_service.query(query_input.message, query_input.api_token)
+    response = await llama_service.query(query_input.message)
     return LangflowResponse(response=response)
 
 @vendas_router.get("/regioes")

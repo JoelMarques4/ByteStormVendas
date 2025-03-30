@@ -3,80 +3,142 @@ from typing import Dict, List, Any
 from fastapi import HTTPException
 import pandas as pd
 from datetime import datetime
+from sqlmodel import Session, select
+from sqlalchemy.engine import create_engine
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 from data_store import data_store
 from config import DEFAULT_API_TOKEN, LANGFLOW_API_URL
+from importar_csv import Pessoa
 
-class LangflowService:
-    """Serviço para interagir com a API do Langflow."""
+# Configuração do banco de dados
+DATABASE_URL = "postgresql://postgres:12345678Oito*@localhost:5432/postgres?client_encoding=LATIN1"
+engine = create_engine(
+    DATABASE_URL,
+    echo=True,  # Para ver as consultas SQL no console
+    connect_args={
+        "client_encoding": "LATIN1",
+        "options": "-c TimeZone=America/Sao_Paulo"
+    }
+)
+
+class LlamaService:
+    """Serviço para interagir com o Llama local e banco de dados."""
     
-    def extract_message(self, response_data):
-        """Extrai a mensagem da resposta do Langflow."""
+    def __init__(self):
+        self.llama_url = "http://localhost:11434/api/generate"
+        self.vectorizer = TfidfVectorizer(
+            stop_words='english',
+            ngram_range=(1, 2),
+            max_features=1000
+        )
+        
+    def formatar_dados_banco(self, dados: List[Pessoa]) -> str:
+        """Formata os dados do banco para incluir no contexto da IA."""
+        texto_formatado = "Dados disponíveis no banco de dados:\n\n"
+        
+        # Agrupar por região
+        dados_por_regiao = {}
+        for item in dados:
+            regiao = item.regiao or "Não especificada"
+            if regiao not in dados_por_regiao:
+                dados_por_regiao[regiao] = []
+            dados_por_regiao[regiao].append(item)
+        
+        # Formatar dados por região
+        for regiao, items in dados_por_regiao.items():
+            texto_formatado += f"\nRegião: {regiao}\n"
+            for item in items:
+                texto_formatado += f"- Cliente: {item.nome_cliente}\n"
+                texto_formatado += f"  Produto: {item.produto}\n"
+                texto_formatado += f"  Quantidade: {item.quantidade}\n"
+                texto_formatado += f"  Valor: R$ {item.valor_unitario:.2f}\n"
+                texto_formatado += f"  Lucro: R$ {item.lucro_total:.2f}\n"
+                texto_formatado += f"  Data: {item.data}\n"
+        
+        return texto_formatado
+    
+    def buscar_dados_relevantes(self, query: str, dados: List[Pessoa], top_k: int = 5) -> List[Pessoa]:
+        """Busca os dados mais relevantes para a consulta usando TF-IDF."""
+        # Criar textos para cada registro
+        textos = []
+        for item in dados:
+            texto = f"Região: {item.regiao}, Cliente: {item.nome_cliente}, Produto: {item.produto}, "
+            texto += f"Quantidade: {item.quantidade}, Valor: {item.valor_unitario}, Lucro: {item.lucro_total}"
+            textos.append(texto)
+        
+        # Adicionar a query à lista de textos
+        textos.append(query)
+        
+        # Calcular TF-IDF
         try:
-            # Tenta encontrar a mensagem no caminho mais comum
-            if 'outputs' in response_data and len(response_data['outputs']) > 0:
-                first_output = response_data['outputs'][0]
-                if 'outputs' in first_output and len(first_output['outputs']) > 0:
-                    message_data = first_output['outputs'][0]
-                    if 'outputs' in message_data and 'message' in message_data['outputs']:
-                        return message_data['outputs']['message']['message']
-                    elif 'artifacts' in message_data and 'message' in message_data['artifacts']:
-                        return message_data['artifacts']['message']
-                    elif 'messages' in message_data and len(message_data['messages']) > 0:
-                        return message_data['messages'][0]['message']
+            tfidf_matrix = self.vectorizer.fit_transform(textos)
             
-            # Se não encontrar, retorna uma mensagem de erro
-            return "Desculpe, não consegui processar a resposta corretamente."
+            # Calcular similaridade entre a query e todos os documentos
+            query_vector = tfidf_matrix[-1:]  # Último vetor é a query
+            doc_vectors = tfidf_matrix[:-1]  # Todos os outros são documentos
+            
+            similaridades = cosine_similarity(query_vector, doc_vectors)[0]
+            
+            # Obter índices dos top_k mais relevantes
+            indices_relevantes = np.argsort(similaridades)[-top_k:][::-1]
+            
+            # Retornar os dados mais relevantes
+            return [dados[i] for i in indices_relevantes]
         except Exception as e:
-            print(f"Erro ao extrair mensagem: {str(e)}")
-            return "Desculpe, ocorreu um erro ao processar a resposta."
+            print(f"Erro ao calcular similaridade: {str(e)}")
+            # Em caso de erro, retorna os primeiros top_k registros
+            return dados[:top_k]
     
-    async def query(self, message: str, api_token: str = None):
-        """Envia uma consulta para o Langflow e retorna a resposta."""
-        # Use o token API fornecido ou o padrão
-        token = api_token or DEFAULT_API_TOKEN
-        
-        # Parâmetros da consulta
-        params = {
-            "stream": "false"
-        }
-        
-        # Cabeçalhos
-        headers = {
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {token}"
-        }
-        
-        # Payload da requisição
-        payload = {
-            "input_value": message,
-            "output_type": "chat",
-            "input_type": "chat",
-            "tweaks": {
-                "Agent-P5ux3": {},
-                "ChatInput-UG3MA": {},
-                "ChatOutput-bBEAX": {},
-                "URL-2vuYK": {},
-                "CalculatorComponent-b0roK": {}
-            }
-        }
-        
+    async def query(self, message: str):
+        """Envia uma consulta para o Llama local com contexto do banco de dados."""
         try:
-            # Faz a requisição para a API
-            response = requests.post(LANGFLOW_API_URL, params=params, headers=headers, json=payload)
+            # Buscar dados do banco
+            with Session(engine) as session:
+                statement = select(Pessoa)
+                dados_banco = session.exec(statement).all()
             
-            # Verifica se a requisição foi bem-sucedida
-            response.raise_for_status()
+            print(f"Dados do banco recuperados com sucesso. Total de registros: {len(dados_banco)}")
             
-            # Extrai a mensagem da resposta
-            message = self.extract_message(response.json())
+            # Buscar dados mais relevantes para a consulta
+            dados_relevantes = self.buscar_dados_relevantes(message, dados_banco)
             
-            # Retorna apenas a mensagem
-            return message
-        
-        except requests.exceptions.RequestException as e:
-            raise HTTPException(status_code=500, detail=f"Erro ao chamar a API do Langflow: {str(e)}")
+            # Formatar dados relevantes
+            contexto_banco = self.formatar_dados_banco(dados_relevantes)
+            
+            # Preparar prompt para o Llama
+            prompt = f"""Você é um assistente especializado em análise de dados de vendas. Use os dados do banco de dados para responder à pergunta do usuário.
 
+Dados do banco de dados:
+{contexto_banco}
+
+Pergunta do usuário: {message}
+
+Por favor, responda de forma clara e concisa, usando os dados disponíveis. Se não houver dados suficientes para responder completamente, indique isso na sua resposta."""
+
+            # Enviar para o Llama
+            payload = {
+                "model": "deepseek-r1",
+                "prompt": prompt,
+                "stream": False
+            }
+            
+            print("Enviando requisição para o Llama local...")
+            response = requests.post(self.llama_url, json=payload)
+            
+            if response.status_code == 200:
+                return response.json()["response"]
+            else:
+                raise HTTPException(
+                    status_code=500,
+                    detail=f"Erro ao chamar o Llama: {response.status_code}, {response.text}"
+                )
+        
+        except Exception as e:
+            print(f"Erro inesperado: {str(e)}")
+            raise HTTPException(status_code=500, detail=f"Erro interno do servidor: {str(e)}")
 
 class VendasService:
     """Serviço para gerenciar dados de vendas."""
@@ -142,5 +204,5 @@ class VendasService:
         }
 
 # Instâncias singleton dos serviços
-langflow_service = LangflowService()
+llama_service = LlamaService()
 vendas_service = VendasService() 
