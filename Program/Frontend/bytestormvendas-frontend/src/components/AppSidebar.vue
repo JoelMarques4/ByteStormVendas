@@ -37,7 +37,7 @@ const changeView = (view) => {
     <!-- Barra Lateral -->
     <div class="sidebar" :class="{ 'sidebar-open': isSidebarOpen }">
       <div class="sidebar-header">
-        <h3>ByteStorm Vendas</h3>
+        <h3>CodeSellers Vendas</h3>
         <button class="close-sidebar" @click="toggleSidebar">
           <i class="bi bi-x-lg"></i>
         </button>

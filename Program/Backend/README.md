@@ -1,6 +1,6 @@
-# ByteStorm Vendas - Backend
+# CodeSellers Vendas - Backend
 
-Este é o backend do sistema ByteStorm Vendas, uma aplicação para visualização e análise de dados de vendas por região no Brasil.
+Este é o backend do sistema CodeSellers Vendas, uma aplicação para visualização e análise de dados de vendas por região no Brasil.
 
 ## Estrutura do Projeto
 

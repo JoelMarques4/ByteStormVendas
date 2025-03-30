@@ -12,6 +12,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from data_store import data_store
 from config import DEFAULT_API_TOKEN, LANGFLOW_API_URL
 from importar_csv import Pessoa
+from models import Chat, Message
 
 # Configuração do banco de dados
 DATABASE_URL = "postgresql://postgres:12345678Oito*@localhost:5432/postgres?client_encoding=LATIN1"
@@ -53,10 +54,10 @@ class LlamaService:
             for item in items:
                 texto_formatado += f"- Cliente: {item.nome_cliente}\n"
                 texto_formatado += f"  Produto: {item.produto}\n"
-                texto_formatado += f"  Quantidade: {item.quantidade}\n"
-                texto_formatado += f"  Valor: R$ {item.valor_unitario:.2f}\n"
+                texto_formatado += f"  Quantidade Vendida: {item.quantidade}\n"
+                texto_formatado += f"  Preço Unitário: R$ {item.valor_unitario:.2f}\n"
                 texto_formatado += f"  Lucro: R$ {item.lucro_total:.2f}\n"
-                texto_formatado += f"  Data: {item.data}\n"
+                texto_formatado += f"  Data da Venda: {item.data}\n"
         
         return texto_formatado
     
@@ -111,12 +112,14 @@ class LlamaService:
             # Preparar prompt para o Llama
             prompt = f"""Você é um assistente especializado em análise de dados de vendas. Use os dados do banco de dados para responder à pergunta do usuário.
 
+IMPORTANTE: Responda SEMPRE em português brasileiro, usando linguagem clara e profissional.
+
 Dados do banco de dados:
 {contexto_banco}
 
 Pergunta do usuário: {message}
 
-Por favor, responda de forma clara e concisa, usando os dados disponíveis. Se não houver dados suficientes para responder completamente, indique isso na sua resposta."""
+Por favor, responda de forma clara e concisa, usando os dados disponíveis. Se não houver dados suficientes para responder completamente, indique isso na sua resposta. Lembre-se de usar termos e expressões comuns no português brasileiro."""
 
             # Enviar para o Llama
             payload = {
@@ -203,6 +206,72 @@ class VendasService:
             "dados_tabela": dados_regiao
         }
 
+class ChatService:
+    """Serviço para gerenciar chats e mensagens."""
+    
+    def __init__(self):
+        self.engine = engine
+    
+    def criar_chat(self) -> int:
+        """Cria um novo chat e retorna seu ID."""
+        with Session(self.engine) as session:
+            chat = Chat()
+            session.add(chat)
+            session.commit()
+            return chat.id
+    
+    def salvar_mensagem(self, chat_id: int, content: str, sender: str) -> None:
+        """Salva uma nova mensagem no chat especificado."""
+        with Session(self.engine) as session:
+            message = Message(chat_id=chat_id, content=content, sender=sender)
+            session.add(message)
+            
+            # Atualizar o updated_at do chat
+            chat = session.get(Chat, chat_id)
+            if chat:
+                chat.updated_at = datetime.now()
+            
+            session.commit()
+    
+    def excluir_chat(self, chat_id: int) -> bool:
+        """Exclui um chat e todas as suas mensagens."""
+        with Session(self.engine) as session:
+            chat = session.get(Chat, chat_id)
+            if chat:
+                session.delete(chat)
+                session.commit()
+                return True
+            return False
+    
+    def listar_chats(self) -> List[Dict[str, Any]]:
+        """Lista todos os chats com suas informações básicas."""
+        with Session(self.engine) as session:
+            chats = session.query(Chat).order_by(Chat.updated_at.desc()).all()
+            return [
+                {
+                    "id": chat.id,
+                    "created_at": chat.created_at,
+                    "updated_at": chat.updated_at,
+                    "message_count": session.query(Message).filter(Message.chat_id == chat.id).count()
+                }
+                for chat in chats
+            ]
+    
+    def obter_mensagens_chat(self, chat_id: int) -> List[Dict[str, Any]]:
+        """Obtém todas as mensagens de um chat específico."""
+        with Session(self.engine) as session:
+            messages = session.query(Message).filter(Message.chat_id == chat_id).order_by(Message.timestamp).all()
+            return [
+                {
+                    "id": msg.id,
+                    "content": msg.content,
+                    "sender": msg.sender,
+                    "timestamp": msg.timestamp
+                }
+                for msg in messages
+            ]
+
 # Instâncias singleton dos serviços
 llama_service = LlamaService()
-vendas_service = VendasService() 
+vendas_service = VendasService()
+chat_service = ChatService() 

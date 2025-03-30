@@ -51,10 +51,6 @@ let chartQtdProdutoMes = null;
 let chartVendasEstadoMes = null;
 let chartLucroReceita = null;
 
-// Adicionar referência para o container do mapa
-const mapaVendasContainer = ref(null);
-let mapaVendas = null;
-
 // Variável para controlar tentativas de renderização
 let tentativasRenderizacao = 0;
 const MAX_TENTATIVAS = 5;
@@ -871,171 +867,10 @@ const formatarData = (data) => {
   }
 };
 
-// Modificar a função que cria o mapa para usar uma visualização simples em vez do Leaflet
-const criarMapaVendas = () => {
-  // Verificar se o elemento do mapa existe e se temos dados
-  if (!mapaVendasContainer.value || !dadosVendas.value || !dadosVendas.value.dados_tabela) {
-    console.error('Container do mapa ou dados não disponíveis');
-    return;
-  }
-  
-  try {
-    console.log('Criando visualização simplificada de mapa...');
-    
-    // Limpar o container existente
-    mapaVendasContainer.value.innerHTML = '';
-    
-    // Criar canvas para o mapa
-    const canvas = document.createElement('canvas');
-    canvas.width = mapaVendasContainer.value.clientWidth;
-    canvas.height = mapaVendasContainer.value.clientHeight;
-    mapaVendasContainer.value.appendChild(canvas);
-    
-    const ctx = canvas.getContext('2d');
-    ctx.fillStyle = '#f0f0f0';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    // Desenhar contorno do Brasil (simplificado)
-    ctx.beginPath();
-    ctx.strokeStyle = '#2c3e50';
-    ctx.lineWidth = 2;
-    
-    // Contorno simplificado do Brasil
-    const brasilSimplificado = [
-      {x: 0.5, y: 0.4},
-      {x: 0.7, y: 0.3},
-      {x: 0.8, y: 0.5},
-      {x: 0.6, y: 0.8},
-      {x: 0.3, y: 0.7},
-      {x: 0.5, y: 0.4}
-    ];
-    
-    // Desenhar o contorno
-    ctx.beginPath();
-    const startPoint = {
-      x: brasilSimplificado[0].x * canvas.width,
-      y: brasilSimplificado[0].y * canvas.height
-    };
-    ctx.moveTo(startPoint.x, startPoint.y);
-    
-    for (let i = 1; i < brasilSimplificado.length; i++) {
-      const point = {
-        x: brasilSimplificado[i].x * canvas.width,
-        y: brasilSimplificado[i].y * canvas.height
-      };
-      ctx.lineTo(point.x, point.y);
-    }
-    
-    ctx.stroke();
-    ctx.fillStyle = 'rgba(240, 240, 240, 0.5)';
-    ctx.fill();
-    
-    // Coletar e agrupar dados de vendas
-    const pontos = dadosVendas.value.dados_tabela.filter(item => 
-      item.Latitude && item.Longitude
-    );
-    
-    // Função para converter coordenadas geográficas para coordenadas no canvas
-    const geoToCanvas = (lat, lng) => {
-      // Limites aproximados do Brasil
-      const latMin = -33.7683777809;
-      const latMax = 5.24448639569;
-      const lngMin = -73.9872354804;
-      const lngMax = -34.7299934555;
-      
-      // Normalizar as coordenadas
-      const x = ((lng - lngMin) / (lngMax - lngMin)) * canvas.width;
-      const y = (1 - ((lat - latMin) / (latMax - latMin))) * canvas.height;
-      
-      return { x, y };
-    };
-    
-    // Agrupar vendas por localização arredondada
-    const vendasPorLocal = {};
-    pontos.forEach(item => {
-      // Arredondar para reduzir sobreposição
-      const lat = parseFloat((Math.round(parseFloat(item.Latitude) * 10) / 10).toFixed(1));
-      const lng = parseFloat((Math.round(parseFloat(item.Longitude) * 10) / 10).toFixed(1));
-      const key = `${lat}-${lng}`;
-      
-      if (!vendasPorLocal[key]) {
-        vendasPorLocal[key] = {
-          lat,
-          lng,
-          vendas: 0,
-          produtos: new Set(),
-          clientes: new Set(),
-          lucro: 0
-        };
-      }
-      
-      vendasPorLocal[key].vendas += parseFloat(item.Valor || 0);
-      vendasPorLocal[key].lucro += parseFloat(item.Lucro || 0);
-      vendasPorLocal[key].produtos.add(item.Produto);
-      vendasPorLocal[key].clientes.add(item.Cliente);
-    });
-    
-    // Desenhar círculos representando as vendas
-    Object.values(vendasPorLocal).forEach(local => {
-      const canvasPos = geoToCanvas(local.lat, local.lng);
-      
-      // Calcular tamanho do círculo com base no valor das vendas
-      const valorNormalizado = Math.min(Math.max(Math.log10(local.vendas) * 5, 5), 20);
-      
-      // Desenhar círculo
-      ctx.beginPath();
-      ctx.fillStyle = 'rgba(52, 152, 219, 0.5)';
-      ctx.strokeStyle = 'rgba(41, 128, 185, 0.8)';
-      ctx.lineWidth = 1;
-      ctx.arc(canvasPos.x, canvasPos.y, valorNormalizado, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.stroke();
-    });
-    
-    // Adicionar título ao mapa
-    ctx.fillStyle = '#2c3e50';
-    ctx.font = '16px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText('Mapa de Distribuição de Vendas (Simplificado)', canvas.width / 2, 20);
-    
-    // Adicionar legenda
-    ctx.font = '12px Arial';
-    ctx.textAlign = 'left';
-    ctx.fillText('Tamanho do círculo representa o volume de vendas', 10, canvas.height - 10);
-    
-    console.log('Visualização de mapa criada com sucesso!');
-    
-    // Adicionar informação para o usuário
-    const infoDiv = document.createElement('div');
-    infoDiv.className = 'mapa-info';
-    infoDiv.innerHTML = 'Este é um mapa simplificado. Para interatividade completa, instale o pacote Leaflet.';
-    mapaVendasContainer.value.appendChild(infoDiv);
-    
-  } catch (error) {
-    console.error('Erro ao criar visualização do mapa:', error);
-  }
-};
-
-// Observar mudanças nos dados para atualizar o mapa
-watch(() => dadosVendas.value, () => {
-  if (dadosVendas.value && props.mostrar) {
-    // Atrasar criação do mapa para garantir que o container esteja renderizado
-    setTimeout(() => {
-      criarMapaVendas();
-    }, 500);
-  }
-}, { deep: true });
-
 // Limpar mapa ao fechar o relatório
 const fecharRelatorio = () => {
-  console.log('Fechando relatório e limpando gráficos e mapa');
+  console.log('Fechando relatório e limpando gráficos');
   limparGraficos();
-  
-  if (mapaVendas) {
-    mapaVendas.remove();
-    mapaVendas = null;
-  }
-  
   emit('fechar');
 };
 
@@ -1179,12 +1014,11 @@ const formatarMoedaSemSimbolo = (valor) => {
 <template>
   <div class="relatorio-container" v-if="mostrar">
     <div class="relatorio-content">
-      <button class="fechar-btn" @click="fecharRelatorio">
-          <i class="bi bi-x-lg"></i>
-        </button>
-      
       <div class="relatorio-header">
         <h2>Relatório de Vendas: {{ tituloRegioes }}</h2>
+        <button class="fechar-btn" @click="fecharRelatorio">
+          <i class="bi bi-x-lg"></i>
+        </button>
       </div>
       
       <div v-if="carregando" class="loading-container">
@@ -1271,19 +1105,14 @@ const formatarMoedaSemSimbolo = (valor) => {
             </div>
             <div class="chart-info">Use a roda do mouse para zoom ou arraste para selecionar uma área</div>
           </div>
-          
-          <!-- Mapa de Distribuição Geográfica de Vendas -->
-          <div class="chart-container mapa-container">
-            <h4>Distribuição Geográfica de Vendas</h4>
-            <div class="mapa-wrapper" ref="mapaVendasContainer"></div>
-          </div>
-          
-          <!-- Botões de ação -->
-          <div class="relatorio-acoes">
+        </div>
+        
+        <!-- Barra de Ações -->
+        <div class="acoes-bar">
+          <div class="acoes-left">
             <button class="btn-exportar" @click="exportarParaCSV">
               <i class="fas fa-file-export"></i> Exportar para Excel
             </button>
-            <button class="btn-fechar" @click="fecharRelatorio">Fechar</button>
           </div>
         </div>
         
@@ -1387,49 +1216,52 @@ const formatarMoedaSemSimbolo = (valor) => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: white;
   z-index: 1000;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  overflow-y: auto;
-  padding: 20px 0;
+  flex-direction: column;
 }
 
 .relatorio-content {
-  background-color: white;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 1200px;
-  max-height: 90vh;
+  flex: 1;
   overflow-y: auto;
-  position: relative;
   padding: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  margin: 20px 0;
-}
-
-.fechar-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #333;
-  z-index: 10;
+  background-color: white;
 }
 
 .relatorio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
 }
 
 .relatorio-header h2 {
   margin: 0;
   color: #2c3e50;
+}
+
+.fechar-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.fechar-btn:hover {
+  color: #e74c3c;
 }
 
 .regioes-selecionadas {
@@ -1558,11 +1390,10 @@ const formatarMoedaSemSimbolo = (valor) => {
 }
 
 .chart-info {
-  margin-top: auto;
   font-size: 12px;
   color: #666;
+  margin-top: 5px;
   text-align: center;
-  font-style: italic;
 }
 
 /* Estilo adicional para evitar scroll abaixo do gráfico */
@@ -1667,60 +1498,63 @@ canvas {
 
 .mapa-container {
   grid-column: 1 / -1;
-  height: 500px;
+  margin-top: 20px;
 }
 
 .mapa-wrapper {
-    width: 100%;
-  height: 450px;
-  border-radius: 8px;
+  width: 100%;
+  height: 400px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  position: relative;
   overflow: hidden;
 }
 
 .mapa-info {
   position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 12px;
-  color: #333;
+  color: #666;
 }
 
-.relatorio-acoes {
+.acoes-bar {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0;
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #e9ecef;
+}
+
+.acoes-left {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-.btn-exportar, 
-.btn-fechar {
-  padding: 8px 16px;
+.btn-exportar {
+  padding: 6px 12px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.2s ease;
-}
-
-.btn-exportar {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 32px;
   background-color: #27ae60;
   color: white;
 }
 
 .btn-exportar:hover {
   background-color: #2ecc71;
-}
-
-.btn-fechar {
-  background-color: #7f8c8d;
-  color: white;
-}
-
-.btn-fechar:hover {
-  background-color: #95a5a6;
 }
 </style> 

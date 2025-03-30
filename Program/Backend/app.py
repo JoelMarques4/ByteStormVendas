@@ -8,8 +8,8 @@ from routes import chat_router, vendas_router
 def create_app() -> FastAPI:
     """Cria e configura a aplicação FastAPI."""
     app = FastAPI(
-        title="ByteStorm Vendas API",
-        description="API para o sistema de vendas ByteStorm",
+        title="CodeSellers Vendas API",
+        description="API para o sistema de vendas CodeSellers.",
         version="1.0.0"
     )
     
