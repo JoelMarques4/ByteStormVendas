@@ -10,6 +10,7 @@ const activeView = ref('chat');
 const isSidebarOpen = ref(false);
 const mostrarRelatorio = ref(false);
 const regioesSelecionadas = ref([]);
+const loading = ref(false);
 
 // Manipuladores de eventos
 const toggleSidebar = () => {
@@ -29,6 +30,11 @@ const fecharRelatorio = () => {
   mostrarRelatorio.value = false;
   regioesSelecionadas.value = [];
 };
+
+// Função para atualizar o estado de loading
+const updateLoading = (value) => {
+  loading.value = value;
+};
 </script>
 
 <template>
@@ -37,8 +43,9 @@ const fecharRelatorio = () => {
     
     <!-- Barra Lateral -->
     <AppSidebar 
-      :isSidebarOpen="isSidebarOpen" 
-      :activeView="activeView"
+      :is-sidebar-open="isSidebarOpen"
+      :active-view="activeView"
+      :loading="loading"
       @toggle-sidebar="toggleSidebar"
       @change-view="changeView"
     />
@@ -46,7 +53,7 @@ const fecharRelatorio = () => {
     <!-- Conteúdo Principal -->
     <div class="main-content" :class="{ 'content-shifted': isSidebarOpen }">
       <!-- Chat View -->
-      <ChatView v-if="activeView === 'chat'" />
+      <ChatView v-if="activeView === 'chat'" v-model="loading" />
 
       <!-- Mapa View -->
       <BrazilMap v-if="activeView === 'map'" @regiao-selecionada="abrirRelatorio" />

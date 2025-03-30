@@ -9,16 +9,22 @@ const props = defineProps({
   activeView: {
     type: String,
     required: true
+  },
+  loading: {
+    type: Boolean,
+    default: false
   }
 });
 
 const emit = defineEmits(['toggle-sidebar', 'change-view']);
 
 const toggleSidebar = () => {
+  if (props.loading) return;
   emit('toggle-sidebar');
 };
 
 const changeView = (view) => {
+  if (props.loading) return;
   emit('change-view', view);
   
   if (window.innerWidth < 768) {
@@ -30,7 +36,7 @@ const changeView = (view) => {
 <template>
   <div class="sidebar-wrapper">
     <!-- Botão do Menu Hamburguer -->
-    <button class="menu-toggle" @click="toggleSidebar">
+    <button class="menu-toggle" @click="toggleSidebar" :disabled="loading">
       <i class="bi bi-list"></i>
     </button>
 
@@ -38,7 +44,7 @@ const changeView = (view) => {
     <div class="sidebar" :class="{ 'sidebar-open': isSidebarOpen }">
       <div class="sidebar-header">
         <h3>CodeSellers Vendas</h3>
-        <button class="close-sidebar" @click="toggleSidebar">
+        <button class="close-sidebar" @click="toggleSidebar" :disabled="loading">
           <i class="bi bi-x-lg"></i>
         </button>
       </div>
@@ -46,13 +52,15 @@ const changeView = (view) => {
         <button 
           class="menu-item" 
           :class="{ active: activeView === 'chat' }"
-          @click="changeView('chat')">
+          @click="changeView('chat')"
+          :disabled="loading">
           <i class="bi bi-chat-dots"></i> Chat
         </button>
         <button 
           class="menu-item" 
           :class="{ active: activeView === 'map' }"
-          @click="changeView('map')">
+          @click="changeView('map')"
+          :disabled="loading">
           <i class="bi bi-geo-alt"></i> Mapa do Brasil
         </button>
       </div>
@@ -149,5 +157,21 @@ const changeView = (view) => {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
+}
+
+.menu-toggle:disabled,
+.close-sidebar:disabled,
+.menu-item:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.sidebar-overlay {
+  pointer-events: none;
+}
+
+.sidebar-wrapper.loading .sidebar-overlay {
+  pointer-events: none;
 }
 </style> 
