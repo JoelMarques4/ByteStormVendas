@@ -1,8 +1,6 @@
-# 🚀 ByteStorm Vendas - Sistema de Análise de Vendas com IA
+# 🚀 TrendSightAI - Sistema de Análise de Vendas com IA
 
 <div align="center">
-
-![ByteStorm Logo](Frontend/src/assets/logo.png)
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15.0-blue.svg)](https://www.postgresql.org/)
@@ -26,7 +24,7 @@
 
 ## 🎯 Sobre o Projeto
 
-ByteStorm Vendas é um sistema avançado de análise de vendas que utiliza Inteligência Artificial para fornecer insights valiosos sobre dados de vendas. O sistema integra tecnologias modernas como PostgreSQL para armazenamento de dados e Ollama com o modelo DeepSeek-R1 para análise inteligente.
+TrendSightAI é um sistema avançado de análise de vendas que utiliza Inteligência Artificial para fornecer insights valiosos sobre dados de vendas. O sistema integra tecnologias modernas como PostgreSQL para armazenamento de dados e Ollama com o modelo DeepSeek-R1 para análise inteligente.
 
 ### 📚 Documentação Detalhada
 - [Documentação do Backend](Backend/README.md)
