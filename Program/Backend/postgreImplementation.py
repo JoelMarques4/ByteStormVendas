@@ -3,13 +3,13 @@ from sqlalchemy.engine import create_engine
 import requests
 import json
 
-# Importar o modelo Pessoa da etapa anterior
-from importar_csv import Pessoa, engine
+# Importar o modelo Vendas da etapa anterior
+from importar_csv import Vendas, engine
 
 def buscar_dados_do_banco():
     """Busca dados do PostgreSQL"""
     with Session(engine) as session:
-        statement = select(Pessoa)
+        statement = select(Vendas)
         results = session.exec(statement).all()
         return results
 
@@ -19,7 +19,7 @@ def formatar_dados_para_modelo(dados):
     texto_formatado = ""
     
     for item in dados:
-        texto_formatado += f"Pessoa: {item.nome}, Idade: {item.idade}, Email: {item.email}\n"
+        texto_formatado += f"Venda: {item.nome}, Idade: {item.idade}, Email: {item.email}, Estoque: {item.estoque_atual}\n"
     
     return texto_formatado
 

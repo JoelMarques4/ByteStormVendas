@@ -5,7 +5,7 @@ from sqlalchemy.engine import URL
 import sqlalchemy
 
 # Definir modelo corretamente com todas as colunas que você tem
-class Pessoa(SQLModel, table=True):
+class Vendas(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     latitude: Optional[float] = Field(default=None)
     longitude: Optional[float] = Field(default=None)
@@ -19,6 +19,7 @@ class Pessoa(SQLModel, table=True):
     quantidade: Optional[int] = Field(default=None)
     valor_unitario: Optional[float] = Field(default=None)
     lucro_total: Optional[float] = Field(default=None)
+    estoque_atual: Optional[int] = Field(default=None)
 
 # Configurar conexão com o banco de dados com parâmetros específicos de codificação
 def create_db_engine():
@@ -127,8 +128,8 @@ def importar_csv(arquivo_csv: str):
             for _, row in batch.iterrows():
                 try:
                     # Converter linha para dicionário e filtrar apenas as colunas existentes no modelo
-                    dados = {k: v for k, v in row.to_dict().items() if k in Pessoa.__annotations__}
-                    objeto = Pessoa(**dados)
+                    dados = {k: v for k, v in row.to_dict().items() if k in Vendas.__annotations__}
+                    objeto = Vendas(**dados)
                     objetos.append(objeto)
                 except Exception as e:
                     print(f"Erro ao processar linha: {row}")

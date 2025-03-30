@@ -262,10 +262,9 @@ const processarDadosGraficos = () => {
     }
   });
   
-  // Limitar a 10 produtos mais vendidos para melhor visualização
+  // Remover a limitação de 10 produtos mais vendidos
   const produtosOrdenados = Object.entries(vendasProdutoTemp)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 10);
+    .sort((a, b) => b[1] - a[1]);
   
   const vendasProduto = Object.fromEntries(produtosOrdenados);
 
@@ -316,10 +315,9 @@ const processarDadosGraficos = () => {
     produtosTotais[produto] = Object.values(mesesData).reduce((acc, val) => acc + val, 0);
   });
   
-  // Pegar os 5 produtos mais vendidos em quantidade para o gráfico por mês
+  // Remover a limitação de 5 produtos mais vendidos em quantidade
   const produtosTopQuantidade = Object.entries(produtosTotais)
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 5)
     .map(item => item[0]);
   
   // Preparar dados para gráfico: produtos por mês
@@ -330,6 +328,16 @@ const processarDadosGraficos = () => {
       'rgba(255, 206, 86, 0.7)',
       'rgba(75, 192, 192, 0.7)',
       'rgba(153, 102, 255, 0.7)',
+      'rgba(255, 159, 64, 0.7)',
+      'rgba(201, 203, 207, 0.7)',
+      'rgba(0, 162, 232, 0.7)',
+      'rgba(139, 195, 74, 0.7)',
+      'rgba(103, 58, 183, 0.7)',
+      'rgba(255, 99, 71, 0.7)',
+      'rgba(0, 191, 255, 0.7)',
+      'rgba(255, 215, 0, 0.7)',
+      'rgba(147, 112, 219, 0.7)',
+      'rgba(50, 205, 50, 0.7)'
     ];
     
     return {

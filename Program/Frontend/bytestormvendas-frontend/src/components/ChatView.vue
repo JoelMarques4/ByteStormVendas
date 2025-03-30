@@ -80,52 +80,52 @@ const processResponse = (response) => {
       // Se response.response for um objeto, procura pelo texto
       if (typeof response.response === 'object') {
         // Procura por propriedades que podem conter o texto
-        if (response.response.text) return response.response.text;
-        if (response.response.content) return response.response.content;
-        if (response.response.result) return response.response.result;
-        if (response.response.output) return response.response.output;
-        if (response.response.answer) return response.response.answer;
+        if (response.response.text) return response.response.text.replace(/<think>.*?<\/think>/g, '');
+        if (response.response.content) return response.response.content.replace(/<think>.*?<\/think>/g, '');
+        if (response.response.result) return response.response.result.replace(/<think>.*?<\/think>/g, '');
+        if (response.response.output) return response.response.output.replace(/<think>.*?<\/think>/g, '');
+        if (response.response.answer) return response.response.answer.replace(/<think>.*?<\/think>/g, '');
         
         // Se não encontrar, retorna o objeto formatado
         return JSON.stringify(response.response, null, 2);
       }
-      return response.response;
+      return response.response.replace(/<think>.*?<\/think>/g, '');
     }
     
     // Se a resposta tiver uma propriedade 'result', usa ela
     if (response.result) {
-      return response.result;
+      return response.result.replace(/<think>.*?<\/think>/g, '');
     }
     
     // Se a resposta tiver uma propriedade 'message', usa ela
     if (response.message) {
-      return response.message;
+      return response.message.replace(/<think>.*?<\/think>/g, '');
     }
     
     // Se a resposta tiver uma propriedade 'text', usa ela
     if (response.text) {
-      return response.text;
+      return response.text.replace(/<think>.*?<\/think>/g, '');
     }
     
     // Se a resposta tiver uma propriedade 'content', usa ela
     if (response.content) {
-      return response.content;
+      return response.content.replace(/<think>.*?<\/think>/g, '');
     }
     
     // Se a resposta tiver uma propriedade 'output', usa ela
     if (response.output) {
-      return response.output;
+      return response.output.replace(/<think>.*?<\/think>/g, '');
     }
     
     // Se a resposta tiver uma propriedade 'answer', usa ela
     if (response.answer) {
-      return response.answer;
+      return response.answer.replace(/<think>.*?<\/think>/g, '');
     }
     
     // Se a resposta for um objeto, tenta encontrar o primeiro valor de string
     for (const key in response) {
       if (typeof response[key] === 'string') {
-        return response[key];
+        return response[key].replace(/<think>.*?<\/think>/g, '');
       }
     }
     

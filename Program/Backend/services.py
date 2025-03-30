@@ -11,7 +11,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 from data_store import data_store
 from config import DEFAULT_API_TOKEN, LANGFLOW_API_URL
-from importar_csv import Pessoa
+from importar_csv import Vendas
 from models import Chat, Message
 
 # Configuração do banco de dados
@@ -36,7 +36,7 @@ class LlamaService:
             max_features=1000
         )
         
-    def formatar_dados_banco(self, dados: List[Pessoa]) -> str:
+    def formatar_dados_banco(self, dados: List[Vendas]) -> str:
         """Formata os dados do banco para incluir no contexto da IA."""
         texto_formatado = "Dados disponíveis no banco de dados:\n\n"
         
@@ -61,7 +61,7 @@ class LlamaService:
         
         return texto_formatado
     
-    def buscar_dados_relevantes(self, query: str, dados: List[Pessoa], top_k: int = 5) -> List[Pessoa]:
+    def buscar_dados_relevantes(self, query: str, dados: List[Vendas], top_k: int = 5) -> List[Vendas]:
         """Busca os dados mais relevantes para a consulta usando TF-IDF."""
         # Criar textos para cada registro
         textos = []
@@ -98,7 +98,7 @@ class LlamaService:
         try:
             # Buscar dados do banco
             with Session(engine) as session:
-                statement = select(Pessoa)
+                statement = select(Vendas)
                 dados_banco = session.exec(statement).all()
             
             print(f"Dados do banco recuperados com sucesso. Total de registros: {len(dados_banco)}")
@@ -159,7 +159,9 @@ class VendasService:
                 "media_valor": 0,
                 "num_clientes": 0,
                 "total_lucro": 0,
-                "margem_lucro": 0
+                "margem_lucro": 0,
+                "estoque_total": 0,
+                "produtos_baixo_estoque": 0
             }
         
         total_vendas = sum(item["Valor"] for item in dados_regiao)
@@ -169,13 +171,19 @@ class VendasService:
         clientes = set(item["Cliente"] for item in dados_regiao)
         margem_lucro = (total_lucro / total_vendas * 100) if total_vendas > 0 else 0
         
+        # Calcular informações de estoque
+        estoque_total = sum(item.get("estoque_atual", 0) for item in dados_regiao)
+        produtos_baixo_estoque = sum(1 for item in dados_regiao if item.get("estoque_atual", 0) < 10)
+        
         return {
             "total_vendas": float(total_vendas),
             "total_produtos": int(total_produtos),
             "media_valor": float(media_valor),
             "num_clientes": len(clientes),
             "total_lucro": float(total_lucro),
-            "margem_lucro": float(margem_lucro)
+            "margem_lucro": float(margem_lucro),
+            "estoque_total": int(estoque_total),
+            "produtos_baixo_estoque": int(produtos_baixo_estoque)
         }
     
     def obter_dados_vendas_regiao(self, regiao: str) -> Dict[str, Any]:
@@ -200,10 +208,22 @@ class VendasService:
                 estados_regiao = data_store.estados_por_regiao.get(regiao, [])
                 item['Estado'] = estados_regiao[0] if estados_regiao else regiao
         
+        # Preparar dados para o gráfico de estoque
+        dados_estoque = {}
+        for item in dados_regiao:
+            produto = item.get("Produto", "Sem nome")
+            estoque = item.get("estoque_atual", 0)
+            if produto not in dados_estoque:
+                dados_estoque[produto] = estoque
+        
         # Estrutura para o frontend
         return {
             "resumo": resumo,
-            "dados_tabela": dados_regiao
+            "dados_tabela": dados_regiao,
+            "dados_estoque": [
+                {"produto": produto, "estoque": estoque}
+                for produto, estoque in dados_estoque.items()
+            ]
         }
 
 class ChatService:
